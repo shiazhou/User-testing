@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+<title>光遇24小时测身高</title>
+<style>
+:root{
+  --glass-bg: rgba(255,255,255,0.08);
+  --glass-border: rgba(255,255,255,0.1);
+  --text: #ffffff;
+  --muted: rgba(255,255,255,0.72);
+  --radius: 16px;
+  --card-w: min(700px,96%);
+}
+
+html,body{
+  height:100%; margin:0; padding:0;
+  font-family:'Poppins','Microsoft YaHei',sans-serif;
+  color:var(--text);
+  overflow:hidden;
+  display:flex; justify-content:center; align-items:center;
+  position:relative;
+}
+
+/* 背景 */
+body::before{
+  content:"";
+  position:fixed; inset:0; z-index:-2;
+  background-image:url("https://bing.img.run/1366x768.php");
+  background-size:cover; background-position:center;
+  filter: saturate(1.05) contrast(1.03) brightness(0.56);
+  transform: scale(1.02);
+}
+body::after{
+  content:""; position:fixed; inset:0; z-index:-1;
+  backdrop-filter: blur(7px) saturate(115%);
+  background: linear-gradient(180deg, rgba(2,8,15,0.18), rgba(0,0,0,0.3));
+}
+
+/* 主卡片 */
+.container{
+  width:var(--card-w); max-width:100%;
+  padding:30px 30px 40px 30px; /* 底部加大padding防止footer遮挡 */
+  border-radius:var(--radius);
+  background:var(--glass-bg);
+  border:1px solid var(--glass-border);
+  backdrop-filter: blur(15px);
+  text-align:center;
+  box-shadow:0 10px 50px rgba(2,6,15,0.6);
+}
+
+h1{
+  font-size: clamp(22px,4vw,30px);
+  margin-bottom:12px;
+}
+
+.input-area{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+
+input{
+  flex:1; min-width:220px; max-width:350px;
+  padding:12px 18px; border-radius:25px; border:none;
+  font-size:16px; outline:none; color:#111;
+  background: rgba(255,255,255,0.85);
+}
+input:focus{ box-shadow: 0 0 15px #00eaff; }
+
+button{
+  padding:12px 25px; border-radius:25px; border:none;
+  background: linear-gradient(90deg, #00eaff, #0072ff);
+  color:#fff; font-size:16px; font-weight:bold; cursor:pointer;
+  transition:0.2s ease;
+}
+button:hover{ transform: translateY(-2px); box-shadow:0 0 25px #00eaff; }
+
+#status{ margin-top:15px; font-size:15px; font-weight:bold; }
+
+/* 结果区 */
+#result{
+  margin-top:20px; text-align:left;
+  background: rgba(255,255,255,0.1);
+  border-radius:12px; padding:15px;
+  white-space: pre-wrap;
+  line-height:1.6;
+  opacity:0; transform: translateY(15px);
+  transition: all 0.6s ease;
+  font-size:14px;
+  max-height:200px;
+  overflow-y:auto;
+  position:relative;
+
+  scrollbar-width: thin;
+  scrollbar-color: #00eaff rgba(255,255,255,0.1);
+}
+#result::-webkit-scrollbar{ width:6px; }
+#result::-webkit-scrollbar-thumb{ background:#00eaff; border-radius:4px; }
+#result::-webkit-scrollbar-track{ background: rgba(255,255,255,0.1); }
+
+#result::before,#result::after{
+  content:"";
+  position:sticky;
+  left:0; right:0;
+  height:20px;
+  pointer-events:none;
+  z-index:2;
+}
+#result::before{ top:0; background:linear-gradient(to bottom, rgba(0,0,0,0.3), transparent); }
+#result::after{ bottom:0; background:linear-gradient(to top, rgba(0,0,0,0.3), transparent); }
+
+#result.show{ opacity:1; transform:translateY(0); }
+
+/* 复制按钮 */
+.copy-btn{
+  display:none;
+  margin-top:10px;
+  padding:10px 20px;
+  border-radius:20px;
+  background:linear-gradient(90deg,#00ffcc,#0099ff);
+  color:#fff;
+  font-weight:bold;
+  font-size:14px;
+  border:none;
+  cursor:pointer;
+  transition:0.25s ease;
+}
+.copy-btn:hover{
+  box-shadow:0 0 20px #00eaff;
+  transform:translateY(-2px);
+}
+.copy-btn.show{ display:inline-block; animation:fadeIn 0.4s ease; }
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(15px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* 移动端优化 */
+@media(max-width:500px){
+  .container{ width:95%; padding:20px 20px 30px 20px; }
+  input, button{ width:100%; }
+}
+
+footer{
+  margin-top:20px; font-size:12px; color:var(--muted); text-align:center;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>光遇24小时在线测身高</h1>
+  <p>一码一测<br>测完请删除好友<br>使用重塑后可立即查询</p>
+
+  <div class="input-area">
+    <input id="q" type="text" placeholder="请输入好友码..." />
+    <button id="go">立即查询</button>
+  </div>
+
+  <div id="status"></div>
+  <div id="result"></div>
+  <button id="copyBtn" class="copy-btn">📋 复制结果</button>
+
+  <footer>
+    <div>
+      <a href="https://qm.qq.com/q/xl45eNIpEW" target="_blank" style="color:var(--muted);">联系管理员QQ</a>
+    </div>
+    Powered by 棠粥虚拟<br>
+    测试中 请勿滥用 禁止用于商业用途
+  </footer>
+</div>
+
+<script>
+const btn = document.getElementById('go');
+const qEl = document.getElementById('q');
+const statusEl = document.getElementById('status');
+const resultEl = document.getElementById('result');
+const copyBtn = document.getElementById('copyBtn');
+
+const errorMessages = [
+  "您的光遇好友码不正确，请检查好友码是否正确！",
+  "该好友码已使用,请更换新的好友码再进行查询！"
+];
+
+btn.addEventListener('click', async () => {
+  const q = qEl.value.trim();
+  if(!q){ alert('请输入好友码'); return; }
+
+  btn.disabled = true;
+  statusEl.textContent = '🚀 正在请求中...';
+  statusEl.style.color = '#00eaff';
+  resultEl.textContent = '';
+  resultEl.classList.remove('show');
+  copyBtn.classList.remove('show');
+
+  try{
+    const resp = await fetch('api.php',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({query:q})
+    });
+    const text = await resp.text();
+    const isError = errorMessages.some(msg=>text.includes(msg));
+
+    if(isError){
+      statusEl.textContent='❌ 请求失败';
+      statusEl.style.color='#ff5b5b';
+      copyBtn.classList.remove('show');
+    } else {
+      statusEl.textContent='✅ 请求成功';
+      statusEl.style.color='#00ff9d';
+      copyBtn.classList.add('show');
+    }
+
+    resultEl.textContent = text;
+    resultEl.scrollTo({top:0, behavior:'smooth'});
+    resultEl.classList.add('show');
+  } catch(err){
+    statusEl.textContent='❌ 请求异常';
+    statusEl.style.color='#ff5b5b';
+    resultEl.textContent=String(err);
+    resultEl.classList.add('show');
+    copyBtn.classList.remove('show');
+  } finally{
+    btn.disabled=false;
+  }
+});
+
+// 复制功能
+copyBtn.addEventListener('click', async () => {
+  const text=resultEl.textContent.trim();
+  if(!text) return;
+  try{
+    await navigator.clipboard.writeText(text);
+    copyBtn.textContent="✅ 已复制结果内容";
+    setTimeout(()=>copyBtn.textContent="📋 复制结果",1500);
+  }catch{
+    copyBtn.textContent="❌ 复制失败";
+    setTimeout(()=>copyBtn.textContent="📋 复制结果",1500);
+  }
+});
+
+qEl.addEventListener('keyup', e => { if(e.key==='Enter') btn.click(); });
+</script>
+</body>
+</html>
