@@ -1,0 +1,3313 @@
+{include file="common/header" title="免费试用产品专区" keywords="$setting.company_name" description="$setting.company_profile"
+/}
+<link rel="stylesheet" href="{$setting.web_view}/style/css/actcloud/Newact.css">
+<script type="text/javascript" src="{$setting.web_view}/style/css/actcloud/Newact.js"></script>
+<div id="content">
+	<div class="newuser-banner">
+		<div class="content">
+			<h1>新用户首购专享</h1>
+			<p>精选华中/香港/美国/欧洲多种云服务器产品，低至
+				<span>58</span>元/月
+			</p>
+			<div class="newuser-banner-video">
+				<a href="javascript:;" videohref="{$setting.web_view}/style/image/ecs.mp4" id="nu0"
+					onclick="playmsid(this.id)">观看云服务器介绍视频</a>
+			</div>
+		</div>
+	</div>
+	<div class="newuser-product-nine" id="zd-nine">
+		<div class="zd-nav" style="position: absolute; visibility: hidden;">
+			<div class="head"></div>
+			<div class="body">
+				<div class="zd-nav-list">
+					<ul>
+						<li class="zd-nine active">新用户限量秒杀</li>
+						<li class="zd-coupon">8888元代金券</li>
+						<li class="zd-cloudserver">高防云服务器</li>
+						<li class="zd-gfserver">特价云服务器</li>
+						<li class="zd-luojinshu">裸金属服务器</li>
+						<li class="zd-ip">云虚拟主机</li>
+						<li class="zd-database">云数据库</li>
+	                    <li class="zd-cdn">CDN优惠套餐</li>
+						<li class="zd-youhui">更多活动</li>
+						<li class="zd-yds">推荐返利</li>
+					</ul>
+				</div>
+				<div class="zd-nav-erweima">
+					<div class="nav-erweima-img">
+						<img src="/{$site.wxewm}" alt="">
+					</div>
+					<p>微信扫一扫即可购买</p>
+				</div>
+			</div>
+		</div>
+		<div class="content zdy-kd">
+			<div class="mszc pro-tab">
+				<div class="huadong">
+					<div class="pro-tab-cen">
+						<p class="act-name">今日秒杀专场：</p>
+						<div class="pro-tab-center">
+							<div class="pro-tab-line" style="left: 209px; width: 200px;"></div>
+							<ul>
+								<li class="zwkf">
+									<span>00:00-13:59上半场次</span>
+								</li>
+								<li class="dqkf active">
+									<span>14:00-23:59下半场次</span>
+								</li>
+								<div class="mrzc">明日秒杀专场：</div>
+								<li class="zwkf">
+									<span>00:00-13:59上半场次</span>
+								</li>
+								<li class="zwkf">
+									<span>14:00-23:59下半场次</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pro-item-box">
+				<div class="pro-item" style="display: none;">
+					<div class="pro-area-tab">
+						<div class="tlimit sero"><span
+								class="remin-time">本场次活动已结束，如果您还未抢到心仪的云产品，请查看进行中的活动场次或者关注下一活动场次</span></div>
+					</div>
+					<div class="taocan-tuijian-box zdy-xkd">
+						<div class="taocan-item-box clearfix" id="sero">
+							<div class="taocan-item server-item">
+								<input type="hidden" name="seroS" value="2021-10-14 00:00:01">
+								<input type="hidden" name="seroE" value="2021-10-14 14:00:00">
+								<form name="buyForm" class="buyForm" action="/server/buy/order.html" method="post">
+									<div class="item-content">
+										<div class="head sero">
+											<h3>华中高性能云服务器 [8核8G]</h3>
+											<p>人工审核白名单，企业优先，禁止一切擦边球业务</p>
+											<span style="display: none;">新客专享</span>
+										</div>
+										<div class="body">
+											<ul>
+												<li>
+													<div>8核</div>
+													<p>CPU</p>
+												</li>
+												<li>
+													<div>8G</div>
+													<p>内存</p>
+												</li>
+												<li>
+													<div>8M</div>
+													<p>带宽</p>
+												</li>
+												<li>
+													<div>80G</div>
+													<p>数据盘</p>
+												</li>
+												<li>
+													<div>50G</div>
+													<p>防御</p>
+												</li>
+											</ul>
+										</div>
+										<div class="project-rule clearfix">
+											<div class="project-rule-select clearfix">
+												<div class="buy-select">
+													<span class="project-rule-name">地域：</span>
+													<span class="line-name" id="selectSystemName">华中电信 E5-2697v3</span>
+													<i class="jt"></i>
+													<div class="select-list hot-list-line" id="selectList">
+														<p class="system-main" data-lineid="4" data-defense="50">华中电信
+															E5-2697v3</p>
+													</div>
+												</div>
+												<input type="hidden" value="4" name="lineid" class="actlineid">
+												<input type="hidden" value="50" name="defense" class="act-defense">
+											</div>
+											<p id="system-mirror-text" class="project-rule-desc"></p>
+										</div>
+										<div class="project-rule-select hide">
+											<div class="project-rule-group clearfix months" data-cpu="8">
+												<div class="project-rule-item active" data-month="12">1年</div>
+											</div>
+										</div>
+										<div class="bottom">
+											<div class="price-youhui sero" style="display: none;">
+												<span class="act-num">3984.00</span>元/年 <p>原价：
+													<span class="o-price-num">3984.00</span>元
+												</p>
+											</div>
+											<div class="limit sero" style="display: none;">
+												<span class="limit-math">限
+													<span>1</span>台</span>
+												<span class="renew-cost">月单价￥55.5元</span> <span
+													class="renew-cost">需实名</span>
+											</div>
+											<div class="bottom botbuy sero"><span class="yjs">活动已结束</span></div>
+										</div>
+									</div>
+									<input type="hidden" value="8" name="cpu" class="act-cpu">
+									<input type="hidden" value="8" name="ram" class="act-ram">
+									<input type="hidden" value="8" name="bandwidth" class="bandwidth">
+									<input type="hidden" value="80" name="harddisks[]" class="harddisks">
+									<input type="hidden" value="12" name="months" class="act-months">
+									<input type="hidden" value="12," name="access_months" class="access_months">
+									<input type="hidden" value="1" name="number" class="number">
+									<input type="hidden" name="isActivity" value="1">
+								</form>
+							</div>
+							<div class="taocan-item server-item">
+								<input type="hidden" name="seroS" value="2021-10-14 00:00:01">
+								<input type="hidden" name="seroE" value="2021-10-14 14:00:00">
+								<form name="buyForm" class="buyForm" action="/server/buy/order.html" method="post">
+									<div class="item-content">
+										<div class="head sero">
+											<h3>西南高带宽服务器 [4核4G]</h3>
+											<p>超高性价比，续费同价，限量供应抢到赚到</p>
+											<span style="display: none;">新客专享</span>
+										</div>
+										<div class="body">
+											<ul>
+												<li>
+													<div>4核</div>
+													<p>CPU</p>
+												</li>
+												<li>
+													<div>4G</div>
+													<p>内存</p>
+												</li>
+												<li>
+													<div>21M</div>
+													<p>带宽</p>
+												</li>
+												<li>
+													<div>60G</div>
+													<p>数据盘</p>
+												</li>
+												<li>
+													<div>100G</div>
+													<p>防御</p>
+												</li>
+											</ul>
+										</div>
+										<div class="project-rule clearfix">
+											<div class="project-rule-select clearfix">
+												<div class="buy-select">
+													<span class="project-rule-name">地域：</span>
+													<span class="line-name" id="selectSystemName">四川 · 成都一区</span>
+													<i class="jt"></i>
+													<div class="select-list hot-list-line" id="selectList">
+														<p class="system-main" data-lineid="93" data-defense="100">四川 ·
+															成都一区</p>
+														<p class="system-main" data-lineid="92" data-defense="100">四川 ·
+															雅安一区</p>
+														<p class="system-main" data-lineid="91" data-defense="100">四川 ·
+															德阳一区</p>
+													</div>
+												</div>
+												<input type="hidden" value="93" name="lineid" class="actlineid">
+												<input type="hidden" value="100" name="defense" class="act-defense">
+											</div>
+											<p id="system-mirror-text" class="project-rule-desc"></p>
+										</div>
+										<div class="project-rule-select hide">
+											<div class="project-rule-group clearfix months" data-cpu="4">
+												<div class="project-rule-item active" data-month="1">1个月</div>
+											</div>
+										</div>
+										<div class="bottom">
+											<div class="price-youhui sero" style="display: none;">
+												<span class="act-num">85.00</span>元/首月 <p>原价：
+													<span class="o-price-num">350.00</span>元
+												</p>
+											</div>
+											<div class="limit sero" style="display: none;">
+												<span class="limit-math">限
+													<span>1</span>台</span>
+												<span class="renew-cost">月单价￥85元</span> <span
+													class="renew-cost">需实名</span>
+											</div>
+											<div class="bottom botbuy sero"><span class="yjs">活动已结束</span></div>
+										</div>
+									</div>
+									<input type="hidden" value="4" name="cpu" class="act-cpu">
+									<input type="hidden" value="4" name="ram" class="act-ram">
+									<input type="hidden" value="21" name="bandwidth" class="bandwidth">
+									<input type="hidden" value="60" name="harddisks[]" class="harddisks">
+									<input type="hidden" value="1" name="months" class="act-months">
+									<input type="hidden" value="1," name="access_months" class="access_months">
+									<input type="hidden" value="1" name="number" class="number">
+									<input type="hidden" name="isActivity" value="1">
+								</form>
+							</div>
+							<div class="taocan-item server-item">
+								<input type="hidden" name="seroS" value="2021-10-14 00:00:01">
+								<input type="hidden" name="seroE" value="2021-10-14 14:00:00">
+								<form name="buyForm" class="buyForm" action="/server/buy/order.html" method="post">
+									<div class="item-content">
+										<div class="head sero">
+											<h3>华东硬防云服务器 [4核4G]</h3>
+											<p>BGP硬防，自助白名单，WEB自助CC策略</p>
+											<span style="display: none;">新客专享</span>
+										</div>
+										<div class="body">
+											<ul>
+												<li>
+													<div>4核</div>
+													<p>CPU</p>
+												</li>
+												<li>
+													<div>4G</div>
+													<p>内存</p>
+												</li>
+												<li>
+													<div>20M</div>
+													<p>带宽</p>
+												</li>
+												<li>
+													<div>50G</div>
+													<p>数据盘</p>
+												</li>
+												<li>
+													<div>100G</div>
+													<p>防御</p>
+												</li>
+											</ul>
+										</div>
+										<div class="project-rule clearfix">
+											<div class="project-rule-select clearfix">
+												<div class="buy-select">
+													<span class="project-rule-name">地域：</span>
+													<span class="line-name" id="selectSystemName">江苏 · 宿迁一区</span>
+													<i class="jt"></i>
+													<div class="select-list hot-list-line" id="selectList">
+														<p class="system-main" data-lineid="103" data-defense="100">江苏 ·
+															宿迁一区</p>
+														<p class="system-main" data-lineid="106" data-defense="100">江苏 ·
+															宿迁二区</p>
+													</div>
+												</div>
+												<input type="hidden" value="103" name="lineid" class="actlineid">
+												<input type="hidden" value="100" name="defense" class="act-defense">
+											</div>
+											<p id="system-mirror-text" class="project-rule-desc"></p>
+										</div>
+										<div class="project-rule-select hide">
+											<div class="project-rule-group clearfix months" data-cpu="4">
+												<div class="project-rule-item active" data-month="1">1个月</div>
+											</div>
+										</div>
+										<div class="bottom">
+											<div class="price-youhui sero" style="display: none;">
+												<span class="act-num">299.00</span>元/首月 <p>原价：
+													<span class="o-price-num">299.00</span>元
+												</p>
+											</div>
+											<div class="limit sero" style="display: none;">
+												<span class="limit-math">限
+													<span>1</span>台</span>
+												<span class="renew-cost ">新用户7折</span>
+												<span class="renew-cost">需实名</span>
+											</div>
+											<div class="bottom botbuy sero"><span class="yjs">活动已结束</span></div>
+										</div>
+									</div>
+									<input type="hidden" value="4" name="cpu" class="act-cpu">
+									<input type="hidden" value="4" name="ram" class="act-ram">
+									<input type="hidden" value="20" name="bandwidth" class="bandwidth">
+									<input type="hidden" value="50" name="harddisks[]" class="harddisks">
+									<input type="hidden" value="1" name="months" class="act-months">
+									<input type="hidden" value="1," name="access_months" class="access_months">
+									<input type="hidden" value="1" name="number" class="number">
+									<input type="hidden" name="isActivity" value="1">
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="more-diy-config">
+						<a target="_blank" href="/server/buy.html">更多自定义配置 &gt;&gt;</a>
+					</div>
+				</div>
+				<div class="pro-item" style="display: block;">
+					<div class="pro-area-tab">
+						<div class="tlimit sert"><span class="remin-time">距离本场次活动结束仅剩：<span class="end_time sert">281 天
+									2 小时 47 分 30 秒 </span>，请抓紧时间抢购，以免错失优惠机会！</span></div>
+					</div>
+					<div class="taocan-tuijian-box zdy-xkd">
+						<div class="taocan-item-box clearfix" id="sert">
+							<div class="taocan-item server-item">
+								<input type="hidden" name="sertS" value="2021-10-18 12:14:43">
+								<input type="hidden" name="sertE" value="2022-10-14 23:59:59">
+								<form name="buyForm" class="buyForm" action="/server/buy/order.html" method="post">
+									<div class="item-content">
+										<div class="head sert">
+											<h3>香港CN2云服务器 [2核4G]</h3>
+											<p>CN2线路延时低 提供高达5M的基础带宽 免备案</p>
+											<span>新客专享</span>
+										</div>
+										<div class="body">
+											<ul>
+												<li>
+													<div>2核</div>
+													<p>CPU</p>
+												</li>
+												<li>
+													<div>4G</div>
+													<p>内存</p>
+												</li>
+												<li>
+													<div>5M</div>
+													<p>带宽</p>
+												</li>
+												<li>
+													<div>10G</div>
+													<p>数据盘</p>
+												</li>
+												<li>
+													<div>1G</div>
+													<p>防御</p>
+												</li>
+											</ul>
+										</div>
+										<div class="project-rule clearfix">
+											<div class="project-rule-select clearfix">
+												<div class="buy-select">
+													<span class="project-rule-name">地域：</span>
+													<span class="line-name" id="selectSystemName">香港 · 沙田一区</span>
+													<i class="jt"></i>
+													<div class="select-list hot-list-line" id="selectList">
+														<p class="system-main" data-lineid="109" data-defense="1">香港 ·
+															沙田一区</p>
+														<p class="system-main" data-lineid="25" data-defense="1">香港一区
+														</p>
+													</div>
+												</div>
+												<input type="hidden" value="109" name="lineid" class="actlineid">
+												<input type="hidden" value="1" name="defense" class="act-defense">
+											</div>
+											<p id="system-mirror-text" class="project-rule-desc"></p>
+										</div>
+										<div class="project-rule-select hide">
+											<div class="project-rule-group clearfix months" data-cpu="2">
+												<div class="project-rule-item active" data-month="12">1年</div>
+											</div>
+										</div>
+										<div class="bottom">
+											<div class="price-youhui sert">
+												<span class="act-num">396.00</span>元/年 <p>原价：
+													<span class="o-price-num">1176.00</span>元
+												</p>
+											</div>
+											<div class="limit sert">
+												<span class="limit-math">限
+													<span>1</span>台</span>
+												<span class="renew-cost">月单价￥33元</span> <span
+													class="renew-cost">需实名</span>
+											</div>
+											<div class="bottom botbuy sert">
+												<a class="buy msbuy" href="javascript:;">立即购买</a>
+											</div>
+										</div>
+									</div>
+									<input type="hidden" value="2" name="cpu" class="act-cpu">
+									<input type="hidden" value="4" name="ram" class="act-ram">
+									<input type="hidden" value="5" name="bandwidth" class="bandwidth">
+									<input type="hidden" value="10" name="harddisks[]" class="harddisks">
+									<input type="hidden" value="12" name="months" class="act-months">
+									<input type="hidden" value="12," name="access_months" class="access_months">
+									<input type="hidden" value="1" name="number" class="number">
+									<input type="hidden" name="isActivity" value="1">
+								</form>
+							</div>
+							<div class="taocan-item server-item">
+								<input type="hidden" name="sertS" value="2021-10-18 12:14:43">
+								<input type="hidden" name="sertE" value="2022-10-14 23:59:59">
+								<form name="buyForm" class="buyForm" action="/server/buy/order.html" method="post">
+									<div class="item-content">
+										<div class="head sert">
+											<h3>美国云服务器 [4核4G]</h3>
+											<p>金盾防护免费提供10G防御 高达10M 的基础带宽</p>
+											<span>新客专享</span>
+										</div>
+										<div class="body">
+											<ul>
+												<li>
+													<div>4核</div>
+													<p>CPU</p>
+												</li>
+												<li>
+													<div>4G</div>
+													<p>内存</p>
+												</li>
+												<li>
+													<div>20M</div>
+													<p>带宽</p>
+												</li>
+												<li>
+													<div>40G</div>
+													<p>数据盘</p>
+												</li>
+												<li>
+													<div>10G</div>
+													<p>防御</p>
+												</li>
+											</ul>
+										</div>
+										<div class="project-rule clearfix">
+											<div class="project-rule-select clearfix">
+												<div class="buy-select">
+													<span class="project-rule-name">地域：</span>
+													<span class="line-name" id="selectSystemName">美国 · 洛杉矶二区</span>
+													<i class="jt"></i>
+													<div class="select-list hot-list-line" id="selectList">
+														<p class="system-main" data-lineid="124" data-defense="10">美国 ·
+															洛杉矶二区</p>
+													</div>
+												</div>
+												<input type="hidden" value="124" name="lineid" class="actlineid">
+												<input type="hidden" value="10" name="defense" class="act-defense">
+											</div>
+											<p id="system-mirror-text" class="project-rule-desc"></p>
+										</div>
+										<div class="project-rule-select hide">
+											<div class="project-rule-group clearfix months" data-cpu="4">
+												<div class="project-rule-item active" data-month="1">1个月</div>
+											</div>
+										</div>
+										<div class="bottom">
+											<div class="price-youhui sert">
+												<span class="act-num">66.00</span>元/首月 <p>原价：
+													<span class="o-price-num">226.00</span>元
+												</p>
+											</div>
+											<div class="limit sert">
+												<span class="limit-math">限
+													<span>1</span>台</span>
+												<span class="renew-cost">月单价￥66元</span> <span
+													class="renew-cost">需实名</span>
+											</div>
+											<div class="bottom botbuy sert">
+												<a class="buy msbuy" href="javascript:;">立即购买</a>
+											</div>
+										</div>
+									</div>
+									<input type="hidden" value="4" name="cpu" class="act-cpu">
+									<input type="hidden" value="4" name="ram" class="act-ram">
+									<input type="hidden" value="20" name="bandwidth" class="bandwidth">
+									<input type="hidden" value="40" name="harddisks[]" class="harddisks">
+									<input type="hidden" value="1" name="months" class="act-months">
+									<input type="hidden" value="1," name="access_months" class="access_months">
+									<input type="hidden" value="1" name="number" class="number">
+									<input type="hidden" name="isActivity" value="1">
+								</form>
+							</div>
+							<div class="taocan-item server-item">
+								<input type="hidden" name="sertS" value="2021-10-18 12:14:43">
+								<input type="hidden" name="sertE" value="2022-10-14 23:59:59">
+								<form name="buyForm" class="buyForm" action="/server/buy/order.html" method="post">
+									<div class="item-content">
+										<div class="head sert">
+											<h3>海外高防云服务器 [8核4G]</h3>
+											<p></p>
+											<span>新客专享</span>
+										</div>
+										<div class="body">
+											<ul>
+												<li>
+													<div>8核</div>
+													<p>CPU</p>
+												</li>
+												<li>
+													<div>4G</div>
+													<p>内存</p>
+												</li>
+												<li>
+													<div>20M</div>
+													<p>带宽</p>
+												</li>
+												<li>
+													<div>10G</div>
+													<p>数据盘</p>
+												</li>
+												<li>
+													<div>200G</div>
+													<p>防御</p>
+												</li>
+											</ul>
+										</div>
+										<div class="project-rule clearfix">
+											<div class="project-rule-select clearfix">
+												<div class="buy-select">
+													<span class="project-rule-name">地域：</span>
+													<span class="line-name" id="selectSystemName">美国 · 超级防御</span>
+													<i class="jt"></i>
+													<div class="select-list hot-list-line" id="selectList">
+														<p class="system-main" data-lineid="125" data-defense="200">美国 ·
+															超级防御</p>
+													</div>
+												</div>
+												<input type="hidden" value="125" name="lineid" class="actlineid">
+												<input type="hidden" value="200" name="defense" class="act-defense">
+											</div>
+											<p id="system-mirror-text" class="project-rule-desc"></p>
+										</div>
+										<div class="project-rule-select hide">
+											<div class="project-rule-group clearfix months" data-cpu="8">
+												<div class="project-rule-item active" data-month="1">1个月</div>
+											</div>
+										</div>
+										<div class="bottom">
+											<div class="price-youhui sert">
+												<span class="act-num">398.00</span>元/首月 <p>原价：
+													<span class="o-price-num">525.00</span>元
+												</p>
+											</div>
+											<div class="limit sert">
+												<span class="limit-math">限
+													<span>1</span>台</span>
+												<span class="renew-cost">月单价￥398元</span> <span
+													class="renew-cost">需实名</span>
+											</div>
+											<div class="bottom botbuy sert">
+												<a class="buy msbuy" href="javascript:;">立即购买</a>
+											</div>
+										</div>
+									</div>
+									<input type="hidden" value="8" name="cpu" class="act-cpu">
+									<input type="hidden" value="4" name="ram" class="act-ram">
+									<input type="hidden" value="20" name="bandwidth" class="bandwidth">
+									<input type="hidden" value="10" name="harddisks[]" class="harddisks">
+									<input type="hidden" value="1" name="months" class="act-months">
+									<input type="hidden" value="1," name="access_months" class="access_months">
+									<input type="hidden" value="1" name="number" class="number">
+									<input type="hidden" name="isActivity" value="1">
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="more-diy-config">
+						<a target="_blank" href="/server/buy.html">更多自定义配置 &gt;&gt;</a>
+					</div>
+				</div>
+				<div class="pro-item" style="display: none;"></div>
+				<div class="pro-item" style="display: none;">
+					<div class="pro-area-tab">
+						<div class="tlimit sers"><span class="remin-time">距离活动开始时间还有：<span class="end_time sers">281 天 2
+									小时 47 分 32 秒 </span> ，请提前 <a href="/login">登录账户</a>、<a
+									href="/login">充值余额</a>、做好准备！</span></div>
+					</div>
+					<div class="taocan-tuijian-box zdy-xkd">
+						<div class="taocan-item-box clearfix" id="sers">
+							<div class="taocan-item server-item">
+								<input type="hidden" name="sersS" value="2022-10-15 00:00:01">
+								<input type="hidden" name="sersE" value="2022-10-15 13:59:00">
+								<form name="buyForm" class="buyForm" action="/server/buy/order.html" method="post">
+									<div class="item-content">
+										<div class="head sers">
+											<h3>华中高性能云服务器 [2核4G]</h3>
+											<p>人工审核白名单，企业优先，禁止一切擦边球业务</p>
+											<span>新客专享</span>
+										</div>
+										<div class="body">
+											<ul>
+												<li>
+													<div>2核</div>
+													<p>CPU</p>
+												</li>
+												<li>
+													<div>4G</div>
+													<p>内存</p>
+												</li>
+												<li>
+													<div>3M</div>
+													<p>带宽</p>
+												</li>
+												<li>
+													<div>50G</div>
+													<p>数据盘</p>
+												</li>
+												<li>
+													<div>50G</div>
+													<p>防御</p>
+												</li>
+											</ul>
+										</div>
+										<div class="project-rule clearfix">
+											<div class="project-rule-select clearfix">
+												<div class="buy-select">
+													<span class="project-rule-name">地域：</span>
+													<span class="line-name" id="selectSystemName">华中电信 E5-2697v3</span>
+													<i class="jt"></i>
+													<div class="select-list hot-list-line" id="selectList">
+														<p class="system-main" data-lineid="4" data-defense="50">华中电信
+															E5-2697v3</p>
+													</div>
+												</div>
+												<input type="hidden" value="4" name="lineid" class="actlineid">
+												<input type="hidden" value="50" name="defense" class="act-defense">
+											</div>
+											<p id="system-mirror-text" class="project-rule-desc"></p>
+										</div>
+										<div class="project-rule-select hide">
+											<div class="project-rule-group clearfix months" data-cpu="2">
+												<div class="project-rule-item active" data-month="12">1年</div>
+												<div class="project-rule-item" data-month="24">2年</div>
+												<div class="project-rule-item" data-month="36">3年</div>
+											</div>
+										</div>
+										<div class="bottom">
+											<div class="price-youhui sers">
+												<span class="act-num">1086.00</span>元/年 <p>原价：
+													<span class="o-price-num">1086.00</span>元
+												</p>
+											</div>
+											<div class="limit sers">
+												<span class="limit-math">限
+													<span>1</span>台</span>
+												<span class="renew-cost">月单价￥16.5元</span> <span
+													class="renew-cost">需实名</span>
+											</div>
+											<div class="bottom botbuy sers"><span class="wks">活动还未开始</span></div>
+										</div>
+									</div>
+									<input type="hidden" value="2" name="cpu" class="act-cpu">
+									<input type="hidden" value="4" name="ram" class="act-ram">
+									<input type="hidden" value="3" name="bandwidth" class="bandwidth">
+									<input type="hidden" value="50" name="harddisks[]" class="harddisks">
+
+									<input type="hidden" value="12" name="months" class="act-months">
+									<input type="hidden" value="12,24,36," name="access_months" class="access_months">
+									<input type="hidden" value="1" name="number" class="number">
+									<input type="hidden" name="isActivity" value="1">
+								</form>
+							</div>
+							<div class="taocan-item server-item">
+								<input type="hidden" name="sersS" value="2022-10-15 00:00:01">
+								<input type="hidden" name="sersE" value="2022-10-15 13:59:00">
+								<form name="buyForm" class="buyForm" action="/server/buy/order.html" method="post">
+									<div class="item-content">
+										<div class="head sers">
+											<h3>西南高带宽服务器 [4核4G]</h3>
+											<p>超高性价比，续费同价，限量供应抢到赚到</p>
+											<span>新客专享</span>
+										</div>
+										<div class="body">
+											<ul>
+												<li>
+													<div>4核</div>
+													<p>CPU</p>
+												</li>
+												<li>
+													<div>4G</div>
+													<p>内存</p>
+												</li>
+												<li>
+													<div>6M</div>
+													<p>带宽</p>
+												</li>
+												<li>
+													<div>60G</div>
+													<p>数据盘</p>
+												</li>
+												<li>
+													<div>100G</div>
+													<p>防御</p>
+												</li>
+											</ul>
+										</div>
+										<div class="project-rule clearfix">
+											<div class="project-rule-select clearfix">
+												<div class="buy-select">
+													<span class="project-rule-name">地域：</span>
+													<span class="line-name" id="selectSystemName">四川 · 成都一区</span>
+													<i class="jt"></i>
+													<div class="select-list hot-list-line" id="selectList">
+														<p class="system-main" data-lineid="93" data-defense="100">四川 ·
+															成都一区</p>
+														<p class="system-main" data-lineid="92" data-defense="100">四川 ·
+															雅安一区</p>
+														<p class="system-main" data-lineid="91" data-defense="100">四川 ·
+															德阳一区</p>
+													</div>
+												</div>
+												<input type="hidden" value="93" name="lineid" class="actlineid">
+												<input type="hidden" value="100" name="defense" class="act-defense">
+											</div>
+											<p id="system-mirror-text" class="project-rule-desc"></p>
+										</div>
+										<div class="project-rule-select hide">
+											<div class="project-rule-group clearfix months" data-cpu="4">
+												<div class="project-rule-item active" data-month="1">1个月</div>
+											</div>
+										</div>
+										<div class="bottom">
+											<div class="price-youhui sers">
+												<span class="act-num">78.00</span>元/首月 <p>原价：
+													<span class="o-price-num">200.00</span>元
+												</p>
+											</div>
+											<div class="limit sers">
+												<span class="limit-math">限
+													<span>1</span>台</span>
+												<span class="renew-cost">月单价￥60元</span> <span
+													class="renew-cost">需实名</span>
+											</div>
+											<div class="bottom botbuy sers"><span class="wks">活动还未开始</span></div>
+										</div>
+									</div>
+									<input type="hidden" value="4" name="cpu" class="act-cpu">
+									<input type="hidden" value="4" name="ram" class="act-ram">
+									<input type="hidden" value="6" name="bandwidth" class="bandwidth">
+									<input type="hidden" value="60" name="harddisks[]" class="harddisks">
+
+									<input type="hidden" value="1" name="months" class="act-months">
+									<input type="hidden" value="1," name="access_months" class="access_months">
+									<input type="hidden" value="1" name="number" class="number">
+									<input type="hidden" name="isActivity" value="1">
+								</form>
+							</div>
+							<div class="taocan-item server-item">
+								<input type="hidden" name="sersS" value="2022-10-15 00:00:01">
+								<input type="hidden" name="sersE" value="2022-10-15 13:59:00">
+								<form name="buyForm" class="buyForm" action="/server/buy/order.html" method="post">
+									<div class="item-content">
+										<div class="head sers">
+											<h3>华东硬防云服务器 [4核4G]</h3>
+											<p>BGP硬防，自助白名单，WEB自助CC策略</p>
+											<span>新客专享</span>
+										</div>
+										<div class="body">
+											<ul>
+												<li>
+													<div>4核</div>
+													<p>CPU</p>
+												</li>
+												<li>
+													<div>4G</div>
+													<p>内存</p>
+												</li>
+												<li>
+													<div>10M</div>
+													<p>带宽</p>
+												</li>
+												<li>
+													<div>20G</div>
+													<p>数据盘</p>
+												</li>
+												<li>
+													<div>50G</div>
+													<p>防御</p>
+												</li>
+											</ul>
+										</div>
+										<div class="project-rule clearfix">
+											<div class="project-rule-select clearfix">
+												<div class="buy-select">
+													<span class="project-rule-name">地域：</span>
+													<span class="line-name" id="selectSystemName">江苏 · 宿迁三区</span>
+													<i class="jt"></i>
+													<div class="select-list hot-list-line" id="selectList">
+														<p class="system-main" data-lineid="104" data-defense="50">江苏 ·
+															宿迁三区</p>
+														<p class="system-main" data-lineid="105" data-defense="50">江苏 ·
+															宿迁四区</p>
+													</div>
+												</div>
+												<input type="hidden" value="104" name="lineid" class="actlineid">
+												<input type="hidden" value="50" name="defense" class="act-defense">
+											</div>
+											<p id="system-mirror-text" class="project-rule-desc"></p>
+										</div>
+										<div class="project-rule-select hide">
+											<div class="project-rule-group clearfix months" data-cpu="4">
+												<div class="project-rule-item active" data-month="1">1个月</div>
+											</div>
+										</div>
+										<div class="bottom">
+											<div class="price-youhui sers">
+												<span class="act-num">163.00</span>元/首月 <p>原价：
+													<span class="o-price-num">163.00</span>元
+												</p>
+											</div>
+											<div class="limit sers">
+												<span class="limit-math">限
+													<span>1</span>台</span>
+												<span class="renew-cost ">新用户7折</span>
+												<span class="renew-cost">需实名</span>
+											</div>
+											<div class="bottom botbuy sers"><span class="wks">活动还未开始</span></div>
+										</div>
+									</div>
+									<input type="hidden" value="4" name="cpu" class="act-cpu">
+									<input type="hidden" value="4" name="ram" class="act-ram">
+									<input type="hidden" value="10" name="bandwidth" class="bandwidth">
+									<input type="hidden" value="20" name="harddisks[]" class="harddisks">
+
+									<input type="hidden" value="1" name="months" class="act-months">
+									<input type="hidden" value="1," name="access_months" class="access_months">
+									<input type="hidden" value="1" name="number" class="number">
+									<input type="hidden" name="isActivity" value="1">
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="more-diy-config">
+						<a target="_blank" href="/server/buy.html">更多自定义配置 &gt;&gt;</a>
+					</div>
+				</div>
+				<div class="pro-item" style="display: none;">
+					<div class="pro-area-tab">
+						<div class="tlimit serf"><span class="remin-time">距离活动开始时间还有：<span class="end_time serf">280 天
+									16 小时 47 分 31 秒 </span> ，请提前 <a href="/login">登录账户</a>、<a
+									href="/login">充值余额</a>、做好准备！</span></div>
+					</div>
+					<div class="taocan-tuijian-box zdy-xkd">
+						<div class="taocan-item-box clearfix" id="serf">
+							<div class="taocan-item server-item">
+								<input type="hidden" name="serfS" value="2022-10-14 14:00:00">
+								<input type="hidden" name="serfE" value="2022-10-14 23:59:59">
+								<form name="buyForm" class="buyForm" action="/server/buy/order.html" method="post">
+									<div class="item-content">
+										<div class="head serf">
+											<h3>英国高防云服务器 [1核2G]</h3>
+											<p>欧洲优质线路 高达50M的基础带宽及100G防御能力</p>
+											<span>新客专享</span>
+										</div>
+										<div class="body">
+											<ul>
+												<li>
+													<div>1核</div>
+													<p>CPU</p>
+												</li>
+												<li>
+													<div>2G</div>
+													<p>内存</p>
+												</li>
+												<li>
+													<div>50M</div>
+													<p>带宽</p>
+												</li>
+												<li>
+													<div>10G</div>
+													<p>数据盘</p>
+												</li>
+												<li>
+													<div>100G</div>
+													<p>防御</p>
+												</li>
+											</ul>
+										</div>
+										<div class="project-rule clearfix">
+											<div class="project-rule-select clearfix">
+												<div class="buy-select">
+													<span class="project-rule-name">地域：</span>
+													<span class="line-name" id="selectSystemName">英国 · 伦敦一区</span>
+													<i class="jt"></i>
+													<div class="select-list hot-list-line" id="selectList">
+														<p class="system-main" data-lineid="86" data-defense="100">英国 ·
+															伦敦一区</p>
+													</div>
+												</div>
+												<input type="hidden" value="86" name="lineid" class="actlineid">
+												<input type="hidden" value="100" name="defense" class="act-defense">
+											</div>
+											<p id="system-mirror-text" class="project-rule-desc"></p>
+										</div>
+										<div class="project-rule-select hide">
+											<div class="project-rule-group clearfix months" data-cpu="1">
+												<div class="project-rule-item active" data-month="1">1个月</div>
+											</div>
+										</div>
+										<div class="bottom">
+											<div class="price-youhui serf">
+												<span class="act-num">90.00</span>元/首月 <p>原价：
+													<span class="o-price-num">90.00</span>元
+												</p>
+											</div>
+											<div class="limit serf">
+												<span class="limit-math">限
+													<span>1</span>台</span>
+												<span class="renew-cost ">新用户6.8折</span>
+												<span class="renew-cost">需实名</span>
+											</div>
+											<div class="bottom botbuy serf"><span class="wks">活动还未开始</span></div>
+										</div>
+									</div>
+									<input type="hidden" value="1" name="cpu" class="act-cpu">
+									<input type="hidden" value="2" name="ram" class="act-ram">
+									<input type="hidden" value="50" name="bandwidth" class="bandwidth">
+									<input type="hidden" value="10" name="harddisks[]" class="harddisks">
+									<input type="hidden" value="1" name="months" class="act-months">
+									<input type="hidden" value="1," name="access_months" class="access_months">
+									<input type="hidden" value="1" name="number" class="number">
+									<input type="hidden" name="isActivity" value="1">
+								</form>
+							</div>
+							<div class="taocan-item server-item">
+								<input type="hidden" name="serfS" value="2022-10-14 14:00:00">
+								<input type="hidden" name="serfE" value="2022-10-14 23:59:59">
+								<form name="buyForm" class="buyForm" action="/server/buy/order.html" method="post">
+									<div class="item-content">
+										<div class="head serf">
+											<h3>台湾云服务器 [2核2G]</h3>
+											<p>CN2优化线路 性能稳定速度快</p>
+											<span>新客专享</span>
+										</div>
+										<div class="body">
+											<ul>
+												<li>
+													<div>2核</div>
+													<p>CPU</p>
+												</li>
+												<li>
+													<div>2G</div>
+													<p>内存</p>
+												</li>
+												<li>
+													<div>1M</div>
+													<p>带宽</p>
+												</li>
+												<li>
+													<div>10G</div>
+													<p>数据盘</p>
+												</li>
+												<li>
+													<div>0G</div>
+													<p>防御</p>
+												</li>
+											</ul>
+										</div>
+										<div class="project-rule clearfix">
+											<div class="project-rule-select clearfix">
+												<div class="buy-select">
+													<span class="project-rule-name">地域：</span>
+													<span class="line-name" id="selectSystemName">华东 · 台 湾</span>
+													<i class="jt"></i>
+													<div class="select-list hot-list-line" id="selectList">
+														<p class="system-main" data-lineid="84" data-defense="0">华东 · 台
+															湾</p>
+													</div>
+												</div>
+												<input type="hidden" value="84" name="lineid" class="actlineid">
+												<input type="hidden" value="0" name="defense" class="act-defense">
+											</div>
+											<p id="system-mirror-text" class="project-rule-desc"></p>
+										</div>
+										<div class="project-rule-select hide">
+											<div class="project-rule-group clearfix months" data-cpu="2">
+												<div class="project-rule-item active" data-month="1">1个月</div>
+											</div>
+										</div>
+										<div class="bottom">
+											<div class="price-youhui serf">
+												<span class="act-num">110.00</span>元/首月 <p>原价：
+													<span class="o-price-num">110.00</span>元
+												</p>
+											</div>
+											<div class="limit serf">
+												<span class="limit-math">限
+													<span>1</span>台</span>
+												<span class="renew-cost ">新用户6.8折</span>
+												<span class="renew-cost">需实名</span>
+											</div>
+											<div class="bottom botbuy serf"><span class="wks">活动还未开始</span></div>
+										</div>
+									</div>
+									<input type="hidden" value="2" name="cpu" class="act-cpu">
+									<input type="hidden" value="2" name="ram" class="act-ram">
+									<input type="hidden" value="1" name="bandwidth" class="bandwidth">
+									<input type="hidden" value="10" name="harddisks[]" class="harddisks">
+									<input type="hidden" value="1" name="months" class="act-months">
+									<input type="hidden" value="1," name="access_months" class="access_months">
+									<input type="hidden" value="1" name="number" class="number">
+									<input type="hidden" name="isActivity" value="1">
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="more-diy-config">
+						<a target="_blank" href="/server/buy.html">更多自定义配置 &gt;&gt;</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="new-user" id="zd-coupon">
+		<div class="content">
+			<div class="new-user-guanggao">
+				<a href="javascript:;">
+					<img src="{$setting.web_view}/style/css/actcloud/img/hb.png" alt=""></a>
+				<div class="new-user-text">
+					<div>新老用户现金券大礼包</div>
+					<p>
+						<a href="javascript:;" onclick="alertRegBox()">注册</a>成为指点数据会员，即可领取价值8888元的现金券！
+						<a href="/user/cashcoupon?status=can_use">现金券明细 &gt;&gt;</a>
+					</p>
+					<a href="javascript:;" class="new-coupon-banner-btn">一键领取</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="guanggao-yinqin">
+		<a href="#"></a>
+	</div>
+	<div class="spring-product" id="zd-cloudserver">
+		<div class="content">
+			<div class="spring-product-title">
+				<h2>
+					<span>高防云服务器优惠套餐</span>
+				</h2>
+			</div>
+			<p class="spring-product-des">基于最新一代Intel®至强®可扩展铂金处理器，精选爆款机型，即开即用，限量抢购</p>
+			<div class="spring-product-item">
+				<div class="item">
+					<div class="item-content">
+						<div class="item-tab">
+							<ul>
+								<li class="active">
+									<div>国内高防云服务器</div>
+								</li>
+								<li>
+									<div>香港高防云服务器</div>
+								</li>
+								<li>
+									<div>美国高防云服务器</div>
+								</li>
+							</ul>
+						</div>
+						<div class="item-body">
+							<div class="item-body-item" id="zdyo">
+								<div class="item-body-list server-item">
+									<div class="item-body-list-left">
+										<div class="title">四川高防云服务器</div>
+										<p>超高性价比，续费同价，限量供应抢到赚到</p>
+									</div>
+									<div class="item-body-list-config zdkd">
+										<ul>
+											<li>
+												<div>2核</div>
+												<p>CPU</p>
+											</li>
+											<li>
+												<div>2G</div>
+												<p>内存</p>
+											</li>
+											<li>
+												<div>21M</div>
+												<p>带宽
+												</p>
+											</li>
+											<li>
+												<div>60G</div>
+												<p>数据盘</p>
+											</li>
+											<li>
+												<div>100G</div>
+												<p>防御</p>
+											</li>
+										</ul>
+									</div>
+									<div class="project-rule clearfix hide">
+										<form name="buyForm" class="buyForm" action="/server/buy/order.html"
+											method="post">
+											<div class="project-rule-select clearfix">
+												<div class="buy-select">
+													<span class="project-rule-name">地域：</span>
+													<span class="line-name" id="selectSystemName">四川 · 成都一区</span>
+													<i class="jt"></i>
+													<div class="select-list hot-list-line" id="selectList">
+														<p class="system-main" data-lineid="93" data-defense="100">四川 ·
+															成都一区</p>
+													</div>
+												</div>
+												<input type="hidden" value="93" name="lineid" class="actlineid">
+												<input type="hidden" value="100" name="defense" class="act-defense">
+											</div>
+											<p id="system-mirror-text" class="project-rule-desc"></p>
+										</form>
+									</div>
+									<div class="project-rule-select hide">
+										<div class="project-rule-group clearfix months" data-cpu="2">
+											<div class="project-rule-item active" data-month="1">1个月</div>
+										</div>
+									</div>
+									<div class="item-body-list-price">
+										<a href="javascript:;" class="active">
+											<div class="item-price-math">
+												<span class="act-num">70.00</span>元/首月
+											</div>
+											<div class="item-price-sheng">原价
+												<span class="o-price-num">320.00</span>元
+											</div>
+											<p class="item-limit-math">
+												<span>续费同价</span> / 须实名
+											</p>
+											<i class="item-badge">新客专享</i>
+										</a>
+									</div>
+									<a class="buy shopbtn" href="javascript:;">立即购买</a>
+									<input type="hidden" value="2" name="cpu" class="act-cpu">
+									<input type="hidden" value="2" name="ram" class="act-ram">
+									<input type="hidden" value="21" name="bandwidth" class="bandwidth">
+									<input type="hidden" value="60" name="harddisks[]" class="harddisks">
+									<input type="hidden" value="1" name="months" class="act-months">
+									<input type="hidden" value="1," name="access_months" class="access_months">
+									<input type="hidden" value="1" name="number" class="number">
+
+								</div>
+								<div class="item-body-list server-item">
+									<div class="item-body-list-left">
+										<div class="title">山东高防云服务器</div>
+										<p>电信骨干线路优化 性能稳定</p>
+									</div>
+									<div class="item-body-list-config zdkd">
+										<ul>
+											<li>
+												<div>4核</div>
+												<p>CPU</p>
+											</li>
+											<li>
+												<div>4G</div>
+												<p>内存</p>
+											</li>
+											<li>
+												<div>10M</div>
+												<p>带宽
+												</p>
+											</li>
+											<li>
+												<div>40G</div>
+												<p>数据盘</p>
+											</li>
+											<li>
+												<div>100G</div>
+												<p>防御</p>
+											</li>
+										</ul>
+									</div>
+									<div class="project-rule clearfix hide">
+										<form name="buyForm" class="buyForm" action="/server/buy/order.html"
+											method="post">
+											<div class="project-rule-select clearfix">
+												<div class="buy-select">
+													<span class="project-rule-name">地域：</span>
+													<span class="line-name" id="selectSystemName">枣庄电信高防</span>
+													<i class="jt"></i>
+													<div class="select-list hot-list-line" id="selectList">
+														<p class="system-main" data-lineid="55" data-defense="100">
+															枣庄电信高防</p>
+													</div>
+												</div>
+												<input type="hidden" value="55" name="lineid" class="actlineid">
+												<input type="hidden" value="100" name="defense" class="act-defense">
+											</div>
+											<p id="system-mirror-text" class="project-rule-desc"></p>
+										</form>
+									</div>
+									<div class="project-rule-select hide">
+										<div class="project-rule-group clearfix months" data-cpu="4">
+											<div class="project-rule-item active" data-month="1">1个月</div>
+										</div>
+									</div>
+									<div class="item-body-list-price">
+										<a href="javascript:;" class="active">
+											<div class="item-price-math">
+												<span class="act-num">130.00</span>元/首月
+											</div>
+											<div class="item-price-sheng">原价
+												<span class="o-price-num">130.00</span>元
+											</div>
+											<p class="item-limit-math">
+												<span>续费同价</span> / 须实名
+											</p>
+											<i class="item-badge">新客专享</i>
+										</a>
+									</div>
+									<a class="buy shopbtn" href="javascript:;">立即购买</a>
+									<input type="hidden" value="4" name="cpu" class="act-cpu">
+									<input type="hidden" value="4" name="ram" class="act-ram">
+									<input type="hidden" value="10" name="bandwidth" class="bandwidth">
+									<input type="hidden" value="40" name="harddisks[]" class="harddisks">
+									<input type="hidden" value="1" name="months" class="act-months">
+									<input type="hidden" value="1," name="access_months" class="access_months">
+									<input type="hidden" value="1" name="number" class="number">
+
+								</div>
+								<div class="item-body-list server-item">
+									<div class="item-body-list-left">
+										<div class="title">浙江高防云服务器</div>
+										<p>硬防能力 封UDP 支持WEB防火墙</p>
+									</div>
+									<div class="item-body-list-config zdkd">
+										<ul>
+											<li>
+												<div>4核</div>
+												<p>CPU</p>
+											</li>
+											<li>
+												<div>4G</div>
+												<p>内存</p>
+											</li>
+											<li>
+												<div>20M</div>
+												<p>带宽
+												</p>
+											</li>
+											<li>
+												<div>30G</div>
+												<p>数据盘</p>
+											</li>
+											<li>
+												<div>100G</div>
+												<p>防御</p>
+											</li>
+										</ul>
+									</div>
+									<div class="project-rule clearfix hide">
+										<form name="buyForm" class="buyForm" action="/server/buy/order.html"
+											method="post">
+											<div class="project-rule-select clearfix">
+												<div class="buy-select">
+													<span class="project-rule-name">地域：</span>
+													<span class="line-name" id="selectSystemName">浙江 · 宁波一区</span>
+													<i class="jt"></i>
+													<div class="select-list hot-list-line" id="selectList">
+														<p class="system-main" data-lineid="107" data-defense="100">浙江 ·
+															宁波一区</p>
+													</div>
+												</div>
+												<input type="hidden" value="107" name="lineid" class="actlineid">
+												<input type="hidden" value="100" name="defense" class="act-defense">
+											</div>
+											<p id="system-mirror-text" class="project-rule-desc"></p>
+										</form>
+									</div>
+									<div class="project-rule-select hide">
+										<div class="project-rule-group clearfix months" data-cpu="4">
+											<div class="project-rule-item active" data-month="1">1个月</div>
+										</div>
+									</div>
+									<div class="item-body-list-price">
+										<a href="javascript:;" class="active">
+											<div class="item-price-math">
+												<span class="act-num">询价中···</span>元/首月
+											</div>
+											<div class="item-price-sheng">原价
+												<span class="o-price-num"></span>元
+											</div>
+											<p class="item-limit-math">
+												<span>续费同价</span> / 须实名
+											</p>
+											<i class="item-badge">新客专享</i>
+										</a>
+									</div>
+									<a class="buy shopbtn" href="javascript:;">立即购买</a>
+									<input type="hidden" value="4" name="cpu" class="act-cpu">
+									<input type="hidden" value="4" name="ram" class="act-ram">
+									<input type="hidden" value="20" name="bandwidth" class="bandwidth">
+									<input type="hidden" value="30" name="harddisks[]" class="harddisks">
+									<input type="hidden" value="1" name="months" class="act-months">
+									<input type="hidden" value="1," name="access_months" class="access_months">
+									<input type="hidden" value="1" name="number" class="number">
+
+								</div>
+							</div>
+							<div class="item-body-item" id="zdyt">
+								<div class="item-body-list server-item">
+									<div class="item-body-list-left">
+										<div class="title">香港10G普防云</div>
+										<p>CN2优化线路 金盾防火墙，提供10G基础防御</p>
+									</div>
+									<div class="item-body-list-config zdkd">
+										<ul>
+											<li>
+												<div>1核</div>
+												<p>CPU</p>
+											</li>
+											<li>
+												<div>1G</div>
+												<p>内存</p>
+											</li>
+											<li>
+												<div>3M</div>
+												<p>带宽
+												</p>
+											</li>
+											<li>
+												<div>40G</div>
+												<p>数据盘</p>
+											</li>
+											<li>
+												<div>10G</div>
+												<p>防御</p>
+											</li>
+										</ul>
+									</div>
+									<div class="project-rule clearfix hide">
+										<form name="buyForm" class="buyForm" action="/server/buy/order.html"
+											method="post">
+											<div class="project-rule-select clearfix">
+												<div class="buy-select">
+													<span class="project-rule-name">地域：</span>
+													<span class="line-name" id="selectSystemName">香港 · 高防一区</span>
+													<i class="jt"></i>
+													<div class="select-list hot-list-line" id="selectList">
+														<p class="system-main" data-lineid="102" data-defense="10">香港 ·
+															高防一区</p>
+													</div>
+												</div>
+												<input type="hidden" value="102" name="lineid" class="actlineid">
+												<input type="hidden" value="10" name="defense" class="act-defense">
+											</div>
+											<p id="system-mirror-text" class="project-rule-desc"></p>
+										</form>
+									</div>
+									<div class="project-rule-select hide">
+										<div class="project-rule-group clearfix months" data-cpu="1">
+											<div class="project-rule-item active" data-month="1">1个月</div>
+										</div>
+									</div>
+									<div class="item-body-list-price">
+										<a href="javascript:;" class="active">
+											<div class="item-price-math">
+												<span class="act-num">39.00</span>元/首月
+											</div>
+											<div class="item-price-sheng">原价
+												<span class="o-price-num">39.00</span>元
+											</div>
+											<p class="item-limit-math">
+												<span>续费同价</span> / 须实名
+											</p>
+											<i class="item-badge">新客专享</i>
+										</a>
+									</div>
+									<a class="buy shopbtn" href="javascript:;">立即购买</a>
+									<input type="hidden" value="1" name="cpu" class="act-cpu">
+									<input type="hidden" value="1" name="ram" class="act-ram">
+									<input type="hidden" value="3" name="bandwidth" class="bandwidth">
+									<input type="hidden" value="40" name="harddisks[]" class="harddisks">
+									<input type="hidden" value="1" name="months" class="act-months">
+									<input type="hidden" value="1," name="access_months" class="access_months">
+									<input type="hidden" value="1" name="number" class="number">
+
+								</div>
+								<div class="item-body-list server-item">
+									<div class="item-body-list-left">
+										<div class="title">香港20G中防云</div>
+										<p>CN2+BGP双优化线路 金盾抗DDOS、CC攻击</p>
+									</div>
+									<div class="item-body-list-config zdkd">
+										<ul>
+											<li>
+												<div>2核</div>
+												<p>CPU</p>
+											</li>
+											<li>
+												<div>2G</div>
+												<p>内存</p>
+											</li>
+											<li>
+												<div>2M</div>
+												<p>带宽
+												</p>
+											</li>
+											<li>
+												<div>10G</div>
+												<p>数据盘</p>
+											</li>
+											<li>
+												<div>20G</div>
+												<p>防御</p>
+											</li>
+										</ul>
+									</div>
+									<div class="project-rule clearfix hide">
+										<form name="buyForm" class="buyForm" action="/server/buy/order.html"
+											method="post">
+											<div class="project-rule-select clearfix">
+												<div class="buy-select">
+													<span class="project-rule-name">地域：</span>
+													<span class="line-name" id="selectSystemName">香港CN2+BGP优化</span>
+													<i class="jt"></i>
+													<div class="select-list hot-list-line" id="selectList">
+														<p class="system-main" data-lineid="68" data-defense="20">
+															香港CN2+BGP优化</p>
+													</div>
+												</div>
+												<input type="hidden" value="68" name="lineid" class="actlineid">
+												<input type="hidden" value="20" name="defense" class="act-defense">
+											</div>
+											<p id="system-mirror-text" class="project-rule-desc"></p>
+										</form>
+									</div>
+									<div class="project-rule-select hide">
+										<div class="project-rule-group clearfix months" data-cpu="2">
+											<div class="project-rule-item active" data-month="1">1个月</div>
+										</div>
+									</div>
+									<div class="item-body-list-price">
+										<a href="javascript:;" class="active">
+											<div class="item-price-math">
+												<span class="act-num">90.00</span>元/首月
+											</div>
+											<div class="item-price-sheng">原价
+												<span class="o-price-num">90.00</span>元
+											</div>
+											<p class="item-limit-math">
+												<span>续费同价</span> / 须实名
+											</p>
+											<i class="item-badge">新客专享</i>
+										</a>
+									</div>
+									<a class="buy shopbtn" href="javascript:;">立即购买</a>
+									<input type="hidden" value="2" name="cpu" class="act-cpu">
+									<input type="hidden" value="2" name="ram" class="act-ram">
+									<input type="hidden" value="2" name="bandwidth" class="bandwidth">
+									<input type="hidden" value="10" name="harddisks[]" class="harddisks">
+									<input type="hidden" value="1" name="months" class="act-months">
+									<input type="hidden" value="1," name="access_months" class="access_months">
+									<input type="hidden" value="1" name="number" class="number">
+
+								</div>
+								<div class="item-body-list server-item">
+									<div class="item-body-list-left">
+										<div class="title">香港50G高防云</div>
+										<p>香港强有力的防护能力 CN2线路优化，延时低</p>
+									</div>
+									<div class="item-body-list-config zdkd">
+										<ul>
+											<li>
+												<div>1核</div>
+												<p>CPU</p>
+											</li>
+											<li>
+												<div>1G</div>
+												<p>内存</p>
+											</li>
+											<li>
+												<div>1M</div>
+												<p>带宽
+												</p>
+											</li>
+											<li>
+												<div>10G</div>
+												<p>数据盘</p>
+											</li>
+											<li>
+												<div>50G</div>
+												<p>防御</p>
+											</li>
+										</ul>
+									</div>
+									<div class="project-rule clearfix hide">
+										<form name="buyForm" class="buyForm" action="/server/buy/order.html"
+											method="post">
+											<div class="project-rule-select clearfix">
+												<div class="buy-select">
+													<span class="project-rule-name">地域：</span>
+													<span class="line-name" id="selectSystemName">香港 · 高防二区</span>
+													<i class="jt"></i>
+													<div class="select-list hot-list-line" id="selectList">
+														<p class="system-main" data-lineid="126" data-defense="50">香港 ·
+															高防二区</p>
+													</div>
+												</div>
+												<input type="hidden" value="126" name="lineid" class="actlineid">
+												<input type="hidden" value="50" name="defense" class="act-defense">
+											</div>
+											<p id="system-mirror-text" class="project-rule-desc"></p>
+										</form>
+									</div>
+									<div class="project-rule-select hide">
+										<div class="project-rule-group clearfix months" data-cpu="1">
+											<div class="project-rule-item active" data-month="1">1个月</div>
+										</div>
+									</div>
+									<div class="item-body-list-price">
+										<a href="javascript:;" class="active">
+											<div class="item-price-math">
+												<span class="act-num">599.70</span>元/首月
+											</div>
+											<div class="item-price-sheng">原价
+												<span class="o-price-num">599.70</span>元
+											</div>
+											<p class="item-limit-math">
+												<span>续费同价</span> / 须实名
+											</p>
+											<i class="item-badge">新客专享</i>
+										</a>
+									</div>
+									<a class="buy shopbtn" href="javascript:;">立即购买</a>
+									<input type="hidden" value="1" name="cpu" class="act-cpu">
+									<input type="hidden" value="1" name="ram" class="act-ram">
+									<input type="hidden" value="1" name="bandwidth" class="bandwidth">
+									<input type="hidden" value="10" name="harddisks[]" class="harddisks">
+									<input type="hidden" value="1" name="months" class="act-months">
+									<input type="hidden" value="1," name="access_months" class="access_months">
+									<input type="hidden" value="1" name="number" class="number">
+
+								</div>
+							</div>
+							<div class="item-body-item" id="zdys">
+								<div class="item-body-list server-item">
+									<div class="item-body-list-left">
+										<div class="title">美国GIA高防</div>
+										<p>金盾防火墙，提供100G基础防御 无视CC</p>
+									</div>
+									<div class="item-body-list-config zdkd">
+										<ul>
+											<li>
+												<div>2核</div>
+												<p>CPU</p>
+											</li>
+											<li>
+												<div>1G</div>
+												<p>内存</p>
+											</li>
+											<li>
+												<div>10M</div>
+												<p>带宽
+												</p>
+											</li>
+											<li>
+												<div>40G</div>
+												<p>数据盘</p>
+											</li>
+											<li>
+												<div>100G</div>
+												<p>防御</p>
+											</li>
+										</ul>
+									</div>
+									<div class="project-rule clearfix hide">
+										<form name="buyForm" class="buyForm" action="/server/buy/order.html"
+											method="post">
+											<div class="project-rule-select clearfix">
+												<div class="buy-select">
+													<span class="project-rule-name">地域：</span>
+													<span class="line-name" id="selectSystemName">美国 · GIA高防</span>
+													<i class="jt"></i>
+													<div class="select-list hot-list-line" id="selectList">
+														<p class="system-main" data-lineid="97" data-defense="100">美国 ·
+															GIA高防</p>
+													</div>
+												</div>
+												<input type="hidden" value="97" name="lineid" class="actlineid">
+												<input type="hidden" value="100" name="defense" class="act-defense">
+											</div>
+											<p id="system-mirror-text" class="project-rule-desc"></p>
+										</form>
+									</div>
+									<div class="project-rule-select hide">
+										<div class="project-rule-group clearfix months" data-cpu="2">
+											<div class="project-rule-item active" data-month="1">1个月</div>
+										</div>
+									</div>
+									<div class="item-body-list-price">
+										<a href="javascript:;" class="active">
+											<div class="item-price-math">
+												<span class="act-num">150.00</span>元/首月
+											</div>
+											<div class="item-price-sheng">原价
+												<span class="o-price-num">150.00</span>元
+											</div>
+											<p class="item-limit-math">
+												<span>续费同价</span> / 须实名
+											</p>
+											<i class="item-badge">新客专享</i>
+										</a>
+									</div>
+									<a class="buy shopbtn" href="javascript:;">立即购买</a>
+									<input type="hidden" value="2" name="cpu" class="act-cpu">
+									<input type="hidden" value="1" name="ram" class="act-ram">
+									<input type="hidden" value="10" name="bandwidth" class="bandwidth">
+									<input type="hidden" value="40" name="harddisks[]" class="harddisks">
+									<input type="hidden" value="1" name="months" class="act-months">
+									<input type="hidden" value="1," name="access_months" class="access_months">
+									<input type="hidden" value="1" name="number" class="number">
+
+								</div>
+								<div class="item-body-list server-item">
+									<div class="item-body-list-left">
+										<div class="title">美国CN2高防</div>
+										<p>CN2优化线路 抗DDOS、CC攻击</p>
+									</div>
+									<div class="item-body-list-config zdkd">
+										<ul>
+											<li>
+												<div>4核</div>
+												<p>CPU</p>
+											</li>
+											<li>
+												<div>2G</div>
+												<p>内存</p>
+											</li>
+											<li>
+												<div>10M</div>
+												<p>带宽
+												</p>
+											</li>
+											<li>
+												<div>10G</div>
+												<p>数据盘</p>
+											</li>
+											<li>
+												<div>200G</div>
+												<p>防御</p>
+											</li>
+										</ul>
+									</div>
+									<div class="project-rule clearfix hide">
+										<form name="buyForm" class="buyForm" action="/server/buy/order.html"
+											method="post">
+											<div class="project-rule-select clearfix">
+												<div class="buy-select">
+													<span class="project-rule-name">地域：</span>
+													<span class="line-name" id="selectSystemName">美国 · CN2高防</span>
+													<i class="jt"></i>
+													<div class="select-list hot-list-line" id="selectList">
+														<p class="system-main" data-lineid="89" data-defense="200">美国 ·
+															CN2高防</p>
+													</div>
+												</div>
+												<input type="hidden" value="89" name="lineid" class="actlineid">
+												<input type="hidden" value="200" name="defense" class="act-defense">
+											</div>
+											<p id="system-mirror-text" class="project-rule-desc"></p>
+										</form>
+									</div>
+									<div class="project-rule-select hide">
+										<div class="project-rule-group clearfix months" data-cpu="4">
+											<div class="project-rule-item active" data-month="1">1个月</div>
+										</div>
+									</div>
+									<div class="item-body-list-price">
+										<a href="javascript:;" class="active">
+											<div class="item-price-math">
+												<span class="act-num">300.00</span>元/首月
+											</div>
+											<div class="item-price-sheng">原价
+												<span class="o-price-num">300.00</span>元
+											</div>
+											<p class="item-limit-math">
+												<span>续费同价</span> / 须实名
+											</p>
+											<i class="item-badge">新客专享</i>
+										</a>
+									</div>
+									<a class="buy shopbtn" href="javascript:;">立即购买</a>
+									<input type="hidden" value="4" name="cpu" class="act-cpu">
+									<input type="hidden" value="2" name="ram" class="act-ram">
+									<input type="hidden" value="10" name="bandwidth" class="bandwidth">
+									<input type="hidden" value="10" name="harddisks[]" class="harddisks">
+									<input type="hidden" value="1" name="months" class="act-months">
+									<input type="hidden" value="1," name="access_months" class="access_months">
+									<input type="hidden" value="1" name="number" class="number">
+
+								</div>
+								<div class="item-body-list server-item">
+									<div class="item-body-list-left">
+										<div class="title">美国超级防御</div>
+										<p>上层封UDP 无视CC 提供200G 基础防御能力</p>
+									</div>
+									<div class="item-body-list-config zdkd">
+										<ul>
+											<li>
+												<div>8核</div>
+												<p>CPU</p>
+											</li>
+											<li>
+												<div>8G</div>
+												<p>内存</p>
+											</li>
+											<li>
+												<div>20M</div>
+												<p>带宽
+												</p>
+											</li>
+											<li>
+												<div>10G</div>
+												<p>数据盘</p>
+											</li>
+											<li>
+												<div>200G</div>
+												<p>防御</p>
+											</li>
+										</ul>
+									</div>
+									<div class="project-rule clearfix hide">
+										<form name="buyForm" class="buyForm" action="/server/buy/order.html"
+											method="post">
+											<div class="project-rule-select clearfix">
+												<div class="buy-select">
+													<span class="project-rule-name">地域：</span>
+													<span class="line-name" id="selectSystemName">美国 · 超级防御</span>
+													<i class="jt"></i>
+													<div class="select-list hot-list-line" id="selectList">
+														<p class="system-main" data-lineid="125" data-defense="200">美国 ·
+															超级防御</p>
+													</div>
+												</div>
+												<input type="hidden" value="125" name="lineid" class="actlineid">
+												<input type="hidden" value="200" name="defense" class="act-defense">
+											</div>
+											<p id="system-mirror-text" class="project-rule-desc"></p>
+										</form>
+									</div>
+									<div class="project-rule-select hide">
+										<div class="project-rule-group clearfix months" data-cpu="8">
+											<div class="project-rule-item active" data-month="1">1个月</div>
+										</div>
+									</div>
+									<div class="item-body-list-price">
+										<a href="javascript:;" class="active">
+											<div class="item-price-math">
+												<span class="act-num">725.00</span>元/首月
+											</div>
+											<div class="item-price-sheng">原价
+												<span class="o-price-num">725.00</span>元
+											</div>
+											<p class="item-limit-math">
+												<span>续费同价</span> / 须实名
+											</p>
+											<i class="item-badge">新客专享</i>
+										</a>
+									</div>
+									<a class="buy shopbtn" href="javascript:;">立即购买</a>
+									<input type="hidden" value="8" name="cpu" class="act-cpu">
+									<input type="hidden" value="8" name="ram" class="act-ram">
+									<input type="hidden" value="20" name="bandwidth" class="bandwidth">
+									<input type="hidden" value="10" name="harddisks[]" class="harddisks">
+									<input type="hidden" value="1" name="months" class="act-months">
+									<input type="hidden" value="1," name="access_months" class="access_months">
+									<input type="hidden" value="1" name="number" class="number">
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="spring-product-more">
+						<a target="_blank" href="/server/buy.html">更多自定义配置 &gt;&gt;</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="spring-product" id="zd-gfserver">
+		<div class="content">
+			<div class="spring-product-title">
+				<h2>
+					<span>特价服务器优惠套餐</span>
+				</h2>
+			</div>
+			<p class="spring-product-des">特价限量供应，高性能基础硬件，仅限正规业务，禁止一切擦边球或违法业务，一经发现永久封停</p>
+			<div class="spring-product-item">
+				<div class="item">
+					<div class="item-content">
+						<div class="item-body" id="zdyf">
+							<div class="item-body-list server-item">
+								<div class="item-body-list-left">
+									<div class="title">东北企业云</div>
+									<p>位于辽宁沈阳 SSD架构，提供20G基础防护</p>
+								</div>
+								<div class="item-body-list-config zdkd">
+									<ul>
+										<li>
+											<div>2核</div>
+											<p>CPU</p>
+										</li>
+										<li>
+											<div>2G</div>
+											<p>内存</p>
+										</li>
+										<li>
+											<div>1M</div>
+											<p>带宽
+											</p>
+										</li>
+										<li>
+											<div>10G</div>
+											<p>数据盘</p>
+										</li>
+										<li>
+											<div>20G</div>
+											<p>防御</p>
+										</li>
+									</ul>
+								</div>
+								<div class="project-rule clearfix hide">
+									<form name="buyForm" class="buyForm" action="/server/buy/order.html" method="post">
+										<div class="project-rule-select clearfix">
+											<div class="buy-select">
+												<span class="project-rule-name">地域：</span>
+												<span class="line-name" id="selectSystemName">东北 · 沈 阳</span>
+												<i class="jt"></i>
+												<div class="select-list hot-list-line" id="selectList">
+													<p class="system-main" data-lineid="112" data-defense="20">东北 · 沈 阳
+													</p>
+												</div>
+											</div>
+											<input type="hidden" value="112" name="lineid" class="actlineid">
+											<input type="hidden" value="20" name="defense" class="act-defense">
+										</div>
+										<p id="system-mirror-text" class="project-rule-desc"></p>
+									</form>
+								</div>
+								<div class="project-rule-select hide">
+									<div class="project-rule-group clearfix months" data-cpu="2">
+										<div class="project-rule-item active" data-month="1">1个月</div>
+									</div>
+								</div>
+								<div class="item-body-list-price">
+									<a href="javascript:;" class="active">
+										<div class="item-price-math">
+											<span class="act-num">81.70</span>元/首月
+										</div>
+										<div class="item-price-sheng">原价
+											<span class="o-price-num">81.70</span>元
+										</div>
+										<p class="item-limit-math">
+											<span>续费同价</span> / 须实名
+										</p>
+										<i class="item-badge">新客专享</i>
+									</a>
+								</div>
+								<a class="buy shopbtn" href="javascript:;">立即购买</a>
+								<input type="hidden" value="2" name="cpu" class="act-cpu">
+								<input type="hidden" value="2" name="ram" class="act-ram">
+								<input type="hidden" value="1" name="bandwidth" class="bandwidth">
+								<input type="hidden" value="10" name="harddisks[]" class="harddisks">
+								<input type="hidden" value="1" name="months" class="act-months">
+								<input type="hidden" value="1," name="access_months" class="access_months">
+								<input type="hidden" value="1" name="number" class="number">
+
+							</div>
+							<div class="item-body-list server-item">
+								<div class="item-body-list-left">
+									<div class="title">华南企业云</div>
+									<p>位于广东深圳 SSD架构，性能稳定 延时低</p>
+								</div>
+								<div class="item-body-list-config zdkd">
+									<ul>
+										<li>
+											<div>2核</div>
+											<p>CPU</p>
+										</li>
+										<li>
+											<div>2G</div>
+											<p>内存</p>
+										</li>
+										<li>
+											<div>1M</div>
+											<p>带宽
+											</p>
+										</li>
+										<li>
+											<div>10G</div>
+											<p>数据盘</p>
+										</li>
+										<li>
+											<div>5G</div>
+											<p>防御</p>
+										</li>
+									</ul>
+								</div>
+								<div class="project-rule clearfix hide">
+									<form name="buyForm" class="buyForm" action="/server/buy/order.html" method="post">
+										<div class="project-rule-select clearfix">
+											<div class="buy-select">
+												<span class="project-rule-name">地域：</span>
+												<span class="line-name" id="selectSystemName">华南二区</span>
+												<i class="jt"></i>
+												<div class="select-list hot-list-line" id="selectList">
+													<p class="system-main" data-lineid="21" data-defense="5">华南二区</p>
+												</div>
+											</div>
+											<input type="hidden" value="21" name="lineid" class="actlineid">
+											<input type="hidden" value="5" name="defense" class="act-defense">
+										</div>
+										<p id="system-mirror-text" class="project-rule-desc"></p>
+									</form>
+								</div>
+								<div class="project-rule-select hide">
+									<div class="project-rule-group clearfix months" data-cpu="2">
+										<div class="project-rule-item active" data-month="1">1个月</div>
+									</div>
+								</div>
+								<div class="item-body-list-price">
+									<a href="javascript:;" class="active">
+										<div class="item-price-math">
+											<span class="act-num">67.08</span>元/首月
+										</div>
+										<div class="item-price-sheng">原价
+											<span class="o-price-num">67.08</span>元
+										</div>
+										<p class="item-limit-math">
+											<span>续费同价</span> / 须实名
+										</p>
+										<i class="item-badge">新客专享</i>
+									</a>
+								</div>
+								<a class="buy shopbtn" href="javascript:;">立即购买</a>
+								<input type="hidden" value="2" name="cpu" class="act-cpu">
+								<input type="hidden" value="2" name="ram" class="act-ram">
+								<input type="hidden" value="1" name="bandwidth" class="bandwidth">
+								<input type="hidden" value="10" name="harddisks[]" class="harddisks">
+								<input type="hidden" value="1" name="months" class="act-months">
+								<input type="hidden" value="1," name="access_months" class="access_months">
+								<input type="hidden" value="1" name="number" class="number">
+
+							</div>
+							<div class="item-body-list server-item">
+								<div class="item-body-list-left">
+									<div class="title">华北企业云</div>
+									<p>位于首都北京线路 SSD架构 企业首选</p>
+								</div>
+								<div class="item-body-list-config zdkd">
+									<ul>
+										<li>
+											<div>2核</div>
+											<p>CPU</p>
+										</li>
+										<li>
+											<div>2G</div>
+											<p>内存</p>
+										</li>
+										<li>
+											<div>1M</div>
+											<p>带宽
+											</p>
+										</li>
+										<li>
+											<div>10G</div>
+											<p>数据盘</p>
+										</li>
+										<li>
+											<div>5G</div>
+											<p>防御</p>
+										</li>
+									</ul>
+								</div>
+								<div class="project-rule clearfix hide">
+									<form name="buyForm" class="buyForm" action="/server/buy/order.html" method="post">
+										<div class="project-rule-select clearfix">
+											<div class="buy-select">
+												<span class="project-rule-name">地域：</span>
+												<span class="line-name" id="selectSystemName">华北 · 北 京</span>
+												<i class="jt"></i>
+												<div class="select-list hot-list-line" id="selectList">
+													<p class="system-main" data-lineid="113" data-defense="5">华北 · 北 京
+													</p>
+												</div>
+											</div>
+											<input type="hidden" value="113" name="lineid" class="actlineid">
+											<input type="hidden" value="5" name="defense" class="act-defense">
+										</div>
+										<p id="system-mirror-text" class="project-rule-desc"></p>
+									</form>
+								</div>
+								<div class="project-rule-select hide">
+									<div class="project-rule-group clearfix months" data-cpu="2">
+										<div class="project-rule-item active" data-month="1">1个月</div>
+									</div>
+								</div>
+								<div class="item-body-list-price">
+									<a href="javascript:;" class="active">
+										<div class="item-price-math">
+											<span class="act-num">81.70</span>元/首月
+										</div>
+										<div class="item-price-sheng">原价
+											<span class="o-price-num">81.70</span>元
+										</div>
+										<p class="item-limit-math">
+											<span>续费同价</span> / 须实名
+										</p>
+										<i class="item-badge">新客专享</i>
+									</a>
+								</div>
+								<a class="buy shopbtn" href="javascript:;">立即购买</a>
+								<input type="hidden" value="2" name="cpu" class="act-cpu">
+								<input type="hidden" value="2" name="ram" class="act-ram">
+								<input type="hidden" value="1" name="bandwidth" class="bandwidth">
+								<input type="hidden" value="10" name="harddisks[]" class="harddisks">
+								<input type="hidden" value="1" name="months" class="act-months">
+								<input type="hidden" value="1," name="access_months" class="access_months">
+								<input type="hidden" value="1" name="number" class="number">
+
+							</div>
+							<div class="item-body-list server-item">
+								<div class="item-body-list-left">
+									<div class="title">华东企业云</div>
+									<p>位于福建厦门 骨干线路 延时低</p>
+								</div>
+								<div class="item-body-list-config zdkd">
+									<ul>
+										<li>
+											<div>2核</div>
+											<p>CPU</p>
+										</li>
+										<li>
+											<div>2G</div>
+											<p>内存</p>
+										</li>
+										<li>
+											<div>3M</div>
+											<p>带宽
+											</p>
+										</li>
+										<li>
+											<div>10G</div>
+											<p>数据盘</p>
+										</li>
+										<li>
+											<div>0G</div>
+											<p>防御</p>
+										</li>
+									</ul>
+								</div>
+								<div class="project-rule clearfix hide">
+									<form name="buyForm" class="buyForm" action="/server/buy/order.html" method="post">
+										<div class="project-rule-select clearfix">
+											<div class="buy-select">
+												<span class="project-rule-name">地域：</span>
+												<span class="line-name" id="selectSystemName">华东 · 福 建</span>
+												<i class="jt"></i>
+												<div class="select-list hot-list-line" id="selectList">
+													<p class="system-main" data-lineid="88" data-defense="0">华东 · 福 建
+													</p>
+												</div>
+											</div>
+											<input type="hidden" value="88" name="lineid" class="actlineid">
+											<input type="hidden" value="0" name="defense" class="act-defense">
+										</div>
+										<p id="system-mirror-text" class="project-rule-desc"></p>
+									</form>
+								</div>
+								<div class="project-rule-select hide">
+									<div class="project-rule-group clearfix months" data-cpu="2">
+										<div class="project-rule-item active" data-month="1">1个月</div>
+									</div>
+								</div>
+								<div class="item-body-list-price">
+									<a href="javascript:;" class="active">
+										<div class="item-price-math">
+											<span class="act-num">96.00</span>元/首月
+										</div>
+										<div class="item-price-sheng">原价
+											<span class="o-price-num">96.00</span>元
+										</div>
+										<p class="item-limit-math">
+											<span>续费同价</span> / 须实名
+										</p>
+										<i class="item-badge">新客专享</i>
+									</a>
+								</div>
+								<a class="buy shopbtn" href="javascript:;">立即购买</a>
+								<input type="hidden" value="2" name="cpu" class="act-cpu">
+								<input type="hidden" value="2" name="ram" class="act-ram">
+								<input type="hidden" value="3" name="bandwidth" class="bandwidth">
+								<input type="hidden" value="10" name="harddisks[]" class="harddisks">
+								<input type="hidden" value="1" name="months" class="act-months">
+								<input type="hidden" value="1," name="access_months" class="access_months">
+								<input type="hidden" value="1" name="number" class="number">
+
+							</div>
+						</div>
+					</div>
+					<div class="spring-product-more">
+						<a target="_blank" href="/server/buy.html">更多自定义配置 &gt;&gt;</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="spring-product baremetal" id="zd-luojinshu">
+		<div class="content">
+			<div class="spring-product-title">
+				<h2>
+					<span>裸金属服务器优惠套餐</span>
+				</h2>
+			</div>
+			<p class="spring-product-des">分钟级的交付，提供在线实时开关机、重启、重装系统、Web VNC管理、在线监控等功能</p>
+			<div class="spring-product-item">
+				<div class="item">
+					<div class="item-content">
+						<div class="item-tab">
+							<ul>
+								<li class="active">
+									<div>国内裸金属服务器</div>
+								</li>
+								<li>
+									<div>海外裸金属服务器</div>
+								</li>
+							</ul>
+						</div>
+						<div class="item-body">
+							<div class="item-body-item" id="baremetal">
+
+								<div class="item-body-list baremetal-list-item">
+
+									<div class="item-body-list-left">
+										<form name="buyForm" class="buyForm" action="/server/buy/order.html"
+											method="post">
+											<div class="title">中国河北裸金属</div>
+											<p>16H+16G+120G 至强® E5-2650 v2 DDR3</p>
+										</form>
+									</div>
+									<div class="item-body-list-config five-column-config zdkd">
+										<ul>
+											<li style="width:17%">
+												<div title="16核(至强® 处理器 E5-2650 v2)*1">16核×1</div>
+												<p>CPU</p>
+											</li>
+											<li style="width:30%">
+												<div title="DDR3 ECC REG 16GB">DDR3 ECC REG 16GB</div>
+												<p>内存</p>
+											</li>
+											<li style="width:27%">
+												<div title="SSD 120GB">SSD 120GB</div>
+												<p>硬盘</p>
+											</li>
+											<li style="width:14%">
+												<div title="30M">30M</div>
+												<p>带宽</p>
+											</li>
+											<li style="width:12%">
+												<div title="1个独立IP">1个</div>
+												<p>IP</p>
+											</li>
+
+										</ul>
+									</div>
+									<div class="project-rule-select hide">
+										<div class="project-rule-group clearfix months" data-lineid="11">
+											<div class="project-rule-item active" data-month="1">1个月</div>
+										</div>
+									</div>
+									<div class="item-body-list-price">
+										<a href="javascript:;" class="active">
+											<div class="item-price-math">
+												<span class="act-num">499.00</span>元/首月
+											</div>
+											<div class="item-price-sheng">日常价
+												<span class="o-price-num">499.00</span>元
+											</div>
+											<p class="item-limit-math">
+												<span>续费同价</span> / 须实名
+											</p>
+											<i class="item-badge">新客专享</i>
+										</a>
+									</div>
+									<a class="buy ljsbuy" href="javascript:;">立即购买</a>
+
+									<input type="hidden" value="62" name="productId" class="productId">
+									<input type="hidden" value="" name="areaId" class="actareaid">
+									<input type="hidden" value="11" name="lineId" class="actlineid">
+									<input type="hidden" value="1" name="months" class="act-months">
+									<input type="hidden" value="1" name="number" class="number">
+									<input type="hidden" value="1," name="access_months" class="access_months">
+
+								</div>
+								<div class="item-body-list baremetal-list-item">
+
+									<div class="item-body-list-left">
+										<form name="buyForm" class="buyForm" action="/server/buy/order.html"
+											method="post">
+											<div class="title">中国北京裸金属</div>
+											<p>E5-32G E5-2683 V3 14核28线程 DDR4</p>
+										</form>
+									</div>
+									<div class="item-body-list-config five-column-config zdkd">
+										<ul>
+											<li style="width:17%">
+												<div title="14核(E5-2683 V3)*1">14核×1</div>
+												<p>CPU</p>
+											</li>
+											<li style="width:30%">
+												<div title="DDR4 2133 32GB">DDR4 2133 32GB</div>
+												<p>内存</p>
+											</li>
+											<li style="width:27%">
+												<div title="SSD 500GB">SSD 500GB</div>
+												<p>硬盘</p>
+											</li>
+											<li style="width:14%">
+												<div title="5M">5M</div>
+												<p>带宽</p>
+											</li>
+											<li style="width:12%">
+												<div title="1个独立IP">1个</div>
+												<p>IP</p>
+											</li>
+
+										</ul>
+									</div>
+									<div class="project-rule-select hide">
+										<div class="project-rule-group clearfix months" data-lineid="2">
+											<div class="project-rule-item active" data-month="1">1个月</div>
+										</div>
+									</div>
+									<div class="item-body-list-price">
+										<a href="javascript:;" class="active">
+											<div class="item-price-math">
+												<span class="act-num">650.00</span>元/首月
+											</div>
+											<div class="item-price-sheng">日常价
+												<span class="o-price-num">650.00</span>元
+											</div>
+											<p class="item-limit-math">
+												<span>续费同价</span> / 须实名
+											</p>
+											<i class="item-badge">新客专享</i>
+										</a>
+									</div>
+									<a class="buy ljsbuy" href="javascript:;">立即购买</a>
+
+									<input type="hidden" value="1" name="productId" class="productId">
+									<input type="hidden" value="1" name="areaId" class="actareaid">
+									<input type="hidden" value="2" name="lineId" class="actlineid">
+									<input type="hidden" value="1" name="months" class="act-months">
+									<input type="hidden" value="1" name="number" class="number">
+									<input type="hidden" value="1," name="access_months" class="access_months">
+
+								</div>
+								<div class="item-body-list baremetal-list-item">
+
+									<div class="item-body-list-left">
+										<form name="buyForm" class="buyForm" action="/server/buy/order.html"
+											method="post">
+											<div class="title">中国江苏裸金属</div>
+											<p>SQ-L5630-16G L5630 8核 DDR3</p>
+										</form>
+									</div>
+									<div class="item-body-list-config five-column-config zdkd">
+										<ul>
+											<li style="width:17%">
+												<div title="8核(L5630)*2">8核×2</div>
+												<p>CPU</p>
+											</li>
+											<li style="width:30%">
+												<div title="DDR3 16GB">DDR3 16GB</div>
+												<p>内存</p>
+											</li>
+											<li style="width:27%">
+												<div title="SSD 240GB">SSD 240GB</div>
+												<p>硬盘</p>
+											</li>
+											<li style="width:14%">
+												<div title="30M">30M</div>
+												<p>带宽</p>
+											</li>
+											<li style="width:12%">
+												<div title="1个独立IP">1个</div>
+												<p>IP</p>
+											</li>
+
+										</ul>
+									</div>
+									<div class="project-rule-select hide">
+										<div class="project-rule-group clearfix months" data-lineid="10">
+											<div class="project-rule-item active" data-month="1">1个月</div>
+										</div>
+									</div>
+									<div class="item-body-list-price">
+										<a href="javascript:;" class="active">
+											<div class="item-price-math">
+												<span class="act-num">799.00</span>元/首月
+											</div>
+											<div class="item-price-sheng">日常价
+												<span class="o-price-num">799.00</span>元
+											</div>
+											<p class="item-limit-math">
+												<span>续费同价</span> / 须实名
+											</p>
+											<i class="item-badge">新客专享</i>
+										</a>
+									</div>
+									<a class="buy ljsbuy" href="javascript:;">立即购买</a>
+
+									<input type="hidden" value="69" name="productId" class="productId">
+									<input type="hidden" value="" name="areaId" class="actareaid">
+									<input type="hidden" value="10" name="lineId" class="actlineid">
+									<input type="hidden" value="1" name="months" class="act-months">
+									<input type="hidden" value="1" name="number" class="number">
+									<input type="hidden" value="1," name="access_months" class="access_months">
+
+								</div>
+								<div class="item-body-list baremetal-list-item">
+
+									<div class="item-body-list-left">
+										<form name="buyForm" class="buyForm" action="/server/buy/order.html"
+											method="post">
+											<div class="title">中国深圳裸金属</div>
+											<p>E3-16G E3-1230 V2 4核8线程 DDR3</p>
+										</form>
+									</div>
+									<div class="item-body-list-config five-column-config zdkd">
+										<ul>
+											<li style="width:17%">
+												<div title="4核(E3-1230 V2)*1">4核×1</div>
+												<p>CPU</p>
+											</li>
+											<li style="width:30%">
+												<div title="DDR3-ECC 16GB">DDR3-ECC 16GB</div>
+												<p>内存</p>
+											</li>
+											<li style="width:27%">
+												<div title="SSD 250GB">SSD 250GB</div>
+												<p>硬盘</p>
+											</li>
+											<li style="width:14%">
+												<div title="5M">5M</div>
+												<p>带宽</p>
+											</li>
+											<li style="width:12%">
+												<div title="1个独立IP">1个</div>
+												<p>IP</p>
+											</li>
+
+										</ul>
+									</div>
+									<div class="project-rule-select hide">
+										<div class="project-rule-group clearfix months" data-lineid="1">
+											<div class="project-rule-item active" data-month="1">1个月</div>
+										</div>
+									</div>
+									<div class="item-body-list-price">
+										<a href="javascript:;" class="active">
+											<div class="item-price-math">
+												<span class="act-num">450.00</span>元/首月
+											</div>
+											<div class="item-price-sheng">日常价
+												<span class="o-price-num">450.00</span>元
+											</div>
+											<p class="item-limit-math">
+												<span>续费同价</span> / 须实名
+											</p>
+											<i class="item-badge">新客专享</i>
+										</a>
+									</div>
+									<a class="buy ljsbuy" href="javascript:;">立即购买</a>
+
+									<input type="hidden" value="4" name="productId" class="productId">
+									<input type="hidden" value="1" name="areaId" class="actareaid">
+									<input type="hidden" value="1" name="lineId" class="actlineid">
+									<input type="hidden" value="1" name="months" class="act-months">
+									<input type="hidden" value="1" name="number" class="number">
+									<input type="hidden" value="1," name="access_months" class="access_months">
+
+								</div>
+							</div>
+
+
+							<div class="item-body-item" id="baremetao">
+
+								<div class="item-body-list baremetal-list-item">
+
+									<div class="item-body-list-left">
+										<form name="buyForm" class="buyForm" action="/server/buy/order.html"
+											method="post">
+											<div class="title">中国香港裸金属A</div>
+											<p>E3-16G E3-1230 V2 4核8线程 DDR3</p>
+										</form>
+									</div>
+									<div class="item-body-list-config five-column-config zdkd">
+										<ul>
+											<li style="width:17%">
+												<div title="4核(E3-1230 V2)*1">4核×1</div>
+												<p>CPU</p>
+											</li>
+											<li style="width:30%">
+												<div title="DDR3-ECC 16GB">DDR3-ECC 16GB</div>
+												<p>内存</p>
+											</li>
+											<li style="width:27%">
+												<div title="SSD 250GB">SSD 250GB</div>
+												<p>硬盘</p>
+											</li>
+											<li style="width:14%">
+												<div title="5M">5M</div>
+												<p>带宽</p>
+											</li>
+											<li style="width:12%">
+												<div title="1个独立IP">1个</div>
+												<p>IP</p>
+											</li>
+
+										</ul>
+									</div>
+									<div class="project-rule-select hide">
+										<div class="project-rule-group clearfix months" data-lineid="3">
+											<div class="project-rule-item active" data-month="1">1个月</div>
+										</div>
+									</div>
+									<div class="item-body-list-price">
+										<a href="javascript:;" class="active">
+											<div class="item-price-math">
+												<span class="act-num">850.00</span>元/首月
+											</div>
+											<div class="item-price-sheng">日常价
+												<span class="o-price-num">850.00</span>元
+											</div>
+											<p class="item-limit-math">
+												<span>续费同价</span> / 须实名
+											</p>
+											<i class="item-badge">新客专享</i>
+										</a>
+									</div>
+									<a class="buy ljsbuy" href="javascript:;">立即购买</a>
+
+									<input type="hidden" value="8" name="productId" class="productId">
+									<input type="hidden" value="1" name="areaId" class="actareaid">
+									<input type="hidden" value="3" name="lineId" class="actlineid">
+									<input type="hidden" value="1" name="months" class="act-months">
+									<input type="hidden" value="1" name="number" class="number">
+									<input type="hidden" value="1," name="access_months" class="access_months">
+
+								</div>
+								<div class="item-body-list baremetal-list-item">
+
+									<div class="item-body-list-left">
+										<form name="buyForm" class="buyForm" action="/server/buy/order.html"
+											method="post">
+											<div class="title">中国香港裸金属B</div>
+											<p>E5-32G E5-2683 V3 14核28线程 DDR4</p>
+										</form>
+									</div>
+									<div class="item-body-list-config five-column-config zdkd">
+										<ul>
+											<li style="width:17%">
+												<div title="14核(E5-2683 V3)*1">14核×1</div>
+												<p>CPU</p>
+											</li>
+											<li style="width:30%">
+												<div title="DDR4 2133 32GB">DDR4 2133 32GB</div>
+												<p>内存</p>
+											</li>
+											<li style="width:27%">
+												<div title="SSD 500GB">SSD 500GB</div>
+												<p>硬盘</p>
+											</li>
+											<li style="width:14%">
+												<div title="5M">5M</div>
+												<p>带宽</p>
+											</li>
+											<li style="width:12%">
+												<div title="1个独立IP">1个</div>
+												<p>IP</p>
+											</li>
+
+										</ul>
+									</div>
+									<div class="project-rule-select hide">
+										<div class="project-rule-group clearfix months" data-lineid="3">
+											<div class="project-rule-item active" data-month="1">1个月</div>
+										</div>
+									</div>
+									<div class="item-body-list-price">
+										<a href="javascript:;" class="active">
+											<div class="item-price-math">
+												<span class="act-num">1500.00</span>元/首月
+											</div>
+											<div class="item-price-sheng">日常价
+												<span class="o-price-num">1500.00</span>元
+											</div>
+											<p class="item-limit-math">
+												<span>续费同价</span> / 须实名
+											</p>
+											<i class="item-badge">新客专享</i>
+										</a>
+									</div>
+									<a class="buy ljsbuy" href="javascript:;">立即购买</a>
+
+									<input type="hidden" value="9" name="productId" class="productId">
+									<input type="hidden" value="1" name="areaId" class="actareaid">
+									<input type="hidden" value="3" name="lineId" class="actlineid">
+									<input type="hidden" value="1" name="months" class="act-months">
+									<input type="hidden" value="1" name="number" class="number">
+									<input type="hidden" value="1," name="access_months" class="access_months">
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="spring-product-more">
+						<a target="_blank" href="/baremetal/buy.html">更多自定义配置 &gt;&gt;</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="spring-product" id="zd-ip">
+		<div class="content">
+			<div class="spring-product-title">
+				<h2>云虚拟主机优惠套餐</h2>
+				<div class="title-circle"></div>
+			</div>
+			<p class="spring-product-des">指点数据精心打造的各类云虚拟主机3折起，满足您的快捷建站需求</p>
+
+			<div class="spring-product-item">
+				<div class="item">
+					<div class="item-content" id="host">
+						<div class="item-body">
+							<div class="item-body-list cloud_computer_block">
+								<form action="" class="hostForm" data-url="/host/buy.html">
+									<input autocomplete="off" type="hidden" value="2" name="lineId" class="hostLineId">
+									<input class="hostPid" type="hidden" value="1706260024538366" name="pId">
+									<input class="months" type="hidden" value="12" name="months">
+									<input type="hidden" value="price" name="params">
+								</form>
+								<div class="item-body-list-left">
+									<div class="title">
+										<span class="package-name">共享经济版</span>
+									</div>
+									<p>适合初级建站</p>
+								</div>
+								<div class="item-body-list-config" style="width:610px;">
+									<ul>
+										<li style="width:20%">
+											<div class="cpu">共享</div>
+											<p>CPU</p>
+										</li>
+										<li style="width:18%">
+											<div class="ram">共享</div>
+											<p>内存</p>
+										</li>
+										<li style="width:14%">
+											<div>
+												<span class="disk">2</span>
+												<span>G</span>
+											</div>
+											<p>空间</p>
+										</li>
+										<li style="width:18%">
+											<div class="bandwidth">共享</div>
+											<p>带宽</p>
+										</li>
+										<li style="width:15%">
+											<div class="indeip">共享</div>
+											<p>IP类型</p>
+										</li>
+										<li style="width:15%">
+											<div>
+												<span class="database">100</span>
+												<span>M</span>
+											</div>
+											<p>数据库</p>
+										</li>
+									</ul>
+								</div>
+								<div class="item-body-list-price" style="width:190px">
+									<a href="javascript:;" class="active">
+										<div class="item-price-math">
+											<span class="final_price">71.40</span>元/年
+										</div>
+										<div class="item-price-sheng">立省
+											<span class="discount-price">12.60</span>元
+										</div>
+										<p class="item-limit-math">限购
+											<span>2</span>台 / 须实名
+										</p>
+										<i class="item-badge">新客专享</i>
+									</a>
+								</div>
+								<a href="javascript:;" class="host_buy" data-systemtype="1" data-indeip="0">立即购买</a>
+							</div>
+							<div class="item-body-list cloud_computer_block">
+								<form action="" class="hostForm" data-url="/host/buy.html">
+									<input autocomplete="off" type="hidden" value="2" name="lineId" class="hostLineId">
+									<input class="hostPid" type="hidden" value="1706260024529650" name="pId">
+									<input class="months" type="hidden" value="12" name="months">
+									<input type="hidden" value="price" name="params">
+								</form>
+								<div class="item-body-list-left">
+									<div class="title">
+										<span class="package-name">独享普惠版</span>
+									</div>
+									<p>适合初级建站</p>
+								</div>
+								<div class="item-body-list-config" style="width:610px;">
+									<ul>
+										<li style="width:20%">
+											<div class="cpu">独享单核</div>
+											<p>CPU</p>
+										</li>
+										<li style="width:18%">
+											<div class="ram">独享512M</div>
+											<p>内存</p>
+										</li>
+										<li style="width:14%">
+											<div>
+												<span class="disk">2</span>
+												<span>G</span>
+											</div>
+											<p>空间</p>
+										</li>
+										<li style="width:18%">
+											<div class="bandwidth">独享2M</div>
+											<p>带宽</p>
+										</li>
+										<li style="width:15%">
+											<div class="indeip">独享</div>
+											<p>IP类型</p>
+										</li>
+										<li style="width:15%">
+											<div>
+												<span class="database">500</span>
+												<span>M</span>
+											</div>
+											<p>数据库</p>
+										</li>
+									</ul>
+								</div>
+								<div class="item-body-list-price" style="width:190px">
+									<a href="javascript:;" class="active">
+										<div class="item-price-math">
+											<span class="final_price">285.60</span>元/年
+										</div>
+										<div class="item-price-sheng">立省
+											<span class="discount-price">50.40</span>元
+										</div>
+										<p class="item-limit-math">限购
+											<span>2</span>台 / 须实名
+										</p>
+										<i class="item-badge">新客专享</i>
+									</a>
+								</div>
+								<a href="javascript:;" class="host_buy" data-systemtype="1" data-indeip="1">立即购买</a>
+							</div>
+							<div class="item-body-list cloud_computer_block">
+								<form action="" class="hostForm" data-url="/host/buy.html">
+									<input autocomplete="off" type="hidden" value="2" name="lineId" class="hostLineId">
+									<input class="hostPid" type="hidden" value="1706260024533207" name="pId">
+									<input class="months" type="hidden" value="12" name="months">
+									<input type="hidden" value="price" name="params">
+								</form>
+								<div class="item-body-list-left">
+									<div class="title">
+										<span class="package-name">独享专业版</span>
+									</div>
+									<p>适合初级建站</p>
+								</div>
+								<div class="item-body-list-config" style="width:610px;">
+									<ul>
+										<li style="width:20%">
+											<div class="cpu">独享单核</div>
+											<p>CPU</p>
+										</li>
+										<li style="width:18%">
+											<div class="ram">独享1G</div>
+											<p>内存</p>
+										</li>
+										<li style="width:14%">
+											<div>
+												<span class="disk">4</span>
+												<span>G</span>
+											</div>
+											<p>空间</p>
+										</li>
+										<li style="width:18%">
+											<div class="bandwidth">独享3M</div>
+											<p>带宽</p>
+										</li>
+										<li style="width:15%">
+											<div class="indeip">独享</div>
+											<p>IP类型</p>
+										</li>
+										<li style="width:15%">
+											<div>
+												<span class="database">500</span>
+												<span>M</span>
+											</div>
+											<p>数据库</p>
+										</li>
+									</ul>
+								</div>
+								<div class="item-body-list-price" style="width:190px">
+									<a href="javascript:;" class="active">
+										<div class="item-price-math">
+											<span class="final_price">387.60</span>元/年
+										</div>
+										<div class="item-price-sheng">立省
+											<span class="discount-price">68.40</span>元
+										</div>
+										<p class="item-limit-math">限购
+											<span>2</span>台 / 须实名
+										</p>
+										<i class="item-badge">新客专享</i>
+									</a>
+								</div>
+								<a href="javascript:;" class="host_buy" data-systemtype="1" data-indeip="1">立即购买</a>
+							</div>
+						</div>
+					</div>
+					<div class="spring-product-more">
+						<a href="/host/buy.html" target="_blank">更多自定义配置 &gt;&gt;</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="spring-product" id="zd-database">
+		<div class="content">
+			<div class="spring-product-title">
+				<h2>云数据库优惠套餐</h2>
+				<div class="title-circle"></div>
+			</div>
+			<p class="spring-product-des">指点数据精心打造的各类云数据库3折起，满足您所有应用程序的需求</p>
+			<div class="spring-product-item">
+				<div class="item">
+					<div class="item-content">
+						<div class="item-body">
+							<div class="item-body-list">
+								<div class="item-body-list-left">
+									<div class="title">高可用版 Mysql</div>
+									<p>即开即用 稳定可靠</p>
+								</div>
+								<div class="item-body-list-config">
+									<ul>
+										<li>
+											<div>华中</div>
+											<p>数据中心</p>
+										</li>
+										<li>
+											<div>2核</div>
+											<p>CPU</p>
+										</li>
+										<li>
+											<div>4G</div>
+											<p>内存</p>
+										</li>
+										<li>
+											<div>30G</div>
+											<p>SSD容量</p>
+										</li>
+									</ul>
+								</div>
+								<div class="item-body-list-price">
+									<a href="javascript:;" class="active">
+										<div class="item-price-math">
+											<span>395</span>元/首月
+										</div>
+										<div class="item-price-sheng">立省
+											<span>100</span>元
+										</div>
+										<p class="item-limit-math">限购
+											<span>2</span>台 / 须实名
+										</p>
+										<i class="item-badge">新客专享</i>
+									</a>
+									<a href="javascript:;" key="2-2-4-30-3">
+										<div class="item-price-math">
+											<span>1185</span>元/3个月
+										</div>
+										<div class="item-price-sheng">立省
+											<span>100</span>元
+										</div>
+										<p class="item-original-price">原价：
+											<span>1285</span>元
+										</p>
+									</a>
+								</div>
+								<a href="javascript:;" class="buy db_shop_btn">立即购买</a>
+							</div>
+							<div class="item-body-list">
+								<div class="item-body-list-left">
+									<div class="title">高可用版 Mysql</div>
+									<p>即开即用 稳定可靠</p>
+								</div>
+								<div class="item-body-list-config">
+									<ul>
+										<li>
+											<div>华中</div>
+											<p>数据中心</p>
+										</li>
+										<li>
+											<div>4核</div>
+											<p>CPU</p>
+										</li>
+										<li>
+											<div>8G</div>
+											<p>内存</p>
+										</li>
+										<li>
+											<div>50G</div>
+											<p>SSD容量</p>
+										</li>
+									</ul>
+								</div>
+								<div class="item-body-list-price">
+									<a href="javascript:;" class="active">
+										<div class="item-price-math">
+											<span>785</span>元/首月
+										</div>
+										<div class="item-price-sheng">立省
+											<span>100</span>元
+										</div>
+										<p class="item-limit-math">限购
+											<span>2</span>台 / 须实名
+										</p>
+										<i class="item-badge">新客专享</i>
+									</a>
+									<a href="javascript:;" key="2-4-8-50-3">
+										<div class="item-price-math">
+											<span>2355</span>元/3个月
+										</div>
+										<div class="item-price-sheng">立省
+											<span>100</span>元
+										</div>
+										<p class="item-original-price">原价：
+											<span>2455</span>元
+										</p>
+									</a>
+								</div>
+								<a href="javascript:;" class="buy db_shop_btn">立即购买</a>
+							</div>
+							<div class="item-body-list">
+								<div class="item-body-list-left">
+									<div class="title">高可用版 Mysql</div>
+									<p>即开即用 稳定可靠</p>
+								</div>
+								<div class="item-body-list-config">
+									<ul>
+										<li>
+											<div>香港</div>
+											<p>数据中心</p>
+										</li>
+										<li>
+											<div>2核</div>
+											<p>CPU</p>
+										</li>
+										<li>
+											<div>4G</div>
+											<p>内存</p>
+										</li>
+										<li>
+											<div>30G</div>
+											<p>SSD容量</p>
+										</li>
+									</ul>
+								</div>
+								<div class="item-body-list-price">
+									<a href="javascript:;" class="active">
+										<div class="item-price-math">
+											<span>471</span>元/首月
+										</div>
+										<div class="item-price-sheng">立省
+											<span>100</span>元
+										</div>
+										<p class="item-limit-math">限购
+											<span>2</span>台 / 须实名
+										</p>
+										<i class="item-badge">新客专享</i>
+									</a>
+									<a href="javascript:;" key="48-2-4-30-3">
+										<div class="item-price-math">
+											<span>1413</span>元/3个月
+										</div>
+										<div class="item-price-sheng">立省
+											<span>100</span>元
+										</div>
+										<p class="item-original-price">原价：
+											<span>1513</span>元
+										</p>
+									</a>
+								</div>
+								<a href="javascript:;" class="buy db_shop_btn">立即购买</a>
+							</div>
+							<div class="item-body-list">
+								<div class="item-body-list-left">
+									<div class="title">高可用版 Mysql</div>
+									<p>即开即用 稳定可靠</p>
+								</div>
+								<div class="item-body-list-config">
+									<ul>
+										<li>
+											<div>香港</div>
+											<p>数据中心</p>
+										</li>
+										<li>
+											<div>4核</div>
+											<p>CPU</p>
+										</li>
+										<li>
+											<div>8G</div>
+											<p>内存</p>
+										</li>
+										<li>
+											<div>50G</div>
+											<p>SSD容量</p>
+										</li>
+									</ul>
+								</div>
+								<div class="item-body-list-price">
+									<a href="javascript:;" class="active">
+										<div class="item-price-math">
+											<span>937</span>元/首月
+										</div>
+										<div class="item-price-sheng">立省
+											<span>100</span>元
+										</div>
+										<p class="item-limit-math">限购
+											<span>2</span>台 / 须实名
+										</p>
+										<i class="item-badge">新客专享</i>
+									</a>
+									<a href="javascript:;" key="48-4-8-50-3">
+										<div class="item-price-math">
+											<span>2811</span>元/3个月
+										</div>
+										<div class="item-price-sheng">立省
+											<span>100</span>元
+										</div>
+										<p class="item-original-price">原价：
+											<span>2911</span>元
+										</p>
+									</a>
+								</div>
+								<a href="javascript:;" class="buy db_shop_btn">立即购买</a>
+							</div>
+						</div>
+					</div>
+					<div class="spring-product-more">
+						<a href="/mysql/selfconf/" target="_blank">更多自定义配置 &gt;&gt;</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="spring-product" id="zd-cdn">
+		<div class="content">
+			<div class="spring-product-title">
+				<h2>CDN优惠套餐</h2>
+				<div class="title-circle"></div>
+			</div>
+			<p class="spring-product-des">指点数据整合多个头部CDN提供商的资源、通过智能调整，为您提供更多更快的加速效果</p>
+			<div class="spring-product-item">
+				<div class="item">
+					<div class="item-content" style="display: flex;">
+						<div class="item-body clearfix">
+							<div class="item-body-column" id="bag100g">
+								<div class="column-head">
+									<div>
+										<span>100GB</span>
+										<i>境内流量包</i>
+									</div>
+								</div>
+								<div class="column-price">
+									<div>
+										<i>优惠价</i>
+										<span>1.00</span>元
+									</div>
+									<p>
+										<span class="column-unit-price">约
+											<span>0.01</span>元/GB</span>
+										<span class="column-old-price">原价：
+											<span>18.00</span>元</span>
+									</p>
+								</div>
+								<div class="column-link">
+									<a href="javascript:;" class="cdnPayBag" data-activityid="2" data-bagid="1"
+										data-skuid="21">立即购买</a>
+								</div>
+								<p>自购买一个月内有效，过期作废</p>
+							</div>
+							<div class="item-body-column">
+								<div class="column-head">
+									<div>
+										<span>1TB</span>
+										<i>境内流量包</i>
+									</div>
+								</div>
+								<div class="column-price">
+									<div>
+										<i>优惠价</i>
+										<span>89</span>元
+									</div>
+									<p>
+										<span class="column-unit-price">约
+											<span>0.087</span>元/GB</span>
+										<span class="column-old-price">原价：
+											<span>190</span>元</span>
+									</p>
+								</div>
+								<div class="column-link">
+									<a href="javascript:;" class="cdnPayBag" data-activityid="7" data-bagid="1"
+										data-skuid="73">立即购买</a>
+								</div>
+								<p>自购买半年内有效，过期作废</p>
+							</div>
+							<div class="item-body-column">
+								<div class="column-head">
+									<div>
+										<span>10TB</span>
+										<i>境内流量包</i>
+									</div>
+								</div>
+								<div class="column-price">
+									<div>
+										<i>优惠价</i>
+										<span>799</span>元
+									</div>
+									<p>
+										<span class="column-unit-price">约
+											<span>0.078</span>元/GB</span>
+										<span class="column-old-price">原价：
+											<span>1990</span>元</span>
+									</p>
+								</div>
+								<div class="column-link">
+									<a href="javascript:;" class="cdnPayBag" data-activityid="7" data-bagid="1"
+										data-skuid="77">立即购买</a>
+								</div>
+								<p>自购买半年内有效，过期作废</p>
+							</div>
+							<div class="item-body-column">
+								<div class="column-head">
+									<div>
+										<span>50TB</span>
+										<i>境内流量包</i>
+									</div>
+								</div>
+								<div class="column-price">
+									<div>
+										<i>优惠价</i>
+										<span>3599</span>元
+									</div>
+									<p>
+										<span class="column-unit-price">约
+											<span>0.070</span>元/GB</span>
+										<span class="column-old-price">原价：
+											<span>8399</span>元</span>
+									</p>
+								</div>
+								<div class="column-link">
+									<a href="javascript:;" class="cdnPayBag" data-activityid="7" data-bagid="1"
+										data-skuid="79">立即购买</a>
+								</div>
+								<p>自购买半年内有效，过期作废</p>
+							</div>
+						</div>
+					</div>
+					<div class="spring-product-more">
+						<a href="/cdn/paybag/" target="_blank">更多自定义配置 &gt;&gt;</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="more-youhui" id="zd-youhui">
+		<div class="content">
+			<div class="spring-product-title">
+				<h2>更多优惠活动</h2>
+			</div>
+			<div class="youhui-item-box clearfix">
+				<div class="youhui-item">
+					<div class="youhui-content">
+						<div class="youhui-tit">服务器被攻击怎么办？</div>
+						<p>香港CN2、国内BGP、电信、联通
+							<br>高至防御1000G攻击
+						</p>
+						<a href="/gf/" target="_blank">了解详情 &gt;</a>
+					</div>
+					<div class="youhui-bg youhui-bg-cloud"></div>
+				</div>
+				<div class="youhui-item">
+					<div class="youhui-content">
+						<div class="youhui-tit">性能怪兽 - 裸金属服务器</div>
+						<p>整台物理机资源独占
+							<br>40 vCPU 起步，高至96 vCPU
+						</p>
+						<a href="/baremetal/buy.html" target="_blank">了解详情 &gt;</a>
+					</div>
+					<div class="youhui-bg youhui-bg-luojinshu"></div>
+				</div>
+				<div class="youhui-item last">
+					<div class="youhui-content">
+						<div class="youhui-tit">香港服务器跟国内一样快</div>
+						<p>中国香港网络通过CN2直接连接国内
+							<br>延时低到5ms
+						</p>
+						<a href="/server/buy.html" target="_blank">了解详情 &gt;</a>
+					</div>
+					<div class="youhui-bg youhui-bg-hk"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="shadow">
+		<div class="playnow">
+			<div class="video_control">
+				<video class="show-video" id="play_video" controlslist="nodownload" controls="controls"
+					autoplay="autoplay" width="800" height="500"></video>
+			</div>
+			<div class="play_over">
+				<div class="close_over"></div>
+			</div>
+		</div>
+	</div>
+	<div class="zdy-specialty" id="zd-advantage">
+		<h2 class="specialty-title">指点数据特点</h2>
+		<div class="specialty-show clearfix">
+			<div class="specialtybox one-specialtybox">
+				<div class="specialtybox-head"></div>
+				<div class="specialtybox-title">灵活和弹性</div>
+				<div class="specialtybox-des">
+					<p>根据业务的发展趋势</p>
+					<p>您可随时对云资源进行横向和纵向的伸缩</p>
+					<p>杜绝资源浪费</p>
+				</div>
+			</div>
+			<div class="specialtybox two-specialtybox">
+				<div class="specialtybox-head"></div>
+				<div class="specialtybox-title">稳定和可靠</div>
+				<div class="specialtybox-des">
+					<p>采用RAID进行数据保护，防止数据丢失</p>
+					<p>承诺99.95%的服务可用性</p>
+					<p>数据可靠性不低于99.9999%</p>
+				</div>
+			</div>
+			<div class="specialtybox three-specialtybox">
+				<div class="specialtybox-head"></div>
+				<div class="specialtybox-title">高性能</div>
+				<div class="specialtybox-des">
+					<p>异的网络处理能力满足各种业务应用要求</p>
+					<p>各项性能指标业界领先</p>
+					<p>更有SSD盘云主机，提供超高IOPS性能</p>
+				</div>
+			</div>
+			<div class="specialtybox four-specialtybox">
+				<div class="specialtybox-head"></div>
+				<div class="specialtybox-title">安全保障</div>
+				<div class="specialtybox-des">
+					<p>用户之间100%的完全网络隔离</p>
+					<p>确保数据安全</p>
+					<p>并提供丰富的监控和安全工具</p>
+				</div>
+			</div>
+			<div class="specialtybox five-specialtybox">
+				<div class="specialtybox-head"></div>
+				<div class="specialtybox-title">简单易用</div>
+				<div class="specialtybox-des">
+					<p>用户拥有指点数据CVM的管理员帐号</p>
+					<p>对CVM有完全的控制权</p>
+					<p>管理CVM就像管理您的计算机一样简单方便</p>
+				</div>
+			</div>
+			<div class="specialtybox six-specialtybox">
+				<div class="specialtybox-head"></div>
+				<div class="specialtybox-title">节省成本</div>
+				<div class="specialtybox-des">
+					<p>CVM部署在云端</p>
+					<p>极大节省了您前期搭建基础网络设施的成本</p>
+					<p>和后期的维护成本</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="zdy-join-wrap" id="zd-yds">
+		<a href="/user/promotion/index" class="join_parter_click" target="_blank">
+			<div class="join-content">
+				<h2>成为指点数据推官</h2>
+				<p>推荐新用户使用指点数据,最高
+					<span>50%</span>现金奖励
+				</p>
+				<div class="join-btn">立即加入</div>
+			</div>
+		</a>
+	</div>
+
+</div>
+
+	<div class="new-coupon-modal">
+		<div class="coupon-modal-center">
+			<div class="modal-center-head">代金券明细
+				<span>×</span>
+			</div>
+			<div class="modal-center-body">
+				<p class="center-body-tip">代金券仅适用于云服务器、裸金属服务器、负载均衡、云虚拟主机、服务器托管、域名注册产品购买或续费。</p>
+				<div class="center-body-coupon clearfix">
+					<div class="body-coupon-item ">
+						<div><i>￥</i>50<i>元</i>
+							<span>1张</span>
+						</div>
+						<p>满300元可用</p>
+					</div>
+					<div class="body-coupon-item ">
+						<div><i>￥</i>200<i>元</i>
+							<span>1张</span>
+						</div>
+						<p>满1000元可用</p>
+					</div>
+					<div class="body-coupon-item ">
+						<div><i>￥</i>500<i>元</i>
+							<span>1张</span>
+						</div>
+						<p>满2000元可用</p>
+					</div>
+					<div class="body-coupon-item ">
+						<div><i>￥</i>800<i>元</i>
+							<span>1张</span>
+						</div>
+						<p>满3000元可用</p>
+					</div>
+					<div class="modal-center-bottom">
+						<button class="renewUpgradeBtn upgradeButton" data-type="0">免费领取升级券</button>
+						<button class="disabled hide">已经领取</button>
+					</div>
+				</div>
+				<div class="center-body-coupon kz28 clearfix">
+					<div class="body-coupon-item ">
+						<div><i>￥</i>50<i>元</i>
+							<span>1张</span>
+						</div>
+						<p>满300元可用</p>
+					</div>
+					<div class="body-coupon-item ">
+						<div><i>￥</i>200<i>元</i>
+							<span>1张</span>
+						</div>
+						<p>满1000元可用</p>
+					</div>
+					<div class="body-coupon-item ">
+						<div><i>￥</i>500<i>元</i>
+							<span>1张</span>
+						</div>
+						<p>满2000元可用</p>
+					</div>
+					<div class="body-coupon-item ">
+						<div><i>￥</i>800<i>元</i>
+							<span>1张</span>
+						</div>
+						<p>满3000元可用</p>
+					</div>
+					<div class="modal-center-bottom">
+						<button class="renewUpgradeBtn renewButton" data-type="1">免费领取续费券</button>
+						<button class="disabled hide">已经领取</button>
+					</div>
+				</div>
+				<p class="center-body-mark">注：全部代金券需要通过
+					<a href="/user/auth/newAuth/" target="_blank">实名认证</a> 才能领取；
+					<a href="/user/email/bind.html" target="_blank">绑定邮箱</a>
+					可获得更多红包哦。
+				</p>
+			</div>
+		</div>
+	</div>
+	<!-- 选择系统 -->
+	<!-- system select modal start -->
+	<div class="common-select-system-modal instance_sysimg">
+		<div class="center">
+			<div class="head">快捷下单
+				<span class="close">×</span>
+			</div>
+			<div class="body">
+				<div class="system-kind"></div>
+				<div class="system-list">
+					<p class="zdy-buy"></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="{$setting.web_view}/style/css/actcloud/swiper.min.js"></script>
+	<script type="text/javascript" src="{$setting.web_view}/style/css/actcloud/video.js"></script>
+{include file="common/footer" /}

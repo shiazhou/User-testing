@@ -1,0 +1,186 @@
+{if empty($setting.web_close_mode_message)}
+{include file="common/header"  title="帮助中心" keywords="$setting.company_name" description="$setting.company_profile" /}
+{tagdata name="helpCate,helpList,newsCate,newsList,helpListCate" /}
+<link rel="stylesheet" href="{$setting.web_view}/style/css/help.css">
+<script>
+        if(window.$aioList) {
+            for(var i=0; i<window.$aioList.length; i++) {
+                if (unCuiComponentArr.indexOf(window.$aioList[i])===-1) {
+					document.write('<link rel="stylesheet" href="{$setting.web_view}/style/css/mhelp.css'+window.$aioList[i]+'/'+(window.gConfig.isMobile?'m':'pc')+'/help.css"/>');
+                }
+            }
+        }
+</script>
+<div id="content">
+<div class="support-banner support-new-banner">
+    <div class="v6-container">
+		<div class="support-body">
+            <div class="support-banner-mb">
+        	<div class="support-content">
+
+                <div class="banner-main" style="width:auto">
+                    <div class="banner-title"><h5>帮助中心</h5></div>
+                    
+                </div>
+                <div class="banner-search">
+					 <form action="/helpsearch.html" id="search_form">
+                        <div class="search-box">
+                            <input type="search" name="search" placeholder="请输入要搜索的产品或者文档" class="input searchInput" type="text" maxlength="80" autocomplete="off">
+                            <span class="search-btn-close"></span>
+
+                            <a target="_blank" class="search-inner">
+                                <button class="search-button por-btn por-btn-primary">搜索</button>
+                            </a>
+                            <span class="search-underline"></span>
+                        </div>
+						</form>
+                </div>
+			</div>
+            </div>
+<div class="v6-section support-tab-card support-new-card">
+    <div class="v6-container">
+        <div class="v6-section-body">
+            <div class="product-layer" style="min-height:50px">
+                <div class="product-v6-tabs cf">
+                        <a href="/help.html" class="product-tab" data-clickable="true" target="_blank">
+                            <em class="icons-prod-adv" style="background-image:url({$setting.web_view}/style/image/support-support-quirkPortal-1.svg)"></em>
+                            <p class="caption">
+                                <span>新手入门</span><i class="foldIcon"></i>
+                            </p>
+                            <div class="info" title="新手了解、购买和使用入门指导、快速指导您上云">
+                                <span class="js-title">新手了解、购买和使用入门指导、快速指导您上云</span>
+                            </div>
+                        </a>
+					     <a href="/clientarea" class="product-tab" data-clickable="true" target="_blank">
+                            <em class="icons-prod-adv" style="background-image:url({$setting.web_view}/style/image/support-support-quirkPortal-3.svg)"></em>
+                            <p class="caption">
+                                <span>控制中心</span><i class="foldIcon"></i>
+                            </p>
+                            <div class="info" title="为您提供多功能、智能化实时控制平台">
+                                <span class="js-title">为您提供多功能、智能化实时控制平台</span>
+                            </div>
+                        </a>
+						<a href="http://wpa.qq.com/msgrd?v=3&uin={$setting.company_qq}&site=qq&menu=yes" class="product-tab" data-clickable="true" target="_blank">
+						    <em class="icons-prod-adv" style="background-image:url({$setting.web_view}/style/image/support-support-quirkPortal-2.svg)"></em>
+						    <p class="caption">
+						        <span>在线客服</span><i class="foldIcon"></i>
+						    </p>
+						    <div class="info" title="多元化服务渠道，全方位为您提供保姆式服务">
+						        <span class="js-title">多元化服务渠道，全方位为您提供保姆式服务</span>
+						    </div>
+						</a>
+                        <a href="/supporttickets" class="product-tab" data-clickable="true" target="_blank">
+                            <em class="icons-prod-adv" style="background-image:url({$setting.web_view}/style/image/support-support-quirkPortal-4.svg)"></em>
+                            <p class="caption">
+                                <span>工单服务</span><i class="foldIcon"></i>
+                            </p>
+                            <div class="info" title="专业的技术服务团队为您解决产品使用问题">
+                                <span class="js-title">专业的技术服务团队为您解决产品使用问题</span>
+                            </div>
+                        </a>
+					
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+</div>
+<style>
+    .support-banner {
+        background-image: url({$setting.web_view}/style/image/helpbg.jpg);
+    }
+    @media (max-width: 768px) {
+        .support-banner {
+            background-image: url({$setting.web_view}/style/image/helpbg.jpg);
+            background-size:cover;
+        }
+    }
+    @media (min-width: 768px) {
+		.support-crumbs {
+			display: none
+        } 
+        .support-crumbs .help-crumbs a {
+            max-width: 170px;
+        }
+    }
+    @media (max-width: 768px){
+        .support-banner .v6-container {
+            padding: 0;
+        }
+        .support-banner .support-content {
+            padding: 0 15px;
+        }
+        .v6-section.support-tab-card.support-new-card {
+            padding: 15px;
+        }
+        .support-banner.support-new-banner {
+            background-image: none;
+            background-color: #fff;
+        }
+        .support-new-banner .support-banner-mb {
+            background-image: url({$setting.web_view}/style/image/helpbg.jpg);
+            background-size: cover;
+            position: relative;
+        }
+        .support-banner .v6-container .support-body {
+            height: auto;
+            overflow: hidden;
+        }
+    }
+</style>
+        <div class="v6-section support-index-list" id="support-index-list">
+        	<div class="v6-container">
+				<div class="support-body">
+                    <div class="wrapper">
+                        <div class="support-nav">
+                                <ul>
+                                    {foreach $helpCate as $key=>$vo }
+                                        <li>
+                                            <a href="#zdy{$vo.id}" rel="nofollow">{$vo.title}</a>
+                                        </li>
+                                    {/foreach}
+                                    
+                                    <i class="fold-btn flod"></i>
+                                </ul>
+                        </div>
+                        <div class="support-menu">
+                                <ul>
+                                     {foreach $helpCate as $key=>$vo }
+                                         <li class="support-menu-li" id="zdy{$vo.id}">
+                                                  <h2>{$vo.title}<i class="foldIcon"> </i></h2>
+                                            <div class="support-menu-item">
+                                                <ul>
+													 {php}$news = get_news($vo['id']);{/php}
+													 {foreach $news as $key =>$v}
+                                                     <li class="support-menu-item-li"><a href="/helparticle/{$v.id}.html" target="_blank">{$v.title}</a></li>
+                                                     {/foreach}
+                                                     <li class="support-menu-item-li"><a href="/helpcategory/{$vo.id}.html" target="_blank">查看更多 ···></a></li>
+                                                </ul>
+                                            </div>
+                                         </li>
+                                    {/foreach}
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+</div>
+  {else/}
+{include file="common/header"  title="抱歉,我们暂时进入了维护模式" keywords="$setting.web_seo_keywords" description="$setting.web_seo_desc" /}
+  <div id="notfound" class="d-flex align-items-center justify-content-center">
+    <div class="notfound text-center">
+      <div class="container">
+        <div class="notfound-404">
+          <h1>Oops!</h1>
+        </div>
+        <h2>很抱歉，我们暂时进入了维护~</h2>
+        <p>原因为{$setting.web_close_mode_message}</p>
+      </div>
+    </div>
+  </div>
+{/if}
+  {include file="common/footer"  /}
+  <script src="{$setting.web_view}/style/js/help.js"></script>

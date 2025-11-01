@@ -1,0 +1,96 @@
+{if empty($setting.web_close_mode_message)}
+{include file="common/header"  title="新闻中心" keywords="$setting.company_name" description="$setting.company_profile" /}
+{tagdata name="newsCate,newsList " /}
+<link rel="stylesheet" href="{$setting.web_view}/style/css/news.css">
+<div id="content" data-site="china">
+  <div class="notice-header">
+    <h1>服务公告</h1>
+  </div>
+  <div class="notice-content">
+    <div class="nav-list-wrapper v6-container">
+      <span class="u-icon u-icon-left"></span>
+      <span class="u-icon u-icon-right"></span>
+      <div class="nav-list scroll-list-wrapper">
+        <ul class="scroll-list">
+          <li class="item active"><a href="notice.html">全部</a></li>
+		  {foreach $newsCate as $key=>$vo }
+          <li class="item"><a href="/newscategory/{$vo.id}.html">{$vo.title}</a></li>
+          {/foreach}
+        </ul>
+      </div>
+    </div>
+    <div class="notice-list v6-container">
+      <ul class="industry-info-slide" id="notice-list-container" bi_parent_name="caseList">
+		  {foreach $newsList.list as $key=>$vo } 
+        <li class="content-item">
+          <span class="time time-mb">{$vo.create_date | date='Y-m-d'}</span>
+          <div class="time time-pc">
+              <div class="date-year">{$vo.create_date | date='Y'}</div>
+              <div class="date-month">{$vo.create_date | date='m'}<span>月</span></div>
+              <div class="date-day">{$vo.create_date | date='d'}</div>
+          </div>
+          <div class="content-item-right">
+            <span class="category"></span>
+            <span class="content">
+              <a href="/newsarticle/{$vo.id}.html" target="_blank" class="js-title" title="{$vo.title}">
+             {$vo.title}
+              </a>
+            </span>
+          </div>
+          
+        </li>
+      {/foreach}
+      </ul>
+    </div>
+	{if $newsList.num >1}
+    <div class="pagination-container">
+		<span class="pagination-text">共{$newsList.count}条</span>
+		<a class="pagination-toFirst {if $newsList.next}disabled{/if}" {if $newsList.previous}href="/news/{$newsList.previous}.html"{/if}></a>
+		    <ul class="pagination">
+				<li class="{if $newsList.next}disabled{/if}"><a {if $newsList.previous}href="/news/{$newsList.previous}.html"{/if}></a></li>
+			{for start="$newsList.start" end="$newsList.num"}
+				  <li class="{if $i==$newsList.page}active{/if}">
+				    <a href="/news/{$i}.html">{$i}</a>
+				  </li>
+			{/for}
+			<li class="{if $newsList.previous}disabled{/if}"><a {if $newsList.next}href="/news/{$newsList.next}.html"{/if}></a></li>
+			</ul>
+			<a class="pagination-toLast {if $newsList.previous}disabled{/if}" {if $newsList.next}href="/news/{$newsList.next}.html"{/if}></a>
+			<span class="pagination-text">共{$newsList.total_page}页 </span>
+			<span class="pagination-text">跳到第</span>
+			<input type="text" class="pagination-to" name="currentPage" id="pageNum" value="" oninput="value=value.replace(/[^\d]/g,'')">
+			<span class="pagination-text">页</span>
+			<input maxpage="2488" type="submit" class="pagination-submit" id="pageGoto" onclick="gotoPage()" value="跳转">
+			<script>
+				$('#pageNum').on('keydown', function() {
+					var keyCode = event.keyCode || event.which;
+					if (keyCode == '13') {
+						gotoPage();
+					}
+				});
+				function gotoPage() {
+					var page = parseInt($('#pageNum').val()) && parseInt($('#pageNum').val()) > 0 ? parseInt($('#pageNum').val()) : 1;
+					var maxPage = parseInt($('#pageGoto').attr('maxPage'));
+					var pageNo = maxPage && page > maxPage ? maxPage : page;
+					var urlPattern = '/news/$0.html';window.location.href = urlPattern.replace('$0', pageNo);
+				}
+			</script>
+			</div>
+			{/if}
+  </div>
+    </div>
+	{else/}
+	{include file="common/header"  title="抱歉,我们暂时进入了维护模式" keywords="$setting.web_seo_keywords" description="$setting.web_seo_desc" /}
+	<div id="notfound" class="d-flex align-items-center justify-content-center">
+	    <div class="notfound text-center">
+	      <div class="container">
+	        <div class="notfound-404">
+	          <h1>Oops!</h1>
+	        </div>
+	        <h2>很抱歉，我们暂时进入了维护~</h2>
+	        <p>原因为{$setting.web_close_mode_message}</p>
+	      </div>
+	    </div>
+	  </div>
+	{/if}
+	  {include file="common/footer"  /}

@@ -1,0 +1,289 @@
+{if empty($setting.web_close_mode_message)}
+{include file="common/header" title="$helpSearch.search" keywords="$helpSearch.search" description="$helpSearch.search"/}
+{tagdata name="helpCate,helpSearch,newsCate,newsList" /}
+<link rel="stylesheet" href="{$setting.web_view}/style/css/sindex.css">
+<link rel="stylesheet" href="{$setting.web_view}/style/css/search.css" />
+<div id="content" data-site="china">
+	<div>
+		<div class="search-container">
+			<div class="search-wrapper">
+				<div class="search-form">
+					<form action="/helpsearch.html" id="search_form" data-no-results-text="没有找到结果，请重新输入">
+						<div class="search-box search-floating">
+							<input name="search" type="search" class="search-in searchInput" placeholder="输入关键词搜索帮助文档"
+								maxlength="50" autocomplete="off" value="{$helpSearch.search}">
+							<span class="search-btn-close"></span>
+							<span class="search-vertical-bar"></span>
+							<button type="submit" class="por-icon por-icon-search" style="position:absolute;right:10px;top:10px;background: none;border: none;"></button>
+							<button class="search-button search-btn-submit pc-show" onclick="mySearch()">搜索</button>
+						</div>
+						<div class="tabsSelectWrap collesped">
+							<div class="selectedTab">
+								<span class="select-lable">{if empty($helpSearch.list)}很抱歉,我们没有找到包含"{$helpSearch.search}"的文章{else/}我们帮您找到了以下包含"{$helpSearch.search}"的文章({$helpSearch.count}){/if}</span>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="search-classify pc-show">
+			<div class="search-classify-wrapper">
+				<ul class="search-classify-list">
+					<li class="active">
+						<a>{if empty($helpSearch.list)}很抱歉,我们没有找到包含"{$helpSearch.search}"的文章 {else/}我们帮您找到了以下包含"{$helpSearch.search}"的文章 （{$helpSearch.count}）{/if}</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<section class="search-result">
+			<div class="search-result-wrapper">
+				<div class="search-result-content" id="search_result_content">
+					<div class="" style="width:100%;position:relative;">
+						<div>
+							{if empty($helpSearch.list)}
+							<div class="search-no-data" style="display: block;">
+							    <div class="search-not-found">
+							            <img src="{$setting.web_view}/style/image/no_data.png">
+							        <p class="search-p-sorry">很抱歉，没有找到您期望的内容，请尝试其它搜索词。</p>
+							        <p class="search-p-phone">你可能感兴趣：</p>
+							        <p class="search-no-tips">
+							            <a href="/free.html" target="_blank">最新活动</a>
+							            <span class="line"></span>
+							            <a href="/cart" target="_blank">产品目录</a>
+							            <span class="line"></span>
+							            <a href="/help.html" target="_blank">自助服务</a>
+							            <span class="line"></span>
+							            <a href="/help.html" target="_blank">帮助文档</a>
+							        </p>
+							    </div>
+							</div>
+							{else/} 
+							<div>
+								<div class="search-result-card pep-prodoc-banner" data-index="0">
+									<div>
+										<div class="pc-show">
+											<div>
+												<div class="search-result-card-product">
+													<div class="template-type-pc">
+														<div class="product-banner-main">
+															<div class="product-banner-title">
+																<h1>弹性云服务器 ECS</h1>
+															</div>
+															<p class="product-banner-paragraph">弹性云服务器（Elastic Cloud
+																Server）是一种可随时自助获取、可弹性伸缩的云服务器，帮助用户打造可靠、安全、灵活、高效的应用环境，确保服务持久稳定运行，提升运维效率
+															</p>
+															<div class="product-banner-paragraph-sub">
+																<p>三年低至5折，多种配置可选</p>
+																<a class="product-banner-link" href="/product/ecs.html" target="_blank"> 了解详情 》</a>
+															</div>
+															<div class="product-banner-btn-group ">
+																<a class="cui-btn cui-btn-primary " href="/cart" target="_blank">立即购买</a>
+																<a class="cui-btn cui-btn-outline-primary" href="/cart" target="_blank">价格计算器</a>
+																<a class="cui-btn cui-btn-outline-primary product-banner-btn-last" href="http://wpa.qq.com/msgrd?v=3&uin={$setting.company_qq}&site=qq&menu=yes" target="_blank">1对1咨询</a>
+																<div class="product-banner-textbtn-group product-banner-ecs-textbtn">
+																	<a class="product-banner-textbtn" href="/help.html" target="_blank">帮助文档</a></div>
+															</div>
+															<div class="card-helpdoc-recommend product-banner-recommend" style="display: block;">
+																<span class="product-banner-recommend-title">相关推荐：</span><a
+																	class="product-banner-recommend-link"
+																	href="/cart">香港云服务器</a><a
+																	class="product-banner-recommend-link"
+																	href="/cart">裸金属服务器</a><a
+																	class="product-banner-recommend-link"
+																	href="/cart">显卡服务器</a><a
+																	class="product-banner-recommend-link"
+																	href="/cart">站群服务器</a><a
+																	class="product-banner-recommend-link"
+																	href="/cart">海外服务器</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="mb-show">
+											<div>
+												<div class="template-type-mb">
+													<div class="template-contain">
+														<div class="template-title">
+															<h1>弹性云服务器</h1>
+														</div>
+														<p class="template-desc">弹性云服务器（Elastic Cloud
+															Server）是一种可随时自助获取、可弹性伸缩的云服务器，帮助用户打造可靠、安全、灵活、高效的应用环境，确保服务持久稳定运行，提升运维效率
+														</p>
+														<div class="template-btn-group">
+															<ul class="search-items list-paddingleft-2">
+																<li>
+																	<p><a href="/cart" target="_self" >立即购买</a></p>
+																</li>
+																<li>
+																	<p><a href="/cart" target="_self">价格计算器</a></p>
+																</li>
+																<li>
+																	<p><a href="http://wpa.qq.com/msgrd?v=3&uin={$setting.company_qq}&site=qq&menu=yes" >1对1咨询</a></p>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<ul class="search-result-list">
+									{foreach $helpSearch.list as $key=>$vo }
+									<li class="result-item">
+										<h2 class="search-txtw1">
+											<a href="/helparticle/{$vo.id}.html" target="_blank"><span
+													class="cur">{$vo.label}</span>{$vo.title}</a>
+										</h2>
+										<p class="intro">{$vo.description}</p>
+										<div class="come-form">
+											发布时间：{$vo.create_date}
+										</div>
+									</li>
+									{/foreach}
+
+								</ul>
+
+								{if $helpSearch.num >1}
+
+								<div class="paginationWrap">
+									<div class="pagination-container">
+										<span class="pagination-text">总条数：{$helpSearch.count}</span>
+										<ul class="pagination">
+											<!-- 第一页的前一页disabled -->
+											<li class="{if $helpSearch.previous}disabled{/if}">
+												<a href="/helpsearch.html?search={$helpSearch.search}&page={$helpSearch.previous}" aria-label="Previous"></a>
+											</li>
+											{for start="$helpSearch.start" end="$helpSearch.num"}
+											<li class="pagination-goto-mb {if $i==$helpSearch.page}active{/if}">
+												<a href="/helpsearch.html?search={$helpSearch.search}&page={$i}">{$i}</a>
+											</li>
+
+											<li class="{if $i==$helpSearch.page}active{/if}">
+												<a href="/helpsearch.html?search={$helpSearch.search}&page={$i}">{$i}</a>
+											</li>
+											{/for}
+											<li class="{if $helpSearch.next}disabled{/if}">
+												<a href="/helpsearch.html?search={$helpSearch.search}&page={$helpSearch.next}" aria-label="Next"></a>
+											</li>
+										</ul>
+										<input type="text" class="pagination-to" name="currentPage" id="pageNum" value="" oninput="value=value.replace(/[^\d]/g,'')">
+										<input maxpage="2488" type="submit" class="pagination-submit" id="pageGoto" onclick="gotoPage()" value="跳转">
+										<script>
+											$('#pageNum').on('keydown', function() {
+												var keyCode = event.keyCode || event.which;
+												if (keyCode == '13') {
+													gotoPage();
+												}
+											});
+											function gotoPage() {
+												var page = parseInt($('#pageNum').val()) && parseInt($('#pageNum').val()) > 0 ? parseInt($('#pageNum').val()) : 1;
+												var maxPage = parseInt($('#pageGoto').attr('maxPage'));
+												var pageNo = maxPage && page > maxPage ? maxPage : page;
+												var urlPattern = '/helpsearch.html?search={$helpSearch.search}&page=$0';window.location.href = urlPattern.replace('$0', pageNo);
+											}
+										</script>
+										<style>
+											.pagination-text+.pagination-submit {
+												margin-left: 3px;
+											}
+
+											.paginationWrap>.pagination-container {
+												margin-bottom: 10px;
+												height: 90px;
+												padding-top: 33px;
+											}
+										</style>
+									</div>
+								</div>
+								{/if}
+								{/if}
+							</div>
+						</div>
+					</div>
+				<!-- 右侧推荐 -->
+				<div class="search-pendant">
+					<div>
+						<div id="search-sidebar-ad">
+							<div class="search-hot product-rcd">
+								<h2>他们还在搜索</h2>
+								<div id="product-rcd-area">
+									{foreach $keyword as $key =>$tag}
+									<p class="recommendResult"><span class="logstats"></span>
+									<a class="search-hot1" href="/helpsearch.html?search={$tag}" target="_blank">{$tag}</a></p>
+									{/foreach}
+								</div>
+							</div>
+							{if $pro}
+							<div class="search-ad">
+								<div class="search-hottuo">
+									<h2>为您推荐</h2>
+									<p class="recommendResult" data-index="21">
+										<span class="logstats" style="display:none;" data-id="promotionrecommend1"
+											data-type="recommend"></span>
+									</p>
+									<div id="recommond">
+										<div id="recommondAdv" class="recommond-img">
+											<div data-mod-id="pep-ad-img_1619512387840">
+												<div class="pep-ad-img">
+													<div class="pep-ad-img-wrapper" style="width:240px;height:240px;">
+														<style>
+															.pep-ad-img-wrapper {
+																box-sizing: border-box;
+																display: block;
+																position: relative;
+																text-decoration: none;
+																overflow: hidden;
+																margin: 0px auto;
+															}
+															.pep-smart-recommend-img-card img {
+																width: 100%;
+																height: auto;
+															}
+														</style>
+                                                        {foreach $pro as $key=>$val}
+														<a class="pep-smart-recommend-img-card" href="{$val.url}" target="_blank">
+															<img class="portal-smart-recommends-card-title" src="/{$val.pic}">
+														</a>
+														{/foreach}
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<p></p>
+								</div>
+							</div>
+                            {/if}
+						</div>
+					</div>
+				</div>
+			</div>
+			</section>
+			</div>
+		</div>
+	<style>
+		.search-classify {
+			border-bottom: 1px solid hsla(0, 0%, 84.7%, 0.5);
+			box-shadow: none;
+			margin-top: -50px;
+			background: transparent;
+		}
+	</style>
+{else/}
+{include file="common/header" title="抱歉,我们暂时进入了维护模式" keywords="$setting.web_seo_keywords" description="$setting.web_seo_desc" /}
+<div id="notfound" class="d-flex align-items-center justify-content-center">
+	<div class="notfound text-center">
+		<div class="container">
+			<div class="notfound-404">
+				<h1>Oops!</h1>
+			</div>
+			<h2>很抱歉，我们暂时进入了维护~</h2>
+			<p>原因为{$setting.web_close_mode_message}</p>
+		</div>
+	</div>
+</div>
+{/if}
+{include file="common/footer" /}

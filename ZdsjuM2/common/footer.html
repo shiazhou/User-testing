@@ -1,0 +1,320 @@
+{php}require_once "../app/zdsju.php";
+$br = get_br();
+$all = get_all();
+foreach($all as $site);
+$seo = seo();foreach($seo as $seo);
+$keyword = get_keyword();
+$qqmc = qqmc();$qqzh = qqzh();
+$pro = get_pro();
+$syxl = syxl();
+foreach($syxl as $syxl);
+$tcgg = tcgg();
+foreach($tcgg as $tcgg);
+{/php}
+{if $site.xfdl == 1}{if !$userInfo}
+<div id="tip_bottom" class="tip_bottom {if $site.xfxs == 0}zdynone{/if}">
+    <div class="tip_bottom_cont">
+        <div class="tip_bottom_bg"></div>
+        <div class="tip_bottom_cont_c">
+            <div class="tip_bottom_main">
+                <div class="tip_fot_user"></div>
+                <div class="tip_bottom_left">
+                    <a href="javascript:void(0);" onclick="$('.tip_bottom').hide();" class="tip_bottom_close png"></a>
+                    <div class="tip_bottom_ewm">
+                        <div class="tip_bottom_ewm_bg">
+                            <i class="tip_bottom_ewm_p_icon"></i>
+                            <img src="https://api.pwmqr.com/qrcode/create/?url={$setting.web_url}" width="90" height="90">
+                        </div>
+                        <div class="tip_bottom_ewm_p">扫一扫访问手机版</div>
+                    </div>
+                    <div class="tip_bottom_leftbox">
+                        <span class="tip_bottom_logo"><h2>海量云产品 助您快速上云</h2></span>
+						<div class="tip_bottom_num "><span>30</span>+ 高防云产品</div>
+                        <div class="tip_bottom_num "><span>1000</span>+企业的共同选择</div>
+                    </div>
+                     <div class="tip_bottom_member">
+                        <a href="/login" class="tip_bottom_login">登录</a>
+                        <a href="/register" class="tip_bottom_reg">快速注册<i class="tip_bottom_reg_icon"></i></a>
+                    </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/if}{/if}
+<script type="text/javascript">
+$(function() {
+    $("a").each(function() {
+        $(this).text() === " Powered by ©智简魔方" && $(this).remove();
+    });
+    });
+ </script>
+{if $site.tcgg == 1}
+<div class="zdynone">
+<div class="light white_content">
+	<div class="ck">
+    <a href="{$tcgg.url}" class="img">
+    <img  src="/{$tcgg.pic}" width="100%" height="100%" alt="{$tcgg.btn}" >
+	</a>
+	<a href="javascript:void(0)" onclick="start1()" class="gb">×</a>
+	</div>
+</div>
+</div>
+{/if}
+<div class="footer-service" meta-data-adjust-app="hide">
+      <div class="footer-service-wrapper por-container">
+        <ul>
+			<li>
+			  <a href="/support.html#part3" target="_blank">
+			    <i class="footer-icon-support lazyload" data-src="{$setting.web_view}/style/image/wyt.svg"></i>
+			    <h2>退订</h2>
+			    <p>享无忧退订服务</p>
+			  </a>
+			</li>
+			<li>
+			  <a href="/support.html#part1" target="_blank">
+			    <i class="footer-icon-support lazyload" data-src="{$setting.web_view}/style/image/lyb.svg"></i>
+			    <h2>0元</h2>
+			    <p>免费备案</p>
+			  </a>
+			</li>
+			<li>
+			  <a href="/support.html#part5" target="_blank">
+			    <i class="footer-icon-support lazyload" data-src="{$setting.web_view}/style/image/vip.svg"></i>
+			    <h2>专业服务</h2>
+			    <p>云业务全流程支持</p>
+			  </a>
+			</li>
+          <li>
+            <a href="/support.html#part4" target="_blank">
+              <i class="footer-icon-support lazyload" data-src="{$setting.web_view}/style/image/support.svg"></i>
+              <h2>7*24</h2>
+              <p>多渠道服务支持</p>
+            </a>
+          </li>
+          <li>
+            <a href="/submitticket" target="_blank">
+              <i class="footer-icon-support lazyload" data-src="{$setting.web_view}/style/image/feedback.svg"></i>
+              <h2>建议反馈</h2>
+              <p>优化改进建议</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="footer">
+      <div class="footer-hots-mb" meta-data-adjust-app="hide">
+        <div class="footer-hots-mb-wrapper">
+          <div class="footer-hots-mb-title">{$setting.company_name}热门产品</div>
+          <ul>
+			  {foreach $www_bottom as $key => $val}{foreach $val.son as $k => $v}
+			  {if $i++ < 3}
+              <li><a href="{$v.url}" target="_blank">{$v.name}</a></li>
+			  {/if}
+            {/foreach}{/foreach}
+          </ul>
+        </div>
+      </div>
+      <div class="footer-nav" meta-data-adjust-app="hide">
+        <div class="footer-nav-wrapper por-container">
+          <div class="footer-nav-content">
+			  <div class="footer-nav-menus">
+			  	 {foreach $www_bottom as $key => $val}
+			    <dl>
+			      <dt>{$val.name}</dt>
+			  	{if (isset($val.son))}
+			  	{foreach $val.son as $k => $v}
+			      <dd>
+			        <a class="footer-link" href="{$v.url}" target="_blank" {if (isset($v.tag))}tag="{$v.tag}"{/if}>{$v.name}</a>
+			  	  </dd>
+			  	  {/foreach}
+			  	{/if}
+			    </dl>
+			  {/foreach}
+			  </div>
+            <div class="footer-nav-submenus">
+              <div class="footer-nav-submenus-inner">
+                <div class="footer-nav-contact">
+                  <div class="footer-nav-contact-phone">
+                    <h2>售前咨询热线</h2>
+                    <a href="javascript:;">
+                      <i class="contact-icon lazyload" data-src="{$setting.web_view}/style/image/black-phone.svg"></i>
+                      <i class="contact-icon-hover lazyload" style="background-image: url('{$setting.web_view}/style/image/red-phone.svg');"></i>
+                      <span>{$setting.company_phone}</span></a>
+                  </div>
+                  <ul class="footer-nav-contact-emails">
+                    {if $setting.company_qq}<li>
+                      <div class="footer-nav-contact-emails-item">
+                        <a href="http://wpa.qq.com/msgrd?v=3&amp;uin={$setting.company_qq}&amp;site=qq&amp;menu=yes" target="_blank">综合在线客服</a>
+                        <div class="foot-email">
+                          <p>
+                            <a href="http://wpa.qq.com/msgrd?v=3&amp;uin={$setting.company_qq}&amp;site=qq&amp;menu=yes" target="_blank">客服QQ：{$setting.company_qq}</a>
+                        </div>
+                      </div>
+                    </li>{/if}
+					{if $setting.company_email}
+					<li>
+					  <div class="footer-nav-contact-emails-item">
+					    <a href="mailto:{$setting.company_email}">电子邮件</a>
+					    <div class="foot-email">
+					      <p>
+					        <a href="mailto:{$setting.company_email}">{$setting.company_email}</a></p>
+					    </div>
+					  </div>
+					</li>{/if}
+                  </ul>
+                </div>
+                <!-- div class="footer-nav-download">
+                  <a href="javascript:;">
+                    <i>
+                    </i>下载{$setting.company_name}APP</a>
+                </div -->
+                <p class="footer-nav-contact-title">关注我们</p>
+                <dl class="footer-nav-about">
+                  <dt>关注{$setting.company_name}</dt>
+                  <dd class="footer-nav-about-dd-mb">
+                    <a class="footer-nav-submenus-link footer-nav-submenus-link-phone" href="tel:{$setting.company_phone}">
+                      <i class="footer-icon-phone"></i>
+                      <p>{$setting.company_phone}</p>
+                    </a>
+                  </dd>
+                  <dd>
+                    <a class="footer-nav-submenus-link weixin-sh">
+                      <i class="svgicon" svg-src="{$setting.web_view}/style/image/wechat.svg"></i>
+                      <p>{$setting.company_name}微信</p>
+                      <div class="footer-nav-submenus-qr qr-wechat">
+                        <span style="background-image:url(/{$site.wxewm})"></span>
+                        <p>扫描二维码关注我们</p>
+                      </div>
+                    </a>
+                  </dd>
+                  <dd>
+                    <a class="footer-nav-submenus-link " href="/">
+                      <i class="svgicon" svg-src="{$setting.web_view}/style/image/weibo.svg"></i>
+                      <p>{$setting.company_name}WAP手机版</p>
+                      <div class="footer-nav-submenus-qr qr-weibo" href="{$setting.web_url}">
+                        <span style="background-image:url(https://api.pwmqr.com/qrcode/create/?url={$setting.web_url})"></span>
+                        <p>扫描二维码访问手机版</p>
+                      </div>
+                    </a>
+                  </dd>
+                  <dd class="footer-nav-about-dd-app">
+                    <a class="footer-nav-submenus-link hover" id="footer-nav-app" href="javascript:;" target="_blank">
+                      <i class="svgicon" svg-src="{$setting.web_view}/style/image/app.svg"></i>
+                      <p>{$setting.company_name}app</p>
+                      <div class="footer-nav-submenus-qr qr-app">
+                        <span style="background-image:url(https://api.pwmqr.com/qrcode/create/?url={$setting.web_url}/app)"></span>
+                        <p>扫描下载{$setting.company_name}APP</p>
+                      </div>
+                    </a>
+                  </dd>
+                </dl>
+                <a href="tel:{$setting.company_phone}" class="footer-nav-contact-icon">
+                  <i class="lazyload" data-src="{$setting.web_view}/style/image/black-phone.svg"></i>售前咨询：
+                  <em>{$setting.company_phone}</em></a>
+                <div class="wx-pop-wrapper">
+                  <div class="wx-pop">
+                    <img class="dbl-lazy loaded lazyload" data-src="/{$site.wxewm}">
+                    <p class="wx-info">长按/截图保存，微信识别二维码
+                      <br>或者关注公众号“{$setting.company_name}”</p></div>
+                </div>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+	  {if $f_links}
+      <div class="footer-hot-recommend">
+        <div class="footer-hot-recommend-wrapper por-container">
+          <div class="footer-hot-recommend-content">
+            <div class="content-left">友情链接</div>
+            <div class="content-center">
+			{foreach $f_links as $k => $v}
+              <a class="recommend-item" title="{$v.name}" href="{$v.domain}" target="_blank" tag="{$v.link_tag}">{$v.name}</a>
+			  {/foreach}
+             </div>
+            <div class="content-right"></div>
+            <div class="footer-collapse-icon"></div>
+          </div>
+        </div>
+      </div>
+	  {/if}
+      <div class="footer-copyright-container" meta-data-adjust-app="hide">
+        <div class="footer-copyright-wrapper por-container">
+          <div class="footer-copyright">
+            <span>Copyright © 2020-2024 {$setting.company_name} 版权所有</span>
+            {if $site.ymzc} <span>代理域名注册服务机构：{$site.ymzc}</span>{/if}
+			</div>
+          <div class="footer-record">
+			{if $site.isp}<a class="footer-link" href="http://syjj.enshi.gov.cn/" target="_blank"><i class="footer-icon-record0"></i>《中华人民共和国增值电信业务经营许可证》编号：{$site.isp}</a>{/if}
+            {if $site.xydm}<a class="footer-link" href="http://www.gsxt.gov.cn/" target="_blank"><i class="footer-icon-record1"></i>统一社会信用代码：{$site.xydm}</a>{/if}
+            {if $site.gaba}<a class="footer-link" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode={$site.gaba}" target="_blank"><i class="footer-icon-record2"></i>公安部备案：{$site.gaba}</a>{/if}
+			{if $setting.company_record}<a class="footer-link" href="https://beian.miit.gov.cn/" target="_blank"><i class="footer-icon-record0"></i>{$setting.company_record}</a>{/if}
+          </div>
+        </div>
+      </div>
+	  <div class="float-sidebar last show-totop" data-mod-id="allSet[1]" data-mod-name="child-component" qrcode="false" bi_parent_name="floatSidebar" meta-data-adjust-app="hide" range="default" match="include" style="visibility: visible;">
+	  {if $site.actpic}<a class="float-bar-ad" href="/{$site.xfgg}" target="_blank" style="background-image: url('/{$site.actpic}'); width:48px;height: 135px;"></a>{/if}
+	            <div class="span shown-btn"><span class="dot"></span></div>
+	            <ul class="float-bar-nav">
+	              <li class="item tel">
+	                <div class="phone-icon"><i></i></div>
+	                <p><a href="/contact.html" target="_blank">在线客服</a></p>
+	                <div class="sub-nav-layer">
+	                  <div class="sub-nav-main">
+	                    <div class="sub-inner inner">
+	                      <a class="telcall" href="service/contact.html" target="_blank">
+	                        <span class="icons-float-bar f3"></span>
+	                        <p class="title">服务热线</p>
+	                        <p class="info info-pc" href="javascript:void(0)">{$setting.company_phone}</p>
+	                      </a>
+	                      <a class="info info-mb" href="tel:{$setting.company_phone}">{$setting.company_phone}</a>
+	                    </div>
+	                    <div class="sub-inner inner">
+							{if $site.qqmc}
+	                        <span class="icons-float-bar f2"></span>
+	                        <p class="title">QQ客服中心</p>
+							<p class="info">
+								<span>
+								{foreach $qqmc as $qqmc}
+								<em>{$qqmc}:</em>
+								{/foreach}
+								</span>
+								<span>
+								{foreach $qqzh as $qqzh}
+								<a href="http://wpa.qq.com/msgrd?v=3&uin={$qqzh}&site=qq&menu=yes" target="_blank">
+									 <img border="0" src="{$setting.web_view}/style/image/button_111.gif" alt="点击这里给我发消息" title="点击这里给我发消息"/>
+								</a>
+								{/foreach}
+								</span>
+							</p>
+							{else}
+							<a class="smartQA" href="http://wpa.qq.com/msgrd?v=3&uin={$setting.company_qq}&site=qq&menu=yes" target="_blank">
+							<span class="icons-float-bar f2"></span>
+							<p class="title">QQ在线客服</p>
+							<p class="info"><span>竭诚为您解答各种问题</span></p>
+							</a>
+							{/if}
+	                    </div>
+	                    <div class="sub-inner inner">
+	                      <a class="feedback" href="/submitticket" target="_blank">
+	                        <span class="icons-float-bar f4"></span>
+	                        <p class="title">建议反馈</p>
+	                        <p class="info"><span>您的每一条建议声音，我们都认真对待</span></p>
+	                      </a>
+	                    </div>
+	                  </div>
+	                </div>
+	              </li>
+	              <li class="item to-top-btn"><a href="#toTop"><span class="icons-float-bar to-top"></span></a></li>
+	            </ul>
+	        </div>
+    </div>
+    <script src="{$setting.web_view}/style/js/swiper-3.4.2.jquery.min.js"></script>
+    <script src="{$setting.web_view}/style/js/index.js"></script>
+    
+ 
+    
+  </body>
+</html>

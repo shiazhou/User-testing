@@ -1,0 +1,87 @@
+{include file="common/header"  title="友情链接" keywords="$setting.company_name" description="$setting.company_profile" /}
+	<link href="{$setting.web_view}/style/css/about/links.css" rel="stylesheet" type="text/css"/>
+		<script src="{$setting.web_view}/style/css/about/zeroclipboard.min.js"></script>
+		<script src="{$setting.web_view}/style/css/about/jquery.min.js"></script>
+		<script src="{$setting.web_view}/style/css/about/links.js"></script>
+
+
+			<div class="about-outer about-links clearfix auto" id="content">
+				<div class="about-main-container pull-left">
+				{if $f_links}
+				<div class="links-main clearfix">
+					<div class="links-wrap-div clearfix">
+						{foreach $f_links as $k => $v}
+						<a href="{$v.domain}" target="_blank" title="{$v.name}" class="links-bg-a" tag="{$v.link_tag}">{$v.name}</a>
+						{/foreach}
+					</div>
+				</div>
+                {/if}
+				<div class="share-link-wrapper clearfix">
+					<div>
+						<p class="ab-part-title">
+							交换链接说明
+						</p>
+						<p class="links-introduce-p">
+							符合PR>=2，Alexa排名200以内的网站，可以和{$setting.company_name}相互添加网站链接，具体操作方式如下：
+						</p>
+
+						<div class="share-link-left">
+							<p class="share-link-left-title">在贵站添加{$setting.company_name}链接</p>
+							<p class="share-link-left-title-introduce">
+								您可以根据下方提示，在您的网站中插入{$setting.company_name}的文字链接、图片链接代码。
+							</p>
+							<div class="share-code-title">
+								文字链接代码：
+							</div>
+							<div class="txt-link-code clearfix">
+								<div class="link-code-box link-code-box-2">
+									&lt;a target="_blank" href="{$setting.web_url}"&gt;{$setting.company_name}&lt;/a&gt;
+								</div>
+								<div class="link-preview-box-2 clearfix">
+									<div class="preview-text">文字预览效果：</div>
+									<div class="preview-info-2">
+										<a target="_blank" href="{$setting.web_url}">{$setting.company_name}</a>
+									</div>
+								</div>
+								<div class="copy-code-1" id="copyTxtCode" data-clipboard-text='<a target="_blank" href="{$setting.web_url}">{$setting.company_name}</a>'>
+									复制代码
+								</div>
+								<span class="copied-remind" id="txtCodeRemind">您已复制成功</span>
+							</div>
+							<div class="ie7-fix"></div>
+							<div class="share-code-title">
+								<!--<span class="logo-code-icon"></span>-->
+								图片链接代码：
+							</div>
+							<div class="logo-link-code clearfix">
+								<div class="link-code-box  link-code-box-1">
+									&lt;a target="_blank" href="{$setting.web_url}"&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="{$setting.web_url}/{$site.logo}"&gt;<br/>&lt;/a&gt;
+								</div>
+								<div class="link-preview-box clearfix">
+									<div class="preview-text">图片预览效果：</div>
+									<div class="preview-info" >
+										<img src="/{$site.logo}" />
+									</div>
+								</div>
+								<div class="copy-code-1" id="copyLogoCode" data-clipboard-text='<a target="_blank" href="{$setting.web_url}"><img src="{$setting.web_url}/{$site.logo}"></a>'>
+									复制代码
+								</div>
+								<span class="copied-remind" id="logoCodeRemind">您已复制成功</span>
+							</div>
+							<div class="ie7-fix"></div>
+							<p class="share-link-left-title">将贵站链接邮件给我们 </p>
+							<p class="share-link-left-title-introduce step2-introduce">
+								完成第一步后，将贵站链接邮件至
+								<a href="mailto:{$setting.company_email}" class="color-blue">{$setting.company_email}</a>。
+							</p>
+							<p class="share-link-left-title">{$setting.company_name}审核回复 </p>
+							<p class="share-link-left-title-introduce">
+								收到邮件后，我们会于3个工作日内尽快审核并回复。
+							</p>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		<div class="hide" id="hiddenStatic">{$setting.web_view}/style</div>
+{include file="common/footer"  /}

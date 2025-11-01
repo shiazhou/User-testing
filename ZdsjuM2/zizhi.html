@@ -1,0 +1,59 @@
+{include file="common/header"  title="资质荣誉" keywords="$setting.company_name" description="$setting.company_profile"/}
+{php}$ryzs = ryzs();$zzzs = zzzs();$zscq = zscq();{/php}
+<link rel="stylesheet" href="{$setting.web_view}/style/css/about/lightbox.min.css"/>
+<link rel="stylesheet" href="{$setting.web_view}/style/css/about/certificate.css"/>
+	<div class="about-page" id="content">
+		<div class="module-banner about-banner module-banner-bg">
+			<div class="auto ab-comm-banner">
+				<div class="title-info">
+					<span class="china-title">资质证书</span>
+					<span class="english-title">QUALIFICATION CERTIFICATE</span>
+				</div>
+			</div>
+		</div>
+		<div class="certificate-main">
+			<div class="auto">
+				{if $ryzs}
+		        <div class="certification-type">{$common_site_name}荣誉证书 <span class="english"> HONOR</span></div>
+				{foreach $ryzs as $key=>$val}
+		        <div class="certificate-item">
+		               <div class="certificate-item-img">
+			                <a href="/{$val.mpic}" data-lightbox="img-license" class="text-stress">
+		                        <img src="/{$val.pic}"/>
+			                </a>
+							<div class="certificate-name">{$val.title}</div>
+		                </div>
+		            </div>
+				{/foreach}
+				{/if}
+				    {if $zzzs}
+		            <div class="certification-type">{$common_site_name}资质证书  <span class="english">QUALIFICATIONS</span></div>
+		           {foreach $zzzs as $key=>$val}
+		           <div class="certificate-item">
+		                  <div class="certificate-item-img">
+		                       <a href="/{$val.mpic}" data-lightbox="img-license" class="text-stress">
+		                           <img src="/{$val.pic}"/>
+		                       </a>
+		           			<div class="certificate-name">{$val.title}</div>
+		                   </div>
+		               </div>
+		           {/foreach}
+					{/if}
+					{if $zscq}
+		            <div class="certification-type">{$common_site_name}知识产权  <span class="english">INTELLECTUAL PROPERTY</span></div>
+		            {foreach $zscq as $key=>$val}
+		            <div class="certificate-item">
+		                   <div class="certificate-item-img">
+		                        <a href="/{$val.mpic}" data-lightbox="img-license" class="text-stress">
+		                            <img src="/{$val.pic}"/>
+		                        </a>
+		            			<div class="certificate-name">{$val.title}</div>
+		                    </div>
+		                </div>
+		            {/foreach}
+		            {/if}
+		            </div>
+		</div>
+		</div>
+		<script src="{$setting.web_view}/style/css/about/lightbox.min.js"></script>
+{include file="common/footer"  /}
