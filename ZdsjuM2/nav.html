@@ -1,0 +1,669 @@
+{php}require_once "../app/zdsju.php";
+$all = get_all();
+foreach($all as $site);
+$keyword = get_keyword();
+$fars = get_fars();
+$act = get_act();
+$gy = get_gy();
+$pro = get_pro();
+{/php}
+	<div class="edit-header">
+		<div id="header" class="">
+			<div class="header-container">
+				<div class="header-wrapper">
+					<div class="header-inner">
+						<div class="header-bottom">
+							<h2 class="header-logo-outer"><a class="header-logo" href="/"><img class="" src="/{$site.logo}" /></a></h2>
+							<div class="header-nav">
+								<div class="header-nav-scroll">
+									<ul class="header-nav-list">
+										{foreach $www_top as $key =>$val}{if (!isset($val.son))}
+										<li class="nav-bot">
+											<a href="{$val.url}"><span>{$val.name}</span></a>
+										</li>
+										{/if}{if (isset($val.son))}
+										<li data-key="{$val.name}" class="hasicon">
+											<a><span>{$val.name}</span></a>
+										</li>
+										{/if}{/foreach}
+									</ul>
+									<i class="scroll-lbtn por-icon por-icon-left"></i>
+									<i class="scroll-rbtn por-icon por-icon-right"></i>
+								</div>
+								<div class="header-bottom-mask"></div>
+								<div class="header-nav-hover-line"></div>
+							</div>
+							<div class="header-tools">
+								<div class="header-search J-header-search">
+									<form class="header-search-inner" action="/helpsearch.html">
+										<div class="header-search-content J-search-content">
+											<input class="J-search-input" type="search" name="search"
+												data-active-placeholder="输入您想要搜索的关键词" autocomplete="off" />
+											<button type="submit" class="header-search-submit"><i></i></button>
+											<i class="por-icon por-icon-cancel header-search-close J-search-close"></i>
+
+											<div class="header-search-droplist J-search-drop J-search-autoword show" data-clickable-asyn="true">
+												<ul>
+													<li class="to-page">
+														<div class="search-block" data-href="/product/ecs.html" target="_blank">
+															<p class="text"><span>云服务器 </span> 直达热门产品</p>
+															<div class="search-tag">
+																<a class="tag-console" target="_blank" href="/service?groupid=305">控制台</a>
+																<a href="/product/ecs.html" class="tag-product" target="_blank">产品</a>
+															</div>
+														</div>
+													</li>
+													{foreach $keyword as $key =>$tag}
+													<li><a href="/helpsearch.html?search={$tag}" target="_blank">
+											  		<span>{$tag}</span></a>
+													</li>
+													{/foreach}
+												</ul>
+											</div>
+										</div>
+									</form>
+									<div class="header-search-icon"><i></i></div>
+								</div>
+								<div class="header-menu-search-mb"><span class="header-icon-search"></span></div>
+								<ul class="header-tools-right header-main">
+									<li><a href="/help.html">文档</a></li>
+									<li><a href="/clientarea">控制台</a></li>
+									<!-- li class="header-lang ">
+										<div class="header-lang-current"><i class="header-icon-earth"></i><span class="header-lang-label">中国站</span><i class="header-icon-arrow-down"></i></div>
+										<div class="header-lang-list">
+											<div class="header-site">
+												<div class="header-site-left">International</div>
+												<ul class="header-site-right">
+													<li class="header-lang-item"><a href="/intl/en-us/">Intl-English</a></li>
+													<li class="header-lang-item"><a href="/intl/es-us/">Intl-Español</a></li>
+													<li class="header-lang-item"><a href="/intl/pt-br/">Intl-Português</a></li>
+												</ul>
+											</div>
+											<div class="header-site">
+												<div class="header-site-left">中国站</div>
+												<ul class="header-site-right ">
+													<li class="header-lang-item active"><a href="/">简体中文</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</li -->
+									{if $userInfo}{php}$message = system_message($userInfo[id]);$ticket = ticket($userInfo[id]);$invoices = invoices($userInfo[id]);$cart_session_goods = cart_session_goods($userInfo[id]);$certifi_person = certifi_person($userInfo["id"]);$certifi_company = certifi_company($userInfo["id"]);{/php}
+									<li class="header-shopping-cart">
+										<a class="shopping-cart-icon" target="_blank" href="/cart?action=viewcart"><span></span>
+											<img src="{$setting.web_view}/style/image/shopping-cart.png" />
+										</a>
+										<a class="shopping-cart-text btn js-shopping-cart" target="_blank" href="/cart?action=viewcart">
+											{if $cart_session_goods}<span class="gwcsl">{$cart_session_goods}</span>{/if}购物车
+										</a>
+									</li>
+									<li class="logined header-user user-info">
+										<div class="header-user-avator {if $message egt 1}userdt{/if}">
+											<img class="header-tool-user-avator-img account-pic lazyload" data-src="{if (!isset($userInfo.avatar))}{$userInfo.avatar}{else}{$setting.web_view}/style/image/headPic.png{/if}" />
+										</div>
+										<div class="header-user-name"><span class="my-acct"><a href="/clientarea">{$userInfo.username}</a></span><i class="header-nav-item-icon"></i></div>
+										<div class="header-user-info user-info-layer header-backdrop">
+											<ul class="header-user-info-list account-nav">
+												<li class="header-user-info-item-account account-item">
+													<a href="/clientarea" target="_blank">账号中心{$certifi_person.statu}</a>
+													{if $certifi_person.status eq 1 || $certifi_company.status eq 1}
+													<a class="account-verification header-verification active" href="/verified" target="_blank">
+														<i class="header-icon header-icon-verification-on"></i>
+														<p class="state-active">{if $certifi_company.status eq 1}已企业认证{else/}已个人认证{/if}</p>
+													</a>
+													{else/}
+													<a class="account-verification header-verification" href="/verified" target="_blank">
+														<i class="header-icon header-icon-verification"></i>
+														<p class="state-unactive">未实名认证</p>
+													</a>
+													{/if}
+												</li>
+												<li><a href="/addfunds" target="_blank">账户余额 <span class="yue">￥{$userInfo.credit}</span></a></li>
+												<li class="header-user-info-split"></li>
+												<li class="message"><a href="/billing" target="_blank">待支付订单<span>{$invoices}</span></a></li>
+												<li class="message"><a href="/supporttickets" target="_blank">待处理工单<span>{$ticket}</span></a></li>
+												<li class="message "><a href="/message" target="_blank">未读消息<span>{$message}</span></a></li>
+												<li class="header-user-info-split"></li>
+												<li><a href="/transaction" target="_blank">费用中心</a></li>
+												<li><a href="/security" target="_blank">安全中心</a></li>
+												<li><a class="mb-special" href="/clientarea" target="_blank">管理控制台</a></li>
+												<li class="header-user-info-split"></li>
+												<li class="logout"><a href="/clientarea" class="bottom-username"><span class="my-acct" title="{$userInfo.username}">{$userInfo.username}</span></a>
+													<a class="logout-btn" href="{$setting.web_url}/logout">退出登录</a></li>
+											</ul>
+										</div>
+									</li>
+									{else}
+									<li class="header-shopping-cart">
+										<a class="shopping-cart-icon" target="_blank" href="/cart?action=viewcart"><span></span>
+											<img src="{$setting.web_view}/style/image/shopping-cart.png" />
+										</a>
+										<a class="shopping-cart-text btn js-shopping-cart" target="_blank" href="/cart?action=viewcart">购物车</a>
+									</li>
+									<li class="header-login-mobile">
+										<span class="header-icon-user js-login"></span>
+										<div class="header-user-info user-info-layer user-unlogin header-backdrop">
+											<ul class="header-user-info-list account-nav">
+												<li class="header-user-info-item-account account-item button-container">
+													<a class="header-user-info-button-red" href="{$setting.web_url}/register" target="_blank">注册</a>
+													<a class="header-user-info-button-common" href="{$setting.web_url}/login" target="_blank">登录</a>
+												</li>
+											</ul>
+										</div>
+									</li>
+									<li class="header-login"><a href="{$setting.web_url}/login" class="btn js-login">登录</a></li>
+									<li class="header-register"><a href="{$setting.web_url}/register" class="btn js-register">免费注册</a></li>
+									{/if}
+								</ul>
+								<div class="header-menu-mb" data-clickable="true"><span></span><span></span><span></span></div>
+							</div>
+						</div>
+					</div>
+					    <script type="text/html" id="holder-drop"></script><script type="text/html" id="holder-mbnav"></script>
+					<div class="header-mbshearch header-backdrop">
+						<div class="header-mbshearch-innner">
+							<form class="header-mbshearch-form" action="/helpsearch.html">
+								<div class="header-mbshearch-form-row">
+									<div>
+										<div class="header-mbshearch-input-box"><i class=""></i>
+											<input class="header-mbshearch-input" type="search" name="search" data-active-placeholder="输入您想要搜索的关键词" autocomplete="off" />
+										</div>
+									</div>
+									<div><a class="header-mbshearch-cancel">取消</a></div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="footer"><script type="text/html" id="header-lazyload-html-drop" class="header-lazyload-html">
+		        <div class="header-dropdown">
+					<ul class="header-dropdown-list">
+						<li class="header-dropdown-activity J-drop-common header-backdrop-filter" data-name="最新活动">
+							<div class="dropdown-common-container">
+								<div class="dropdown-common-wrapper">
+									<div class="wrapper-container dropdown-common-wrapper-inner">
+										<div class="dropdown-common-right-wrapper">
+											<div class="dropdown-common-rightl">
+												<div class="dropdown-common-module">
+													<a class="dropdown-common-module-title ">优惠活动</a>
+													<div class="dropdown-common-module-wrapper two-cols">
+														{foreach $www_top as $key =>$val}{if $val.name eq '最新活动'}{foreach $val.son as $k =>$v}
+														<a href="{$v.url}" class="dropdown-common-item" zid="{$v.id}" {if empty($act) eq true}style="flex: 0 0 25%;max-width:25%;" {/if}>
+															<p class="dropdown-common-item-title">{$v.name}
+																{in name="v.id" value="$site.acthot"}<i class="hot"></i>{/in}
+																{in name="v.id" value="$site.actnew"}<i class="new"></i>{/in}
+															</p>
+															<p class="dropdown-common-item-desc">{$v.tag}</p>
+														</a>
+														{/foreach}{/if}{/foreach}
+													</div>
+												</div>
+											</div>
+											{if $act}
+											<div class="dropdown-common-rightr">
+												<div class="dropdown-common-recommend">
+													<p class="dropdown-common-recommend-title">活动推荐</p>
+													{foreach $act as $key=>$val}
+													<a href="{$val.url}" class="dropdown-common-recommend-link">
+														<div class="link-bg" style="background-image:url(/{$val.pic})"></div>
+														<p class="link-title">{$val.title}</p>
+														<p class="link-desc">{$val.desc}</p>
+													</a>
+													{/foreach}
+												</div>
+											</div>
+											{/if}
+										</div>
+									</div>
+								</div>
+								<div class="header-dropdown-close J-drop-close"></div>
+							</div>
+						</li>
+						<li class="header-dropdown-product J-drop-product header-backdrop-filter" data-name="产品服务">
+							<div class="dropdown-product-container">
+								<div class="dropdown-product-wrapper">
+									<div class="dropdown-product-wrapper-right J-pro-wrapper-right">
+										<form action="/cart" class="link-searcher" data-target="产品服务" data-no-results-text="没有找到结果，请重新输入" data-nav-index="0" tabindex="-1">
+											<input class="link-searcher-input" type="text" id="searchInp" name="keywords" class="por-text-input" placeholder="{$Lang.search_products}" value="{$Get.keywords}">
+											<i class="link-searcher-clear"></i>
+											<button class="link-searcher-submit" type="submit">
+												<i class=""></i>
+											</button>
+											<div class="link-searcher-drop">
+												<ul></ul>
+											</div>
+										</form>
+										<div class="hotci">{foreach $keyword as $key =>$tag}<a href="/cart?keywords={$tag}" target="_blank">{$tag}</a>{/foreach}</div>
+										<div class="dropdown-product-body J-product-body">
+											<div class="dropdown-product-content show">
+												<div class="dropdown-product-content-middle">
+													<div class="dropdown-product-content-middleb ">
+														{php} $groups = Db::name('product_first_groups')->where('hidden',0)->order(array('order'=>'asd'))->select();foreach ($groups as $vo){ {/php}
+														<div class="dropdown-product-module" zid="{$vo.id}" {if empty($pro) eq true}style="width:100%;"{/if}>
+															<a href="/cart?fid={$vo.id}" class="dropdown-product-module-title dropdown-product-module-title-icon ">{$vo.name}</a>
+															<div class="dropdown-product-module-wrapper ">
+														{php} $prod = Db::name('product_groups')->order(array('order'=>'asd'))->where('hidden',0)->where('gid',$vo['id'])->select(); foreach ($prod as $v) { {/php}
+														<a href="/cart?fid={$v.gid}&gid={$v.id}" class="dropdown-product-item" data-keywords="{$v.name}" {if empty($pro) eq true}style="-ms-flex: 0 0 25%;flex: 0 0 25%;max-width: 25%;"{/if}>
+																	<p class="dropdown-product-item-title">{$v.name}
+																		{in name="v.id" value="$site.prohot"}<i class="hot"></i>{/in}
+																		{in name="v.id" value="$site.pronew"}<i class="new"></i>{/in}</p>
+																	<p class="dropdown-product-item-desc">{$v.headline}</p>
+																</a>
+																{php}}{/php}
+															</div>
+														</div>
+													{php}}{/php}{if $pro}
+														<div class="dropdown-product-content-right">
+															<div class="dropdown-product-recommend">
+																<p class="dropdown-product-recommend-title">活动推荐</p>
+																{foreach $pro as $key=>$val}
+																<a href="{$val.url}" class="dropdown-product-recommend-link">
+																	<div class="link-bg" style="background-image:url(/{$val.pic})">
+																	</div>
+																	<p class="link-title">{$val.title}</p>
+																	<p class="link-desc">{$val.desc}</p>
+																</a>
+																{/foreach}
+															</div>
+														</div>
+														{/if}
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="header-dropdown-close J-drop-close"></div>
+							</div>
+						</li>
+						<li class="header-dropdown-solution J-drop-product header-backdrop-filter" data-name="解决方案">
+							<div class="dropdown-product-container">
+								<div class="dropdown-product-wrapper">
+									<div class="dropdown-product-wrapper-right J-pro-wrapper-right">
+										<div class="dropdown-product-body J-product-body">
+											<div class="dropdown-product-content show">
+												<div class="dropdown-product-content-middle">
+													<div class="dropdown-product-content-middleb ">
+														<p class="dropdown-product-content-middlet">
+															<a>解决方案 </a>
+														</p>
+														<div class="dropdown-product-module no-title" style="width:100%;">
+															<div class="dropdown-product-module-wrapper">
+                                                                    {foreach $www_top as $key =>$val}{if $val.name eq '解决方案'}{foreach $val.son as $k =>$v}
+																<a href="{$v.url}" class="dropdown-product-item" data-keywords="jjfa" style="flex: 0 0 25%;max-width:25%;" zid="{$v.id}">
+																	<p class="dropdown-product-item-title">{$v.name}
+																	{in name="v.id" value="$site.fahot"}<i class="hot"></i>{/in}
+																	{in name="v.id" value="$site.fanew"}<i class="new"></i>{/in}
+																	</p>
+																	<p class="dropdown-product-item-desc">{$v.tag}</p>
+																</a>
+												                     {/foreach}{/if}{/foreach}
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="header-dropdown-close J-drop-close"></div>
+							</div>
+						</li>
+						<li class="header-dropdown-market J-drop-common header-backdrop-filter" data-name="服务市场">
+							<div class="dropdown-common-container">
+								<div class="dropdown-common-wrapper">
+									<div class="wrapper-container dropdown-common-wrapper-inner">
+									<div class="dropdown-common-left-wrapper">
+											<div>
+												<i class="dropdown-common-icon" style="background-image:url('{$setting.web_view}/style/image/shichang.svg')"></i>
+												<p class="dropdown-common-title"><a>服务市场</a></p>
+												<p class="dropdown-common-desc">
+													官网自营为您提供多元化服务、一条龙服务、省事省心！</p>
+												<a class="dropdown-common-link" href="/market.html">进入服务市场<i class="header-icon-arrow-right"></i></a>
+											</div>
+										</div>
+										<div class="dropdown-common-right-wrapper">
+											<div class="dropdown-common-rightl">
+	                                               {foreach $www_top as $key =>$val}{if $val.name eq '服务市场'}{foreach $val.son as $k =>$v}{php}$prods = prods($v['id']);foreach($prods as $prods);{/php}{if $prods.hidden eq 0}
+												<div class="dropdown-common-module">
+													<a class="dropdown-common-module-title "
+														href="{if $v.nav_type_name eq '商品分组'}/cart?gid={$v.id}{else/}/cart?fid={$v.id}{/if}">{$v.name}<i class="header-icon-arrow-right"></i></a>
+													<div class="dropdown-common-module-wrapper ">
+                                                     {foreach $v.son as $vs_k => $vs_v}{php}$headline = product($vs_v['id']);foreach($headline as $vs_v);{/php}{if $vs_v.hidden eq 0}
+														<a href="{if $vs_v.nav_type_name eq '商品'}/cart?action=configureproduct&pid={$vs_v.id}{else/}/cart?fid={$v.id}&gid={$vs_v.id}{/if}" class="dropdown-common-item">
+															<p class="dropdown-common-item-title">{$vs_v.name}</p>
+														</a>{/if}{/foreach}
+													</div>
+												</div>{/if}{/foreach}{/if}{/foreach}
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="header-dropdown-close J-drop-close"></div>
+							</div>
+						</li>
+						<li class="header-dropdown-partner J-drop-common header-backdrop-filter" data-name="合作伙伴">
+							<div class="dropdown-common-container">
+								<div class="dropdown-common-wrapper">
+									<div class="wrapper-container dropdown-common-wrapper-inner">
+										<div class="dropdown-common-right-wrapper">
+											<div class="dropdown-common-rightl">
+												<div class="dropdown-common-module">
+													<a class="dropdown-common-module-title">合作伙伴</a>
+													<div class="dropdown-common-module-wrapper ">
+                                                       {foreach $www_top as $key =>$val}{if $val.name eq '合作伙伴'}{foreach $val.son as $k =>$v}
+														<a href="{$v.url}" class="dropdown-common-item" zid="{$v.id}">
+															<p class="dropdown-common-item-title">{$v.name}</p>
+															<p class="dropdown-common-item-desc">{$v.tag}</p>
+														</a>
+														{/foreach}{/if}{/foreach}
+													</div>
+												</div>
+
+											</div>
+
+										</div>
+									</div>
+								</div>
+								<div class="header-dropdown-close J-drop-close"></div>
+							</div>
+						</li>
+						<li class="header-dropdown-support J-drop-common header-backdrop-filter" data-name="服务支持">
+							<div class="dropdown-common-container">
+								<div class="dropdown-common-wrapper">
+									<div class="wrapper-container dropdown-common-wrapper-inner">
+										<div class="dropdown-common-left-wrapper">
+											<div>
+												<i class="dropdown-common-icon" style="background-image:url('{$setting.web_view}/style/image/kefu.svg')"></i>
+												<p class="dropdown-common-title"><a>支持与服务</a></p>
+												<p class="dropdown-common-desc">
+													为您提供高效的服务保障、多样化的服务支持计划，让您云上业务更便捷、更安心</p>
+												<a class="dropdown-common-link"></a>
+											</div>
+											<a class="dropdown-common-contact" href="/service/contact.html">服务热线：{$setting.company_phone}</a>
+										</div>
+										<div class="dropdown-common-right-wrapper">
+											<div class="dropdown-common-rightl">
+												<div class="dropdown-common-module">
+													<a class="dropdown-common-module-title" href="/help.html">帮助中心<i class="header-icon-arrow-right"></i></a>
+													<div class="dropdown-common-module-wrapper two-cols">
+                                                       {foreach $www_top as $key =>$val}{if $val.name eq '服务支持'}{foreach $val.son as $k =>$v}
+														<a href="{$v.url}" class="dropdown-common-item" zid="{$v.id}" {if empty($gy) eq true}style="flex: 0 0 33%;max-width:33%;"{/if} >
+															<p class="dropdown-common-item-title">{$v.name}</p>
+															<p class="dropdown-common-item-desc">{$v.tag}</p>
+														</a>
+														{/foreach}{/if}{/foreach}
+													</div>
+												</div>
+											</div>
+                                             {if $gy}
+											<div class="dropdown-common-rightr">
+												<div class="dropdown-common-recommend">
+													<p class="dropdown-common-recommend-title">栏目推荐</p>
+													{foreach $gy as $key=>$val}
+													<a href="{$val.url}" class="gyzdy dropdown-common-recommend-link">
+														<div class="link-bg" style="background-image:url(/{$val.pic})"></div>
+														<p class="link-title">{$val.title}</p>
+														<p class="link-desc">{$val.desc}</p>
+													</a>
+													{/foreach}
+												</div>
+											</div>
+											{/if}
+										</div>
+									</div>
+								</div>
+								<div class="header-dropdown-close J-drop-close"></div>
+							</div>
+						</li>
+						<li class="header-dropdown-whyUs J-drop-common header-backdrop-filter" data-name="关于我们">
+							<div class="dropdown-common-container">
+								<div class="dropdown-common-wrapper">
+									<div class="wrapper-container dropdown-common-wrapper-inner">
+										<div class="dropdown-common-left-wrapper">
+											<div>
+												<i class="dropdown-common-icon" style="background-image:url('{$setting.web_view}/style/image/about.svg')"></i>
+												<p class="dropdown-common-title" data-link='true'><a href="/about.html">了解{$setting.company_name}</a></p>
+												<p class="dropdown-common-desc">{$setting.company_name}致力于提供稳定可靠、安全可信、可持续创新的云服务。
+												</p>
+												<a class="dropdown-common-link" href="/about.html">公司介绍<i class="header-icon-arrow-right"></i></a>
+											</div>
+										</div>
+										<div class="dropdown-common-right-wrapper">
+											<div class="dropdown-common-rightl">
+												<div class="dropdown-common-module">
+													<a class="dropdown-common-module-title ">关于我们</a>
+													<div class="dropdown-common-module-wrapper two-cols">
+													      {foreach $www_top as $key =>$val} {if $val.name eq '关于我们'} {foreach $val.son as $k =>$v}
+														<a href="{$v.url}" class="dropdown-common-item" zid="{$v.id}" {if empty($gy) eq true}style="flex: 0 0 33%;max-width:33%;"{/if} >
+														<p class="dropdown-common-item-title">{$v.name}</p>
+														<p class="dropdown-common-item-desc">{$v.tag}</p>
+														</a> {/foreach}{/if}{/foreach}
+													</div>
+												</div>
+											</div>
+                                               {if $gy}
+											<div class="dropdown-common-rightr">
+												<div class="dropdown-common-recommend">
+													<p class="dropdown-common-recommend-title">栏目推荐</p>
+													{foreach $gy as $key=>$val}
+													<a href="{$val.url}" class="gyzdy dropdown-common-recommend-link">
+														<div class="link-bg" style="background-image:url(/{$val.pic})"></div>
+														<p class="link-title">{$val.title}</p>
+														<p class="link-desc">{$val.desc}</p>
+													</a>
+													{/foreach}
+												</div>
+											</div>
+											{/if}
+										</div>
+									</div>
+								</div>
+								<div class="header-dropdown-close J-drop-close"></div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</script>
+			<script type="text/html" id="header-lazyload-html-mbnav" class="header-lazyload-html" data-holder="#holder-mbnav">
+				<div class="header-mbnav">
+					<div class="header-mbnav-inner">
+						<div class="header-mbnav-level2">
+							<div class="header-mbnav-level2-inner show">
+								<div class="header-mbnav-level2-body">
+									<div class="header-mbnav-level2-leftmenu">
+										<ul class="header-mbnav-level2-menulist">
+											{foreach $www_top as $key =>$val}{if (!isset($val.son))}
+											<li class="nav-bot">
+												<a href="{$val.url}"><span>{$val.name}</span></a>
+											</li>
+											{/if}{if (isset($val.son))}
+											<li data-key="{$val.name}" class="{if $key eq 1}active{/if} ">
+												<a><span>{$val.name}</span></a>
+											</li>
+											{/if}{/foreach}
+											<!-- li data-key="language" class="">
+												<a bi_name="语言"><span>语言</span></a>
+											</li -->
+										</ul>
+									</div>
+									<ul class="header-mbnav-level2-collapses">
+										<li class="show" data-name="最新活动">
+                                           {foreach $www_top as $key =>$val}{if $val.name eq '最新活动'}{foreach $val.son as $k =>$v}
+											<div class="header-collapse header-collapse-level1 closed">
+												<div class="header-collapse-head">
+													<a href="{$v.url}">
+														<h2><span>{$v.name}</span>
+														{in name="v.id" value="$site.acthot"}<i class="hot"></i>{/in}
+														{in name="v.id" value="$site.actnew"}<i class="new"></i>{/in}
+														</h2>
+													</a>
+													<p class="dropdown-common-item-desc">{$v.tag}</p>
+												</div>
+											</div>
+											<div class="header-collapse-line">
+											</div>{/foreach}{/if}{/foreach}
+	                                              {if $act}{foreach $act as $key=>$val}
+													<a href="{$val.url}" class="dropdown-common-recommend-link">
+														<div class="link-bg" style="background-image:url(/{$val.pic})"></div>
+														<p class="link-title">{$val.title}</p>
+														<p class="link-desc">{$val.desc}</p>
+													</a>
+													{/foreach}{/if}
+										</li>
+										<li data-name="产品服务">
+											<div class="header-mbnav-level2-content-index">
+												<a href="/cart"><span>所有产品</span><i class="por-icon por-icon-more-new"></i></a>
+											</div>
+												{php} $groups = Db::name('product_first_groups')->where('hidden',0)->order(array('order'=>'asd'))->select();foreach ($groups as $vo){ {/php}
+											<div class="header-collapse header-collapse-level1 closed">
+												<div class="header-collapse-head">
+													<a>
+														<h2><span>{$vo.name}</span></h2>
+														<i class="header-icon-arrow-down"></i>
+													</a>
+												</div>
+												<div class="header-collapse-body">
+													<div class="header-collapse-content">
+													{php} $prod = Db::name('product_groups')->order(array('order'=>'asd'))->where('hidden',0)->where('gid',$vo['id'])->select(); foreach ($prod as $v) { {/php}
+														<div class="header-collapse header-collapse-level1 closed">
+															<div class="header-collapse-head">
+																<a href="/cart?fid={$v.gid}&gid={$v.id}">
+																	<h2>{$v.name}
+																	{in name="v.id" value="$site.prohot"}<i class="hot"></i>{/in}
+																	{in name="v.id" value="$site.pronew"}<i class="new"></i>{/in}</h2>
+																	<p class="dropdown-product-item-desc">{$v.headline}</p>
+																</a>
+															</div>
+														</div>
+														<div class="header-collapse-line">
+														</div>
+														{php}}{/php}
+													</div>
+												</div>
+											</div>
+											<div class="header-collapse-line"></div>
+	                                          {php}}{/php}{if $pro}{foreach $pro as $key=>$val}
+																<a href="{$val.url}" class="dropdown-product-recommend-link">
+																	<div class="link-bg" style="background-image:url(/{$val.pic})">
+																	</div>
+																	<p class="link-title">{$val.title}</p>
+																	<p class="link-desc">{$val.desc}</p>
+																</a>
+																{/foreach}{/if}
+										</li>
+										<li data-name="解决方案">
+                                                   {foreach $www_top as $key =>$val}{if $val.name eq '解决方案'}{foreach $val.son as $k =>$v}
+											<div class="header-collapse header-collapse-level1 closed">
+												<div class="header-collapse-head">
+													<a href="{$v.url}">
+														<h2><span>{$v.name}</span>
+														{in name="v.id" value="$site.fahot"}<i class="hot"></i>{/in}
+														{in name="v.id" value="$site.fanew"}<i class="new"></i>{/in}
+														</h2>
+													</a>
+													<p class="dropdown-product-item-desc">{$v.tag}</p>
+												</div>
+											</div>
+											<div class="header-collapse-line"></div>
+                                                {/foreach}{/if}{/foreach}
+										</li>
+										<li data-name="服务市场">
+                                                   {foreach $www_top as $key =>$val}{if $val.name eq '服务市场'}{foreach $val.son as $k =>$v}{php}$prods = prods($v['id']);foreach($prods as $prods);{/php}{if $prods.hidden eq 0}
+											<div class="header-collapse header-collapse-level1 closed">
+												<div class="header-collapse-head">
+													<a>
+														<h2><span>{$v.name}</span></h2>
+														<i class="header-icon-arrow-down"></i>
+													</a>
+												</div>
+												<div class="header-collapse-body">
+													<div class="header-collapse-content">
+														{foreach $v.son as $vs_k => $vs_v}{php}$headline = product($vs_v['id']);foreach($headline as $vs_v);{/php}{if $vs_v.hidden eq 0}
+														<div class="header-collapse-level2-content-index">
+															<a href="{if $vs_v.nav_type_name eq '商品'}/cart?action=configureproduct&pid={$vs_v.id}{else/}/cart?fid={$v.id}&gid={$vs_v.id}{/if}"><span>{$vs_v.name}</span>
+															<p class="dropdown-common-item-desc">{$vs_v.headline}</p>
+															</a>			
+														</div>
+                                                          {/if}{/foreach}
+													</div>
+												</div>
+											</div>
+											<div class="header-collapse-line"></div>{/if}{/foreach}{/if}{/foreach}
+										</li>
+										<li data-name="合作伙伴">
+                                            {foreach $www_top as $key =>$val}{if $val.name eq '合作伙伴'}{foreach $val.son as $k =>$v}
+											<div class="header-collapse header-collapse-level1 closed">
+												<div class="header-collapse-head">
+													<a href="{$v.url}"><h2><span>{$v.name}</span></h2></a>
+													<p class="dropdown-common-item-desc">{$v.tag}</p>
+												</div>
+											</div>
+											<div class="header-collapse-line"></div>
+		                                    {/foreach}{/if}{/foreach}
+										</li>
+										<li data-name="服务支持">
+                                             {foreach $www_top as $key =>$val}{if $val.name eq '服务支持'}{foreach $val.son as $k =>$v}
+											<div class="header-collapse header-collapse-level1 closed">
+												<div class="header-collapse-head">
+													<a href="{$v.url}">
+														<h2><span>{$v.name}</span></h2>
+													</a>
+													<p class="dropdown-common-item-desc">{$v.tag}</p>
+												</div>
+											</div>
+											<div class="header-collapse-line"></div>
+                                            {/foreach}{/if}{/foreach}{if $gy}{foreach $gy as $key=>$val}
+													<a href="{$val.url}" class="dropdown-common-recommend-link">
+														<div class="link-bg" style="background-image:url(/{$val.pic})"></div>
+														<p class="link-title">{$val.title}</p>
+														<p class="link-desc">{$val.desc}</p>
+													</a>
+													{/foreach}{/if}
+										</li>
+										<li data-name="关于我们">
+                                             {foreach $www_top as $key =>$val}{if $val.name eq '关于我们'}{foreach $val.son as $k =>$v}										
+											<div class="header-collapse header-collapse-level1 closed">
+												<div class="header-collapse-head">
+													<a href="{$v.url}">
+														<h2><span>{$v.name}</span></h2>
+													</a>
+													<p class="dropdown-common-item-desc">{$v.tag}</p>
+												</div>
+											</div>
+											<div class="header-collapse-line">
+											</div>
+                                                 {/foreach}{/if}{/foreach}{if $gy}{foreach $gy as $key=>$val}
+													<a href="{$val.url}" class="dropdown-common-recommend-link">
+														<div class="link-bg" style="background-image:url(/{$val.pic})"></div>
+														<p class="link-title">{$val.title}</p>
+														<p class="link-desc">{$val.desc}</p>
+													</a>
+												{/foreach}{/if}
+										</li>
+										<!-- li data-name="language">
+											<div class="header-mbnav-level2-item">
+												<p class="header-mbnav-level2-item_title">International</p>
+												<a class="header-mbnav-level2-item_link " href="/intl/en-us/">Intl-English</a>
+												<a class="header-mbnav-level2-item_link " href="/intl/es-us/">Intl-Español</a>
+												<a class="header-mbnav-level2-item_link " href="/intl/pt-br/">Intl-Português</a>
+												<a class="header-mbnav-level2-item_link " href="/intl/zh-cn/">Intl-简体中文</a>
+											</div>
+											<div class="header-mbnav-level2-item">
+												<p class="header-mbnav-level2-item_title">中国站</p>
+												<a class="header-mbnav-level2-item_link active" href="/">简体中文<i
+														class="por-icon por-icon-checked"></i></a>
+											</div>
+										</li -->
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="header-packup-container"><p class="header-packup-btn"></p></div>
+				</div>
+			</script>
+		</div>
+	</div>

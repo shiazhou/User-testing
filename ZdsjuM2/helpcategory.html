@@ -1,0 +1,162 @@
+{if empty($setting.web_close_mode_message)}
+{include file="common/header"  title="$helpListCate.catename" keywords="$helpListCate.catename" description="$helpListCate.catename" /}
+{tagdata name="newsCate,newsList,helpCate,helpListCate" /}
+<link rel="stylesheet" href="{$setting.web_view}/style/css/helparticle.css">
+<div id="content" class="help-page home-page">
+	<div bi_parent_name="china-content">
+		<div class="support-section support-content" id="support-content">
+			<div class="support-body">
+				<div class="wrapper">
+					<div class="support-section support-nav" id="support-nav" style="left: 0px;">
+						<div class="prod-name" data-prod="ecs">
+							<div class="menu-box">
+								<p class="title">全部文档</p>
+								<i class="menu-btn"></i>
+							</div>
+							<form action="/helpsearch.html">
+							<div class="search-box-l" style="padding: 12px 20px 10px 20px;">
+								<div class="support-link-searcher">
+									<input name="search" type="search" class="support-link-searcher-input" type="text" placeholder="搜索本产品帮助文档" maxlength="50" autocomplete="off" value="{$helpSearch.search}">
+									<button class="support-link-searcher-submit" type="submit"></button></div>
+							</div>
+							</form>
+							<div class="side-nav-menu">
+								<div class="side-menu-box">
+									<div class="inner">
+										<div class="item item-search-pc">
+											<dt>帮助分类</dt>
+                                             {foreach $helpCate as $key=>$vo }
+											<dl class="side-menu-list">
+												<dd title="{$vo.title}">
+													<a target="_blank" href="/helpcategory/{$vo.id}.html" class="js-title">{$vo.title}</a>
+												</dd>
+											</dl>
+                                             {/foreach}
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="indicator-triangle"></div>
+							<div class="side-nav sidenav-main max">
+								<div class="search-box-l">
+									<form action="/helpsearch.html">
+										<input class="support-link-searcher-input" name="search" type="search" placeholder="搜索本产品帮助文档" value="{$helpSearch.search}" autocomplete="off">
+										<button class="support-link-searcher-submit" type="submit"></button>
+									</form>
+								</div>
+								<ul class="side-nav max">
+                                {foreach $helpCate as $key=>$vo }
+									<li class="nav-item level1">
+										<a target="_self" href="/helpcategory/{$vo.id}.html" class="js-title ajax-nav" title="">{$vo.title}</a>
+									</li>
+                                  {/foreach}
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+					<div class="support-main" style="min-height: calc(100vh - 120px);">
+						
+						<div class="crumbs">
+							<a class="link help-link" href="/help.html">文档首页</a><span>&gt;</span>
+							<span class="text">{$helpListCate.catename}</span>
+
+						</div>
+						<div class="help-content">
+							<h1 class="topictitle1">{$helpListCate.catename}</h1>
+							<div class="updateTime showw"></div>
+							<div>
+								<div>
+								<ul class="ullinks">
+									{if empty($helpListCate.list)}
+									 <p>
+									此分类下暂无文章!
+									 </p>
+									 {else/}  
+								{foreach $helpListCate.list as $key=>$vo }
+								<li class="ulchildlink"><strong><a href="/helparticle/{$vo.id}.html">{$vo.title}</a></strong><br></li>
+								 {/foreach}
+								 {if $helpListCate.num >1}
+								 <div class="paginationWrap">
+								 	<div class="pagination-container">
+								 		<span class="pagination-text">总条数：{$helpListCate.count}</span>
+								 		<ul class="pagination">
+								 			<!-- 第一页的前一页disabled -->
+								 
+								 			<li class="{if $helpListCate.previous}disabled{/if}">
+								 				<a href="/helpcategory/{$helpListCate.cateid}/{$helpListCate.previous}.html" aria-label="Previous"></a>
+								 			</li>
+								 			 {for start="$helpListCate.start" end="$helpListCate.num"}
+								 			<li class="pagination-goto-mb {if $i==$helpListCate.page}active{/if}">
+								 				<a href="/helpcategory/{$helpListCate.cateid}/{$i}.html">{$i}</a>
+								 			</li>
+								 
+								 			<li class="{if $i==$helpListCate.page}active{/if}">
+								 				<a href="/helpcategory/{$helpListCate.cateid}/{$i}.html">{$i}</a>
+								 			</li>
+								 			{/for}
+								 			<li class="{if $helpListCate.next}disabled{/if}">
+								 				<a href="/helpcategory/{$helpListCate.cateid}/{$helpListCate.next}.html" aria-label="Next"></a>
+								 			</li>
+								 
+								 		</ul>
+								 
+								 		<input type="text" class="pagination-to" name="currentPage" id="pageNum" value="" oninput="value=value.replace(/[^\d]/g,'')">
+								 		<input maxpage="2488" type="submit" class="pagination-submit" id="pageGoto" onclick="gotoPage()" value="跳转">
+								 		<script>
+								 			$('#pageNum').on('keydown', function() {
+								 				var keyCode = event.keyCode || event.which;
+								 				if (keyCode == '13') {
+								 					gotoPage();
+								 				}
+								 			});
+								 			function gotoPage() {
+								 				var page = parseInt($('#pageNum').val()) && parseInt($('#pageNum').val()) > 0 ? parseInt($('#pageNum').val()) : 1;
+								 				var maxPage = parseInt($('#pageGoto').attr('maxPage'));
+								 				var pageNo = maxPage && page > maxPage ? maxPage : page;
+								 				var urlPattern = '/helpcategory/{$helpListCate.cateid}/$0.html';window.location.href = urlPattern.replace('$0', pageNo);
+								 			}
+								 		</script>
+								 		<style>
+								 			.pagination-text+.pagination-submit {
+								 				margin-left: 3px;
+								 			}
+								 
+								 			.paginationWrap>.pagination-container {
+								 				margin-bottom: 10px;
+								 				height: 90px;
+								 				padding-top: 33px;
+								 			}
+								 		</style>
+								 	</div>
+								 
+								 </div>
+								 {/if}
+								 {/if}
+								 </ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{else/}
+{include file="common/header"  title="抱歉,我们暂时进入了维护模式" keywords="$setting.web_seo_keywords" description="$setting.web_seo_desc" /}
+  <div id="notfound" class="d-flex align-items-center justify-content-center">
+    <div class="notfound text-center">
+      <div class="container">
+        <div class="notfound-404">
+          <h1>Oops!</h1>
+        </div>
+        <h2>很抱歉，我们暂时进入了维护~</h2>
+        <p>原因为{$setting.web_close_mode_message}</p>
+      </div>
+    </div>
+  </div>
+{/if}
+<script src="{$setting.web_view}/style/js/helparticle.js"></script>
+  {include file="common/footer"/}

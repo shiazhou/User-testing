@@ -1,0 +1,42 @@
+{php}
+require_once "../app/zdsju.php";
+$br = get_br();
+$all = get_all();
+foreach($all as $site);
+$seo = seo();foreach($seo as $seo);
+$keyword = get_keyword();
+$qqmc = qqmc();$qqzh = qqzh();
+$pro = get_pro();
+$syxl = syxl();
+foreach($syxl as $syxl);
+$tcgg = tcgg();
+foreach($tcgg as $tcgg);
+{/php}
+<!doctype html>
+<html lang="zh-CN" site="china">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="applicable-device" content="pc,mobile">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>{if $seo.ymbt}{$seo.ymbt}{elseif $CartConfig.product.name}[title]_{$CartConfig.product.name}{else /}[title]{/if}_{$setting.company_name}</title>
+    <meta name="keywords" content="{if $seo.ymgjc}{$seo.ymgjc}{else /}[keywords]{/if}" />
+    <meta name="description" content="{if $seo.ymms}{$seo.ymms}{else /}[description]{/if}" />
+    <link rel="stylesheet" href="{$setting.web_view}/style/css/global.css">
+    <link rel="stylesheet" href="{$setting.web_view}/style/css/header.css">
+    <link rel="stylesheet" href="{$setting.web_view}/style/css/index.css?v=2">
+	<link rel="stylesheet" href="{$setting.web_view}/style/css/swiper-3.4.2.min.css">
+	<script type="text/javaScript" src="{$setting.web_view}/style/js/Header.js"></script>
+    <script src="{$setting.web_view}/style/js/jquery-1.12.4.min.js"></script>
+	<script src="{$setting.web_view}/style/js/common.js"></script>
+  </head>
+  <body>{if $site.xsfs == 1}
+  <div class="zdyhome {if $syxl}zdynone{/if}">
+      <div class="index_zs_banner index_zs_banner2 none" id="js_ads_banner_top">
+         <a href='{$syxl.url}' target='_blank' rel='nofollow'><img src='/{$syxl.mpic}' style='max-width:100%; height:auto;'></a>
+      </div>
+      <div class="index_zs_banner index_zs_banner1" id="js_ads_banner_top_slide">
+          <a href='{$syxl.url}' target='_blank' rel='nofollow'><img src='/{$syxl.pic}' style='max-width:100%; height:auto;'></a>
+      </div>
+  </div>{/if}
+  <div id="header"></div>

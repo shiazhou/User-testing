@@ -1,0 +1,519 @@
+{include file="common/header"  title="服务市场" keywords="$setting.company_name" description="$setting.company_profile" /}
+<link rel="stylesheet" href="{$setting.web_view}/style/css/market/index.css">
+    <div id="content">
+        <div id="common-components-container">
+            
+                <div data-mod-name-pc="@cloud/pep-mkp-trademark-cn/pc/index" data-mod-name-m="@cloud/pep-mkp-trademark-cn/m/index">
+
+  <div data-mod-id="store">
+		<div data-mod-name="store" class="banner market-wrapper" id="banner" data-background-img-pc="{$setting.web_view}/style/css/market/img/mkbg.jpg" data-background-img-mb="{$setting.web_view}/style/css/market/img/mkbg.jpg">
+    <div class="banner-center por-container" id="banner-center">
+        <img src="{$setting.web_view}/style/css/market/img/pclogo.png" alt="logo" class="selected-logoPC" id="selected-logoPC">
+        <img src="{$setting.web_view}/style/css/market/img/mlogo.png" alt="logo" class="selected-logoMB" id="selected-logoMB">
+        <div class="selected-area" id="selected-area">
+            <div class="selected-area-all" id="selected-area-all">全部服务分类</div>
+            <ul class="navigation-ul" id="navigation-ul" data-mod-id="selecterList" data-mod-name="child-component" data-partial-refresh="false">
+                {foreach $www_top as $key =>$val}{if $val.name eq '服务市场'}{foreach $val.son as $k =>$v}{if $prods.hidden eq 0}
+                <li class="navigation-ul-li">
+                    <a class="navigation-ul-li-a" id="navigation-ul-li-a-0" href="{if $v.nav_type_name eq '商品分组'}/cart?gid={$v.id}{else/}/cart?fid={$v.id}{/if}" target="_blank">{$v.name}</a>
+                </li>
+                {/if}{/foreach}{/if}{/foreach}
+            </ul>
+        </div>
+        <div class="selected-hot-sell-title section-title">热销服务</div>
+        <ul class="selected-hot-sell-content">
+			{foreach $www_top as $key =>$val}
+			{if $val.name eq '服务市场'}
+			{foreach $val.son as $k =>$v}
+			{if $prods.hidden eq 0 and $k eq 0}
+			{foreach $v.son as $vs_k => $vs_v}
+			{php}$market = market($vs_v['id']);foreach($market as $vs_v);{/php}
+			{if $vs_v.hidden eq 0 and $vs_k < 4}
+            <li class="selected-hot-sell-content-li cui-select-option">
+                <a target="_blank" href="{$vs_v.product_shopping_url}">
+                    <div class="promotion-info" data-background-img-pc="https://res-static.hc-cdn.cn/cloudbu-site/china/zh-cn/marketplace/selected/banner/recommend-pc.png" data-background-img-mb="https://res-static.hc-cdn.cn/cloudbu-site/china/zh-cn/marketplace/selected/banner/recommend-mb.png" style="background-image: url(index/img/recommend-pc.png&quot;);"></div>
+                    <div class="selected-hot-sell-content-li-title">{$vs_v.name}</div>
+                    <div class="selected-hot-sell-content-li-info">{$vs_v.description}</div>
+                    <div class="selected-hot-sell-trial">
+                        <span id="hot-sell-trial-info-0">顾问注册680元/件起</span>
+                    </div>
+                    <span class="price-info">¥680.00</span>
+                    <span class="price-unit">/次</span>
+                    <div class="selected-hot-sell-line"></div>
+                    <span class="selected-hot-sell-image" style="background-image:url(index/img/phone.svg)"></span>
+                    <span class="selected-hot-sell-phone">官方自营</span>
+                </a>
+            </li>
+			{/if}
+			{/foreach}
+			{/if}
+			{/foreach}
+			{/if}
+			{/foreach}
+        </ul>
+    </div>
+    <div class="banner-pagination">
+        <div class="fix-content">
+            <ul class="main-wrapper" bi_name="main-wrapper-0" id="main-wrapper-only"></ul>
+        </div>
+    </div>
+</div>
+	</div>
+
+  <div data-mod-id="site">
+		<div data-mod-name="site" class="cui-enterprise market-wrapper" id="cui-enterprise">
+    <div class="cui-enterprise-center por-container" id="cui-enterprise-center">
+        <div class="tab-content-top" id="cui-enterprise-tab-content-top">
+            <span class="tab-content-title section-title" data-theme="开发建站" id="cui-enterprise-tab-content-title" bi_name="开发建站">开发建站</span>
+        </div>
+        <div class="tab-content-wrap">
+            <div class="tab-card-left biggest cui-select-option" data-billing="" data-contentid="8eecae39-e816-4799-8613-6eca9eee1278" data-productid="" data-mod-id="siteLft" data-mod-name="child-component" data-partial-refresh="false">
+                <a href="#" class="tab-card-link" target="_blank" id="site-tab-card-link" bi_name="exploit-site-0">
+                    <object>
+                        <a href="/" target="_blank" id="site-a-blank">
+                            <div class="tab-card-bgImg" id="site-tab-card-bgImg" style="background-image: url(index/img/01-bg.jpg)">
+                                <div class="tab-card-inner-word" id="site-tab-card-inner-word">用户案例：上海心弦文化传播有限公司</div>
+                            </div>
+                        </a>
+                    </object>
+                    <div class="tab-card-info" id="site-tab-card-info">
+                        <div style="display: flex">
+                            <div class="tab-card-info-img" id="site-tab-card-info-img" style="background-image: url(index/img/01.png)"></div>
+                            <div class="tab-card-info-titles" id="site-tab-card-info-titles">
+                                <span class="main-title" id="site-main-title">云速建站-迅响定制</span>
+                                <span class="sub-title" id="site-sub-title">通过简单配置操作，拥有强大互联网</span>
+                            </div>
+                        </div>
+                        <div class="tab-card-info-desc" id="site-tab-card-info-desc">不用懂代码，自由拖拽，轻松建站；支持电脑、平板、手机等多种设备； 海量模板，任意挑选；安全保障，抗病毒木马；全球极速部署，访问快又稳。</div>
+                    </div>
+                    <div class="tab-card-price" id="site-tab-card-price">
+                        <span class="price-info" id="site-price-info"></span>
+                        <span class="price-unit" id="site-price-unit"></span>
+                    </div>
+                </a>
+            </div>
+            <div class="tab-card-right">
+                
+                <div class="smallest cui-select-option" data-billing="3" data-contentid="" data-productid="00301-168323-0--0" data-mod-id="sites[0]" data-mod-name="child-component" data-partial-refresh="false">
+                    <a href="" class="tab-card-link" target="_blank" id="site-tab-card-link-0" bi_name="迅响 模板建站-0">
+                        <div class="tab-card-info" id="site-tab-card-info-0">
+                            <div class="tab-card-info-img" id="site-tab-card-info-img-0" style="background-image: url(index/img/02.png)"></div>
+                            <div class="tab-card-info-titles" id="site-tab-card-info-titles-0">
+                                <span class="main-title" id="site-main-title-0">迅响 模板建站</span>
+                                <span class="sub-title" id="site-sub-title-0">H5响应式模板网站</span>
+                            </div>
+                        </div>
+                        <div class="tab-card-price" id="site-tab-card-price-0">
+                            <span class="price-info" id="site-price-info-0"></span>
+                            <span class="price-unit" id="site-price-unit-0"></span>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="smallest cui-select-option" data-billing="" data-contentid="243fa205-9a95-4777-a667-260116547a01" data-productid="" data-mod-id="sites[1]" data-mod-name="child-component" data-partial-refresh="false">
+                    <a href="" class="tab-card-link" target="_blank" id="site-tab-card-link-1" bi_name="迅响电商多端小程序-1">
+                        <div class="tab-card-info" id="site-tab-card-info-1">
+                            <div class="tab-card-info-img" id="site-tab-card-info-img-1" style="background-image: url(index/img/03.png)"></div>
+                            <div class="tab-card-info-titles" id="site-tab-card-info-titles-1">
+                                <span class="main-title" id="site-main-title-1">迅响电商多端小程序</span>
+                                <span class="sub-title" id="site-sub-title-1">提供专业的小程序解决方案</span>
+                            </div>
+                        </div>
+                        <div class="tab-card-price" id="site-tab-card-price-1">
+                            <span class="price-info" id="site-price-info-1"></span>
+                            <span class="price-unit" id="site-price-unit-1"></span>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="smallest cui-select-option" data-billing="" data-contentid="24ca0c61-381f-4c43-935e-4c4343526768" data-productid="" data-mod-id="sites[2]" data-mod-name="child-component" data-partial-refresh="false">
+                    <a href="" class="tab-card-link" target="_blank" id="site-tab-card-link-2" bi_name="凡科轻站小程序-2">
+                        <div class="tab-card-info" id="site-tab-card-info-2">
+                            <div class="tab-card-info-img" id="site-tab-card-info-img-2" style="background-image: url(index/img/04.png)"></div>
+                            <div class="tab-card-info-titles" id="site-tab-card-info-titles-2">
+                                <span class="main-title" id="site-main-title-2">凡科轻站小程序</span>
+                                <span class="sub-title" id="site-sub-title-2">适合全行业小程序场景</span>
+                            </div>
+                        </div>
+                        <div class="tab-card-price" id="site-tab-card-price-2">
+                            <span class="price-info" id="site-price-info-2"></span>
+                            <span class="price-unit" id="site-price-unit-2"></span>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="smallest cui-select-option" data-billing="3" data-contentid="65e82bf2-eff4-4e9b-9657-e5f442e4613c" data-productid="" data-mod-id="sites[3]" data-mod-name="child-component" data-partial-refresh="false">
+                    <a href="" class="tab-card-link" target="_blank" id="site-tab-card-link-3" bi_name="响应式定制建站-3">
+                        <div class="tab-card-info" id="site-tab-card-info-3">
+                            <div class="tab-card-info-img" id="site-tab-card-info-img-3" style="background-image: url(index/img/05.png)"></div>
+                            <div class="tab-card-info-titles" id="site-tab-card-info-titles-3">
+                                <span class="main-title" id="site-main-title-3">响应式定制建站</span>
+                                <span class="sub-title" id="site-sub-title-3">不同分辨率屏幕自动适应</span>
+                            </div>
+                        </div>
+                        <div class="tab-card-price" id="site-tab-card-price-3">
+                            <span class="price-info" id="site-price-info-3"></span>
+                            <span class="price-unit" id="site-price-unit-3"></span>
+                        </div>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+	</div>
+
+	<div data-mod-id="marketing">
+		<div data-mod-name="marketing" class="cui-office deep market-wrapper" id="cui-office">
+    <div class="cui-office-center por-container" id="cui-office-center">
+        <div class="tab-content-top" id="cui-office-tab-content-top">
+            <span class="tab-content-title section-title" data-theme="企业营销" id="cui-office-tab-content-title">企业营销</span>
+            <span class="tab-content-info" id="cui-office-tab-content-info"></span>
+        </div>
+        <div class="tab-content-wrap">
+            <div class="tab-content-wrap-left2-flex" id="tab-content-wrap-left2-flex">
+                
+                <div class="tab-card second cui-select-option" id="l-market-tab-card-0" data-billing="" data-contentid="ca332809-339a-49e9-875b-db0d46726f66" data-productid="" data-mod-id="marketLeft[0]" data-mod-name="child-component" data-partial-refresh="false">
+                    <a href="" class="tab-card-link" target="_blank" id="l-market-tab-card-link-0" bi_name="UDESK全周期智能客户服务解决方案-0">
+                        <div class="tab-card-info" id="l-market-tab-card-info-">
+                            <div class="tab-card-info-flex">
+                                <div class="tab-card-info-titles" id="l-market-tab-card-info-titles-0">
+                                    <span class="main-title" id="l-market-main-title-0">UDESK全周期智能客户服务解决方案</span>
+                                    <span class="sub-title" id="l-market-sub-title-0">新一代SaaS全场景智能客户服务系统</span>
+                                </div>
+                                <div class="tab-card-info-desc" id="market-tab-card-info-desc-0">全场景智能客服，沟通全渠道，管理全流程。</div>
+                            </div>
+                            <div class="tab-card-info-img" style="background-image: url(index/img/01.png)" id="market-tab-card-info-img-0"></div>
+                        </div>
+                        <div class="tab-card-info2" id="market-tab-card-info2-0">
+                            <div class="customer-example" id="market-customer-example-0">用户案例</div>
+                            <object>
+                                    <a href="/" class="customer-link" target="_blank" id="market-customer-link-0">世界人工智能大会</a>
+                                </object>
+                        </div>
+                        <div class="tab-card-price" id="market-tab-card-price-0">
+                            <span class="price-info" id="market-price-info-0"></span>
+                            <span class="price-unit" id="market-price-unit-0"></span>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="tab-card second cui-select-option" id="l-market-tab-card-1" data-billing="" data-contentid="a4f3a8db-85a6-4fd2-a051-39b7c7128cbb" data-productid="" data-mod-id="marketLeft[1]" data-mod-name="child-component" data-partial-refresh="false">
+                    <a href="" class="tab-card-link" target="_blank" id="l-market-tab-card-link-1" bi_name="Smarket智营开放平台-1">
+                        <div class="tab-card-info" id="l-market-tab-card-info-">
+                            <div class="tab-card-info-flex">
+                                <div class="tab-card-info-titles" id="l-market-tab-card-info-titles-1">
+                                    <span class="main-title" id="l-market-main-title-1">Smarket智营开放平台</span>
+                                    <span class="sub-title" id="l-market-sub-title-1">全渠道智能集客营销平台</span>
+                                </div>
+                                <div class="tab-card-info-desc" id="market-tab-card-info-desc-1">打通线上和线下营销路径，实现全渠道行为追踪、用户画像、大数据分析。</div>
+                            </div>
+                            <div class="tab-card-info-img" style="background-image: url(index/img/02.png)" id="market-tab-card-info-img-1"></div>
+                        </div>
+                        <div class="tab-card-info2" id="market-tab-card-info2-1">
+                            <div class="customer-example" id="market-customer-example-1">用户案例</div>
+                            <object>
+                                    <a href="/" class="customer-link" target="_blank" id="market-customer-link-1">华为技术有限公司</a>
+                                </object>
+                        </div>
+                        <div class="tab-card-price" id="market-tab-card-price-1">
+                            <span class="price-info" id="market-price-info-1"></span>
+                            <span class="price-unit" id="market-price-unit-1"></span>
+                        </div>
+                    </a>
+                </div>
+                
+            </div>
+            <div class="tab-content-wrap-right2-column" id="tab-content-wrap-right2-column">
+                
+                <div class="tab-card third cui-select-option" id="r-market-tab-card-0" data-billing="5" data-contentid="9886430c-e0f8-4f1e-9373-5a12049fef9d" data-productid="" data-mod-id="right2[0]" data-mod-name="child-component" data-partial-refresh="false">
+                    <a href="" class="tab-card-link" target="_blank" id="r-market-tab-card-link-0" bi_name="兔展H5轻定制-0">
+                        <div class="tab-card-info" id="r-market-tab-card-info-">
+                            <div class="tab-card-info-img" id="tab-card-info-img-right2-0" style="background-image:  url(index/img/03.png) "></div>
+                            <div class="tab-card-info-titles" id="r-market-tab-card-info-titles-0">
+                                <span class="main-title" id="r-market-main-title-0">兔展H5轻定制</span>
+                                <span class="sub-title" id="r-market-sub-title-0">集制作与传播为一体的营销工具</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="tab-card third cui-select-option" id="r-market-tab-card-1" data-billing="" data-contentid="be15dd93-2b53-4467-a783-c247f5f44af4" data-productid="" data-mod-id="right2[1]" data-mod-name="child-component" data-partial-refresh="false">
+                    <a href="" class="tab-card-link" target="_blank" id="r-market-tab-card-link-1" bi_name="纷享销客CRM-1">
+                        <div class="tab-card-info" id="r-market-tab-card-info-">
+                            <div class="tab-card-info-img" id="tab-card-info-img-right2-1" style="background-image:  url(index/img/04.png) "></div>
+                            <div class="tab-card-info-titles" id="r-market-tab-card-info-titles-1">
+                                <span class="main-title" id="r-market-main-title-1">纷享销客CRM</span>
+                                <span class="sub-title" id="r-market-sub-title-1">构建连接企业内外的业务价值</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+	</div>
+
+  <div data-mod-id="office"> 
+		<div data-mod-name="office" class="cui-manager deep market-wrapper" id="cui-manager">
+    <div class="cui-manager-center por-container" id="cui-manager-center">
+        <div class="tab-content-top" id="cui-manager-tab-content-top">
+            <span class="tab-content-title section-title" data-theme="协同办公" id="cui-manager-tab-content-title">协同办公</span>
+            <span class="tab-content-info" id="cui-manager-tab-content-info"></span>
+        </div>
+        <div class="tab-content-wrap">
+            <div class="tab-content-wrap-left2">
+                
+                <div class="tab-card fourth cui-select-option" id="l-office-tab-card-0" data-billing="" data-contentid="c278d3f7-615e-4890-b1d5-54790a79575f" data-productid="" data-mod-id="officeLeft[0]" data-mod-name="child-component" data-partial-refresh="false">
+                    <a href="" class="tab-card-link" target="_blank" id="l-office-tab-card-link-0" bi_name="心通达 OA-0">
+                        <div class="tab-card-info" id="l-office-tab-card-info-0">
+                            <div class="tab-card-info-img hide" id="l-tab-card-info-img1-0" style="background-image: url(index/img/01.png)"></div>
+                            <div class="tab-card-info-titles" id="l-office-tab-card-info-titles-0">
+                                <span class="main-title" id="l-office-main-title-0">心通达 OA</span>
+                                <span class="sub-title" id="l-office-sub-title-0">第三代智慧型OA平台</span>
+                            </div>
+                            <div class="tab-card-info-desc" id="l-office-tab-card-info-desc-0">基于云计算模式的SaaS架构研发，为传统OA产业注入新的活力</div>
+                            <div class="tab-card-info-img" id="l-tab-card-info-img2-0" style="background-image: url(index/img/01.png)"></div>
+                        </div>
+                        <div class="tab-card-info2" id="office-tab-card-info2-0">
+                            <div class="customer-example" id="office-customer-example-0">用户案例</div>
+                            <object>
+                                    <a href="/" class="customer-link" target="_blank" id="office-customer-link-0">上海市闵行区教育局</a>
+                                </object>
+                        </div>
+                        <div class="tab-card-price" id="l-office-tab-card-price-0">
+                            <span class="price-info" id="l-office-price-info-0"></span>
+                            <span class="price-unit" id="l-price-info-0"></span>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="tab-card fourth cui-select-option" id="l-office-tab-card-1" data-billing="" data-contentid="69e2f786-9643-4f78-9000-363117c42a6f" data-productid="" data-mod-id="officeLeft[1]" data-mod-name="child-component" data-partial-refresh="false">
+                    <a href="" class="tab-card-link" target="_blank" id="l-office-tab-card-link-1" bi_name="泛微e-ofiice-1">
+                        <div class="tab-card-info" id="l-office-tab-card-info-1">
+                            <div class="tab-card-info-img hide" id="l-tab-card-info-img1-1" style="background-image: url(index/img/02.png)"></div>
+                            <div class="tab-card-info-titles" id="l-office-tab-card-info-titles-1">
+                                <span class="main-title" id="l-office-main-title-1">泛微e-ofiice</span>
+                                <span class="sub-title" id="l-office-sub-title-1">标准化的协同OA办公软件</span>
+                            </div>
+                            <div class="tab-card-info-desc" id="l-office-tab-card-info-desc-1">为企业快速打造移动化。无纸化。数字化的办公平台</div>
+                            <div class="tab-card-info-img" id="l-tab-card-info-img2-1" style="background-image: url(index/img/02.png)"></div>
+                        </div>
+                        <div class="tab-card-info2" id="office-tab-card-info2-1">
+                            <div class="customer-example" id="office-customer-example-1"></div>
+                            <object>
+                                    <a href="" class="customer-link" target="_blank" id="office-customer-link-1"></a>
+                                </object>
+                        </div>
+                        <div class="tab-card-price" id="l-office-tab-card-price-1">
+                            <span class="price-info" id="l-office-price-info-1"></span>
+                            <span class="price-unit" id="l-price-info-1"></span>
+                        </div>
+                    </a>
+                </div>
+                
+            </div>
+            <div class="tab-content-wrap-right4">
+                
+                <div class="tab-card smallest cui-select-option" id="r-office-tab-card-0" data-billing="" data-contentid="cd478a4d-f130-4d7a-89d2-6447d1612cbd" data-productid="" data-mod-id="right4[0]" data-mod-name="child-component" data-partial-refresh="false">
+                    <a href="" class="tab-card-link" target="_blank" id="r-office-tab-card-link-0" bi_name="爱数企业云盘服务-0">
+                        <div class="tab-card-info" id="r-office-tab-card-info-0">
+                            <div class="tab-card-info-img hide" id="r-tab-card-info-img1-0" style="background-image: url(index/img/03.png)"></div>
+                            <div class="tab-card-info-titles" id="r-office-tab-card-info-titles-0">
+                                <span class="main-title" id="r-office-main-title-0">爱数企业云盘服务</span>
+                                <span class="sub-title" id="r-office-sub-title-0">企业级文档共享平台</span>
+                            </div>
+                            <div class="tab-card-info-desc" id="r-office-tab-card-info-desc-0"></div>
+                            <div class="tab-card-info-img" id="r-tab-card-info-img2-0" style="background-image: url(index/img/03.png)"></div>
+                        </div>
+                        <div class="tab-card-price" id="r-office-tab-card-price-0">
+                            <span class="price-info" id="r-office-price-info-0"></span>
+                            <span class="price-unit" id="r-price-info-0"></span>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="tab-card smallest cui-select-option" id="r-office-tab-card-1" data-billing="" data-contentid="e469e44a-ba6f-4d9d-8d27-cbd7beef2bfe" data-productid="" data-mod-id="right4[1]" data-mod-name="child-component" data-partial-refresh="false">
+                    <a href="" class="tab-card-link" target="_blank" id="r-office-tab-card-link-1" bi_name="致远协同管理软件A6+-1">
+                        <div class="tab-card-info" id="r-office-tab-card-info-1">
+                            <div class="tab-card-info-img hide" id="r-tab-card-info-img1-1" style="background-image: url(index/img/04.png)"></div>
+                            <div class="tab-card-info-titles" id="r-office-tab-card-info-titles-1">
+                                <span class="main-title" id="r-office-main-title-1">致远协同管理软件A6+</span>
+                                <span class="sub-title" id="r-office-sub-title-1">针对成长型企业的智慧办公平台</span>
+                            </div>
+                            <div class="tab-card-info-desc" id="r-office-tab-card-info-desc-1"></div>
+                            <div class="tab-card-info-img" id="r-tab-card-info-img2-1" style="background-image: url(index/img/04.png)"></div>
+                        </div>
+                        <div class="tab-card-price" id="r-office-tab-card-price-1">
+                            <span class="price-info" id="r-office-price-info-1"></span>
+                            <span class="price-unit" id="r-price-info-1"></span>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="tab-card smallest cui-select-option" id="r-office-tab-card-2" data-billing="" data-contentid="8674378b-4b4c-4f8c-95e3-3f0b93360b7f" data-productid="" data-mod-id="right4[2]" data-mod-name="child-component" data-partial-refresh="false">
+                    <a href="" class="tab-card-link" target="_blank" id="r-office-tab-card-link-2" bi_name="全程云HR 人力资源管理-2">
+                        <div class="tab-card-info" id="r-office-tab-card-info-2">
+                            <div class="tab-card-info-img hide" id="r-tab-card-info-img1-2" style="background-image: url(index/img/05.png)"></div>
+                            <div class="tab-card-info-titles" id="r-office-tab-card-info-titles-2">
+                                <span class="main-title" id="r-office-main-title-2">全程云HR 人力资源管理</span>
+                                <span class="sub-title" id="r-office-sub-title-2">一站式人事软件系统服务平台</span>
+                            </div>
+                            <div class="tab-card-info-desc" id="r-office-tab-card-info-desc-2"></div>
+                            <div class="tab-card-info-img" id="r-tab-card-info-img2-2" style="background-image: url(index/img/05.png)"></div>
+                        </div>
+                        <div class="tab-card-price" id="r-office-tab-card-price-2">
+                            <span class="price-info" id="r-office-price-info-2"></span>
+                            <span class="price-unit" id="r-price-info-2"></span>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="tab-card smallest cui-select-option" id="r-office-tab-card-3" data-billing="" data-contentid="144175bb-0995-43b9-83e4-6ad1fea90d06" data-productid="" data-mod-id="right4[3]" data-mod-name="child-component" data-partial-refresh="false">
+                    <a href="" class="tab-card-link" target="_blank" id="r-office-tab-card-link-3" bi_name="Coremail云享版企业邮箱-3">
+                        <div class="tab-card-info" id="r-office-tab-card-info-3">
+                            <div class="tab-card-info-img hide" id="r-tab-card-info-img1-3" style="background-image: url(index/img/06.png)"></div>
+                            <div class="tab-card-info-titles" id="r-office-tab-card-info-titles-3">
+                                <span class="main-title" id="r-office-main-title-3">Coremail云享版企业邮箱</span>
+                                <span class="sub-title" id="r-office-sub-title-3">为各行业客户打造的高端企业邮箱</span>
+                            </div>
+                            <div class="tab-card-info-desc" id="r-office-tab-card-info-desc-3"></div>
+                            <div class="tab-card-info-img" id="r-tab-card-info-img2-3" style="background-image: url(index/img/06.png)"></div>
+                        </div>
+                        <div class="tab-card-price" id="r-office-tab-card-price-3">
+                            <span class="price-info" id="r-office-price-info-3"></span>
+                            <span class="price-unit" id="r-price-info-3"></span>
+                        </div>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+	</div>
+
+	<div data-mod-id="manage"> 
+		<div data-mod-name="manage" class="cui-market market-wrapper" id="cui-market">
+    <div class="cui-market-center por-container" id="cui-market-center">
+        <div class="tab-content-top" id="cui-market-tab-content-top">
+            <span class="tab-content-title section-title" data-theme="财务管理" id="cui-market-tab-content-title" bi_name="财务管理">财务管理</span>
+            <span class="tab-content-info" id="cui-market-tab-content-info"></span>
+        </div>
+        <div class="tab-content-wrap" id="manage-tab-content-wrap">
+            
+            <div class="tab-card second cui-select-option" id="manage-tab-card-0" data-billing="" data-contentid="4c3feab7-74d3-484f-9671-73a2a8201651" data-productid="" data-mod-id="financials[0]" data-mod-name="child-component" data-partial-refresh="false">
+                <a href="" class="tab-card-link" target="_blank" bi_name="金蝶云星空企业经营管理解决方案" id="manage-tab-card-link-0">
+                    <div class="tab-card-info" id="manage-tab-card-info-0">
+                        <div class="tab-card-info-img" id="manage-img-0" style="background-image: url(index/img/01.png)"></div>
+                        <div class="tab-card-info-titles" id="manage-titles-0">
+                            <span class="main-title" id="manage-main-title-0">金蝶云星空企业经营管理解决方案</span>
+                            <span class="sub-title" id="manage-sub-title-0">为企业提供开放的 ERP 云平台</span>
+                        </div>
+                    </div>
+                    <div class="tab-card-price" id="manage-price-0">
+                        <span class="price-info" id="manage-price-info-0"></span>
+                        <span class="price-unit" id="manage-price-unit-0"></span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="tab-card second cui-select-option" id="manage-tab-card-1" data-billing="" data-contentid="bf1f83ef-4198-429a-93af-de80b56be733" data-productid="" data-mod-id="financials[1]" data-mod-name="child-component" data-partial-refresh="false">
+                <a href="" class="tab-card-link" target="_blank" bi_name="用友好会计" id="manage-tab-card-link-1">
+                    <div class="tab-card-info" id="manage-tab-card-info-1">
+                        <div class="tab-card-info-img" id="manage-img-1" style="background-image: url(index/img/02.png)"></div>
+                        <div class="tab-card-info-titles" id="manage-titles-1">
+                            <span class="main-title" id="manage-main-title-1">用友好会计</span>
+                            <span class="sub-title" id="manage-sub-title-1">为小微企业量身打造的云财务应用</span>
+                        </div>
+                    </div>
+                    <div class="tab-card-price" id="manage-price-1">
+                        <span class="price-info" id="manage-price-info-1"></span>
+                        <span class="price-unit" id="manage-price-unit-1"></span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="tab-card second cui-select-option" id="manage-tab-card-2" data-billing="" data-contentid="c05098e9-f3c5-4f00-b5a5-90b184f5ac36" data-productid="" data-mod-id="financials[2]" data-mod-name="child-component" data-partial-refresh="false">
+                <a href="" class="tab-card-link" target="_blank" bi_name="帆软报表软件" id="manage-tab-card-link-2">
+                    <div class="tab-card-info" id="manage-tab-card-info-2">
+                        <div class="tab-card-info-img" id="manage-img-2" style="background-image: url(index/img/03.png)"></div>
+                        <div class="tab-card-info-titles" id="manage-titles-2">
+                            <span class="main-title" id="manage-main-title-2">帆软报表软件</span>
+                            <span class="sub-title" id="manage-sub-title-2">轻松搭建数据决策分析系统</span>
+                        </div>
+                    </div>
+                    <div class="tab-card-price" id="manage-price-2">
+                        <span class="price-info" id="manage-price-info-2"></span>
+                        <span class="price-unit" id="manage-price-unit-2"></span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="tab-card second cui-select-option" id="manage-tab-card-3" data-billing="" data-contentid="74c326d9-da81-4cee-9291-a477b73e0b8d" data-productid="" data-mod-id="financials[3]" data-mod-name="child-component" data-partial-refresh="false">
+                <a href="" class="tab-card-link" target="_blank" bi_name="永洪BI" id="manage-tab-card-link-3">
+                    <div class="tab-card-info" id="manage-tab-card-info-3">
+                        <div class="tab-card-info-img" id="manage-img-3" style="background-image: url(index/img/04.png)"></div>
+                        <div class="tab-card-info-titles" id="manage-titles-3">
+                            <span class="main-title" id="manage-main-title-3">永洪BI</span>
+                            <span class="sub-title" id="manage-sub-title-3">实现对数据的深度挖掘</span>
+                        </div>
+                    </div>
+                    <div class="tab-card-price" id="manage-price-3">
+                        <span class="price-info" id="manage-price-info-3"></span>
+                        <span class="price-unit" id="manage-price-unit-3"></span>
+                    </div>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+	</div>
+ <script src="https://res.hc-cdn.com/cpage-pep-mkp-trademark-cn/7.1.101/pc/index.js"></script>
+    <script src="https://res.hc-cdn.com/cpage-pep-mkp-trademark-cn/1.0.7/pc/index.js"></script>
+	<script> window.gConfig = window.gConfig || {}; window.gConfig.seed = window.gConfig.seed || []; window.gConfig.seed.push({name : '@cloud/pep-mkp-trademark-cn', data : {
+  "packages": {
+    "@cloud/pep-mkp-trademark-cn": {
+      "path": "https://res.hc-cdn.com/cpage-pep-mkp-trademark-cn/7.1.101/",
+      "version": "7.1.101"
+    },
+    "@cloud/link-to": {
+      "path": "//res.hc-cdn.com/cnpm-link-to/1.0.16/",
+      "version": "1.0.16"
+    },
+    "@cloud/lazyload": {
+      "path": "//res.hc-cdn.com/cnpm-lazyload/2.0.10/",
+      "version": "2.0.10"
+    },
+    "@cloud/xtemplate-runtime": {
+      "path": "//res.hc-cdn.com/cnpm-xtemplate-runtime/1.0.7/",
+      "version": "1.0.7"
+    }
+  },
+  "modules": {
+    "@cloud/pep-mkp-trademark-cn/m/index": {
+      "requires": [
+        "@cloud/link-to",
+        "@cloud/lazyload"
+      ]
+    },
+    "@cloud/pep-mkp-trademark-cn/pc/index": {
+      "requires": [
+        "@cloud/link-to",
+        "@cloud/lazyload"
+      ]
+    }
+  }
+}})</script>
+
+</div>
+
+            
+        </div>
+    </div>
+<script type="text/javascript" src="{$setting.web_view}/style/css/market/feloader.js"></script>
+{include file="common/footer"  /}

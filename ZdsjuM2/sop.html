@@ -1,0 +1,43 @@
+{php}
+require_once "../app/zdsju.php";
+$gids = get_gid();
+{/php}
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<title>获取导航栏项目ID</title>  
+<div style=""><b>在下方寻找你的项目，找到项目ID输入到后台插件的方框内:</b></div>
+<script>  
+function decodeUnicodeEscapeSequences(str) {  
+  return str.replace(/\\u[\dA-Fa-f]{4}/gi, function(match) {  
+    return String.fromCharCode(parseInt(match.replace(/\\u/g, ''), 16));  
+  });  
+}  
+  
+function onPageLoad() {  
+  // 假设 $gid 的值存储在一个名为 'gidValue' 的元素中  
+  var gidElement = document.getElementById('gidValue');  
+  var gid = gidElement.textContent || gidElement.innerText; // 获取 $gid 的值  
+  
+  // 解码 Unicode 转义序列  
+  var decodedGid = decodeUnicodeEscapeSequences(gid);  
+  
+  // 假设你要在一个 id 为 'output' 的元素中显示解码后的中文  
+  var outputElement = document.getElementById('output');  
+  outputElement.textContent = decodedGid; // 更新元素内容  
+}  
+</script>  
+</head>  
+<body onload="onPageLoad()">  
+  
+<!-- 存储 $gid 值的元素 -->  
+<div id="gidValue" style="display: none;">
+    <a>{$gids}</a>
+</div>  
+  
+<!-- 用于显示解码后中文的元素 -->  
+<div id="output"></div>  
+  
+</body>  
+</html>
